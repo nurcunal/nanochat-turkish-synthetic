@@ -1,0 +1,2230 @@
+{
+  "summary": {
+    "n_total": 100,
+    "n_accepted": 45,
+    "accept_rate": 0.45,
+    "common_failure_modes": [
+      "TEMPLATE_TYPO (GLOBAL WARNING): Every single item contains the typos 'nedenu' (instead of 'nedeni') or 'sonuçu' (instead of 'sonucu'). Items were accepted despite this easy-to-fix error to assess logical quality, but this must be patched.",
+      "MORPHOLOGY_LOCATIVE_ERRORS (REJECTED): Items with internal noun suffix errors were rejected. Examples: 'koridoruda' (should be 'koridorunda'), 'durağıda' (durağında'), 'parkda' ('parkta').",
+      "LOGIC_AMBIGUITY (REJECTED): Some 'unexpected' tags created confusion about the causality (e.g., doing something positive resulting in a negative outcome merely because it was 'unexpected' is a weak causal link for training)."
+    ],
+    "notes_for_generator": [
+      "CRITICAL GLOBAL FIX: Perform a string replace on the dataset: 'nedenu' -> 'nedeni', 'sonuçu' -> 'sonucu'.",
+      "MORPHOLOGY FIX: Fix the possessive+locative chain. 'Koridor' + 'u' (poss) + 'n' (buffer) + 'da' (loc) -> 'Koridorunda'. The generator is missing the buffer 'n'.",
+      "CONTENT ADVICE: Ensure the 'Unexpected' tag doesn't contradict the physical causality of the event (e.g., warming up always reduces injury risk physically, regardless of expectation)."
+    ],
+    "judge_model_label": "gemini-3-pro",
+    "source_name": "XCOPA-like synthetic EVAL (2-way causal, held-out)",
+    "synthetic_path": "/Users/nurcunal/Documents/boun/DSAI585/synthetic/synthetic_benchmarks/xcopa_tr/synthetic_eval_xcopa_like_100.jsonl"
+  },
+  "results": [
+    {
+      "index": 0,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic is sound. 'Nedenu' typo penalized in fluency but accepted."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 1,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology error: 'koridoruda' should be 'koridorunda'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 2,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good causal logic. 'Nedenu' typo exists."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 3,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good causal logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 4,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Clear cause for waking up late."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 5,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good shopping logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 6,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "'Sonuçu' typo, otherwise good."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 7,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "'Sonuçu' typo, logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 8,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology error: 'durağıda' should be 'durağında'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 9,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 10,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 11,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 12,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 13,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 14,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 15,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 16,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 17,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 18,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 19,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 20,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 21,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 22,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 23,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 24,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 25,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 26,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 27,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 28,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 29,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 30,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 31,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 32,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 33,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 34,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 35,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 36,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 37,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 38,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 39,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 40,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 41,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 42,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology error: 'parkda' should be 'parkta'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 43,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 44,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 45,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 46,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 47,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Logic valid."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    }
+  ],
+  "accepted_items": {
+    "items": [
+      [
+        {
+          "role": "user",
+          "content": "Tekrar ederken daha hızlı buldu.\nBu olayın nedenu hangisidir?\nA) Sena notlarını düzenli tuttu.\nB) Sena notlarını karıştırdı ve dağıttı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir durak geri yürüdü.\nBu olayın nedenu hangisidir?\nA) Selin yanlış durağa indi.\nB) Selin doğru durakta indi."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Yazım hatasını fark edip düzeltti. Bu durum beklenmedik oldu.\nAşağıdakilerden hangisi bu durumun nedenudur?\nA) Umut e-postayı hiç kontrol etmedi.\nB) Umut e-postayı tekrar okuyup kontrol etti."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Emre sabah geç uyandı.\nBu olayın nedenu hangisidir?\nA) Emre gece erkenden yattı.\nB) Emre alarmı kurmadı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Gereksiz ürün almadı.\nBu olayın nedenu hangisidir?\nA) Deniz markete listeyle gitti.\nB) Deniz liste yapmadan gitti."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Can kahvesini çok sıcak içti.\nBu olayın sonuçu hangisidir?\nA) Dilini yaktı.\nB) Üşüdü."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Gökçe kahvesini çok sıcak içti.\nBu olayın sonuçu hangisidir?\nA) Üşüdü.\nB) Dilini yaktı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Emre e-postayı tekrar okuyup kontrol etti.\nBu olayın sonuçu hangisidir?\nA) Yazım hatasını fark edip düzeltti.\nB) Hataları görmezden gelip hemen gönderdi."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Telefonu gün içinde kapandı.\nBu olayın nedenu hangisidir?\nA) Selin telefonu tüm gece şarj etti.\nB) Selin telefonunu şarja takmadı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Umut e-postayı tekrar okuyup kontrol etti.\nBu olayın sonuçu hangisidir?\nA) Yazım hatasını fark edip düzeltti.\nB) Hataları görmezden gelip hemen gönderdi."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Buse önemli dosyaları yedekledi.\nBu olayın sonuçu hangisidir?\nA) Bilgisayar bozulunca tüm dosyalar kayboldu.\nB) Bilgisayar bozulsa bile dosyaları kaybolmadı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Burak toplu taşımada kartını önceden hazırladı.\nBu olayın sonuçu hangisidir?\nA) Turnikeden hızlı geçti.\nB) Turnikede uzun süre oyalandı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Yazım hatasını fark edip düzeltti.\nBu olayın nedenu hangisidir?\nA) Onur e-postayı tekrar okuyup kontrol etti.\nB) Onur e-postayı hiç kontrol etmedi."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Gereksiz ürün almadı.\nBu olayın nedenu hangisidir?\nA) Onur markete listeyle gitti.\nB) Onur liste yapmadan gitti."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir durak geri yürüdü. Kimse bunu önceden fark etmedi.\nBuna en olası neden hangisidir?\nA) Kaan yanlış durağa indi.\nB) Kaan doğru durakta indi."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Emre otobüsü kaçırdı.\nBu olayın sonuçu hangisidir?\nA) Hemen otobüse bindi.\nB) Bir sonraki seferi bekledi."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Daha sonra kapıyı açık buldu.\nBu olayın nedenu hangisidir?\nA) Zeynep aceleyle çıktı ve kapıyı kilitlemedi.\nB) Zeynep kapıyı iki kez kilitledi."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Furkan deneme sınavında daha iyi yaptı. Bu durum beklenmedik oldu.\nBuna en olası neden hangisidir?\nA) Furkan hiç çalışmadı.\nB) Furkan ders çalışmayı düzenli hale getirdi."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Ayşe spor öncesi ısınma yaptı. Bu durum beklenmedik oldu.\nAşağıdakilerden hangisi bu durumun sonuçudur?\nA) Sakatlanma riskini artırdı.\nB) Sakatlanma riskini azalttı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Sarp telefonunu şarja takmadı.\nBu olayın sonuçu hangisidir?\nA) Telefonu gün boyu %100 kaldı.\nB) Telefonu gün içinde kapandı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Ceren spor öncesi ısınma yaptı.\nBu olayın sonuçu hangisidir?\nA) Sakatlanma riskini artırdı.\nB) Sakatlanma riskini azalttı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Sena önemli dosyaları yedekledi. Kimse bunu önceden fark etmedi.\nAşağıdakilerden hangisi bu durumun sonuçudur?\nA) Bilgisayar bozulunca tüm dosyalar kayboldu.\nB) Bilgisayar bozulsa bile dosyaları kaybolmadı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Mehmet randevu saatini karıştırdı.\nBu olayın sonuçu hangisidir?\nA) Mehmet tam zamanında ve hiç beklemeden girdi.\nB) Mehmet erkenden gidip bekledi."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Tekrar ederken daha hızlı buldu.\nBu olayın nedenu hangisidir?\nA) Ceren notlarını karıştırdı ve dağıttı.\nB) Ceren notlarını düzenli tuttu."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Yolda susayınca su içti.\nBu olayın nedenu hangisidir?\nA) Zeynep su şişesini evde bıraktı.\nB) Zeynep su şişesini yanına aldı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Kerem erkenden gidip bekledi.\nBu olayın nedenu hangisidir?\nA) Kerem randevu saatini doğru hatırladı.\nB) Kerem randevu saatini karıştırdı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Dilini yaktı.\nBu olayın nedenu hangisidir?\nA) Eylül kahvesini soğutup içti.\nB) Eylül kahvesini çok sıcak içti."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Turnikeden hızlı geçti.\nBu olayın nedenu hangisidir?\nA) Mert toplu taşımada kartını önceden hazırladı.\nB) Mert kartını arayıp bulamadı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Deniz markete listeyle gitti.\nBu olayın sonuçu hangisidir?\nA) Gereksiz ürün almadı.\nB) Liste dışı her şeyi aldı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Turnikeden hızlı geçti.\nBu olayın nedenu hangisidir?\nA) Sena toplu taşımada kartını önceden hazırladı.\nB) Sena kartını arayıp bulamadı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Pınar markete listeyle gitti.\nBu olayın sonuçu hangisidir?\nA) Gereksiz ürün almadı.\nB) Liste dışı her şeyi aldı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hava aniden soğudu.\nBu olayın sonuçu hangisidir?\nA) İnsanlar güneş gözlüğü taktı.\nB) İnsanlar şemsiye açtı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Mehmet markete listeyle gitti.\nBu olayın sonuçu hangisidir?\nA) Gereksiz ürün almadı.\nB) Liste dışı her şeyi aldı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Gökçe deneme sınavında daha iyi yaptı. Bu durum beklenmedik oldu.\nBu olayın nedenu hangisidir?\nA) Gökçe ders çalışmayı düzenli hale getirdi.\nB) Gökçe hiç çalışmadı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hakan sınavdan önce iyi dinlendi.\nBu olayın sonuçu hangisidir?\nA) Daha dikkatli cevap verdi.\nB) Soruları rastgele işaretledi."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Planlar aksadı.\nBu olayın nedenu hangisidir?\nA) Her şey sorunsuz ilerledi.\nB) Alarm çaldı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Gereksiz ürün almadı.\nBu olayın nedenu hangisidir?\nA) Tolga liste yapmadan gitti.\nB) Tolga markete listeyle gitti."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir sonraki seferi bekledi.\nBu olayın nedenu hangisidir?\nA) Kerem otobüse zamanında yetişti.\nB) Kerem otobüsü kaçırdı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Yağmur başladı.\nBu olayın sonuçu hangisidir?\nA) İnsanlar şemsiye açtı.\nB) İnsanlar güneş gözlüğü taktı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Telefonu gün içinde kapandı. Bu durum beklenmedik oldu.\nBu olayın nedenu hangisidir?\nA) Pınar telefonu tüm gece şarj etti.\nB) Pınar telefonunu şarja takmadı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Ayşe spor öncesi ısınma yaptı.\nBu olayın sonuçu hangisidir?\nA) Sakatlanma riskini azalttı.\nB) Sakatlanma riskini artırdı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aslı telefonunu şarja takmadı.\nBu olayın sonuçu hangisidir?\nA) Telefonu gün boyu %100 kaldı.\nB) Telefonu gün içinde kapandı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Gizem parkda telefonunu kullanamadı.\nBu olayın nedenu hangisidir?\nA) Gizem telefonunu evde unuttu.\nB) Gizem telefonunu fazladan yanında taşıdı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Planlar aksadı.\nBu olayın nedenu hangisidir?\nA) Kapı kilitlendi.\nB) Her şey sorunsuz ilerledi."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir durak geri yürüdü.\nBu olayın nedenu hangisidir?\nA) Eylül doğru durakta indi.\nB) Eylül yanlış durağa indi."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ]
+    ]
+  },
+  "rejected_items": {
+    "items": [
+      [
+        {
+          "role": "user",
+          "content": "Derya okul koridoruda telefonunu kullanamadı.\nBu olayın nedenu hangisidir?\nA) Derya telefonunu evde unuttu.\nB) Derya telefonunu fazladan yanında taşıdı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Eren otobüs durağıda sessiz konuştu.\nBu olayın sonuçu hangisidir?\nA) Çevresindekileri rahatsız etmedi.\nB) Herkes şikâyet etti."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir sonraki seferi bekledi.\nBu olayın nedenu hangisidir?\nA) Zeynep otobüse zamanında yetişti.\nB) Zeynep otobüsü kaçırdı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Pınar otobüsü kaçırdı. Kimse bunu önceden fark etmedi.\nBuna en olası sonuç hangisidir?\nA) Hemen otobüse bindi.\nB) Bir sonraki seferi bekledi."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Telefonu gün içinde kapandı. Zaman planı biraz sıkışıktı.\nBuna en olası neden hangisidir?\nA) Emre telefonu tüm gece şarj etti.\nB) Emre telefonunu şarja takmadı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Yolda susayınca su içti.\nBu olayın nedenu hangisidir?\nA) Derya su şişesini yanına aldı.\nB) Derya su şişesini evde bıraktı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Daha az bölündü.\nBu olayın nedenu hangisidir?\nA) Nisa bildirimleri sürekli açık bıraktı.\nB) Nisa çalışırken bildirimleri kapattı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aslı alarmı kurmadı.\nBu olayın sonuçu hangisidir?\nA) Aslı sabah erkenden uyandı.\nB) Aslı sabah geç uyandı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Sarp su şişesini yanına aldı. Zaman planı biraz sıkışıktı.\nAşağıdakilerden hangisi bu durumun sonuçudur?\nA) Yolda susayınca su bulamadı.\nB) Yolda susayınca su içti."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Can aceleyle çıktı ve kapıyı kilitlemedi.\nBu olayın sonuçu hangisidir?\nA) Daha sonra kapıyı açık buldu.\nB) Daha sonra kapıyı kilitli buldu."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Onur toplu taşımada kartını önceden hazırladı.\nBu olayın sonuçu hangisidir?\nA) Turnikeden hızlı geçti.\nB) Turnikede uzun süre oyalandı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Deniz aceleyle çıktı ve kapıyı kilitlemedi.\nBu olayın sonuçu hangisidir?\nA) Daha sonra kapıyı açık buldu.\nB) Daha sonra kapıyı kilitli buldu."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hakan otobüsü kaçırdı.\nBu olayın sonuçu hangisidir?\nA) Bir sonraki seferi bekledi.\nB) Hemen otobüse bindi."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Umut toplantıya geç kaldı.\nBu olayın sonuçu hangisidir?\nA) Toplantıdan önce tüm hazırlıkları bitirdi.\nB) Toplantının başını kaçırdı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Tolga telefonunu şarja takmadı.\nBu olayın sonuçu hangisidir?\nA) Telefonu gün içinde kapandı.\nB) Telefonu gün boyu %100 kaldı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Kerem deneme sınavında daha iyi yaptı. Zaman planı biraz sıkışıktı.\nBuna en olası neden hangisidir?\nA) Kerem hiç çalışmadı.\nB) Kerem ders çalışmayı düzenli hale getirdi."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Ece toplu taşımada kartını önceden hazırladı.\nBu olayın sonuçu hangisidir?\nA) Turnikede uzun süre oyalandı.\nB) Turnikeden hızlı geçti."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Sena yanlış durağa indi.\nBu olayın sonuçu hangisidir?\nA) Bir durak geri yürüdü.\nB) Hedefe doğrudan ulaştı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Ece deneme sınavında daha iyi yaptı. Kimse bunu önceden fark etmedi.\nBuna en olası neden hangisidir?\nA) Ece hiç çalışmadı.\nB) Ece ders çalışmayı düzenli hale getirdi."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Ceren su şişesini yanına aldı.\nBu olayın sonuçu hangisidir?\nA) Yolda susayınca su bulamadı.\nB) Yolda susayınca su içti."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Turnikeden hızlı geçti. Bu durum beklenmedik oldu.\nAşağıdakilerden hangisi bu durumun nedenudur?\nA) Nisa toplu taşımada kartını önceden hazırladı.\nB) Nisa kartını arayıp bulamadı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Umut su şişesini yanına aldı.\nBu olayın sonuçu hangisidir?\nA) Yolda susayınca su içti.\nB) Yolda susayınca su bulamadı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Daha az bölündü.\nBu olayın nedenu hangisidir?\nA) Kaan çalışırken bildirimleri kapattı.\nB) Kaan bildirimleri sürekli açık bıraktı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hakan çalışırken bildirimleri kapattı.\nBu olayın sonuçu hangisidir?\nA) Daha çok bölündü.\nB) Daha az bölündü."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Dilini yaktı.\nBu olayın nedenu hangisidir?\nA) Ceren kahvesini çok sıcak içti.\nB) Ceren kahvesini soğutup içti."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Yazım hatasını fark edip düzeltti.\nBu olayın nedenu hangisidir?\nA) Ozan e-postayı tekrar okuyup kontrol etti.\nB) Ozan e-postayı hiç kontrol etmedi."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Umut su şişesini yanına aldı.\nBu olayın sonuçu hangisidir?\nA) Yolda susayınca su bulamadı.\nB) Yolda susayınca su içti."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hava aniden soğudu.\nBu olayın sonuçu hangisidir?\nA) İnsanlar şemsiye açtı.\nB) İnsanlar güneş gözlüğü taktı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Telefonu gün içinde kapandı.\nBu olayın nedenu hangisidir?\nA) Melis telefonunu şarja takmadı.\nB) Melis telefonu tüm gece şarj etti."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Buse su şişesini yanına aldı.\nBu olayın sonuçu hangisidir?\nA) Yolda susayınca su içti.\nB) Yolda susayınca su bulamadı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Ozan sınavdan önce iyi dinlendi.\nBu olayın sonuçu hangisidir?\nA) Soruları rastgele işaretledi.\nB) Daha dikkatli cevap verdi."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Buse sınavdan önce iyi dinlendi.\nBu olayın sonuçu hangisidir?\nA) Soruları rastgele işaretledi.\nB) Daha dikkatli cevap verdi."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Tekrar ederken daha hızlı buldu.\nBu olayın nedenu hangisidir?\nA) Selin notlarını karıştırdı ve dağıttı.\nB) Selin notlarını düzenli tuttu."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Dilini yaktı. Zaman planı biraz sıkışıktı.\nBuna en olası neden hangisidir?\nA) Onur kahvesini çok sıcak içti.\nB) Onur kahvesini soğutup içti."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Berk telefonunu şarja takmadı.\nBu olayın sonuçu hangisidir?\nA) Telefonu gün içinde kapandı.\nB) Telefonu gün boyu %100 kaldı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Dilini yaktı.\nBu olayın nedenu hangisidir?\nA) Pınar kahvesini soğutup içti.\nB) Pınar kahvesini çok sıcak içti."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bilgisayar bozulsa bile dosyaları kaybolmadı.\nBu olayın nedenu hangisidir?\nA) Selin önemli dosyaları yedekledi.\nB) Selin hiçbir yedek almadı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Ece aceleyle çıktı ve kapıyı kilitlemedi.\nBu olayın sonuçu hangisidir?\nA) Daha sonra kapıyı kilitli buldu.\nB) Daha sonra kapıyı açık buldu."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Planlar aksadı.\nBu olayın nedenu hangisidir?\nA) Alarm çaldı.\nB) Her şey sorunsuz ilerledi."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hakan randevu saatini karıştırdı.\nBu olayın sonuçu hangisidir?\nA) Hakan erkenden gidip bekledi.\nB) Hakan tam zamanında ve hiç beklemeden girdi."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Burak önemli dosyaları yedekledi.\nBu olayın sonuçu hangisidir?\nA) Bilgisayar bozulunca tüm dosyalar kayboldu.\nB) Bilgisayar bozulsa bile dosyaları kaybolmadı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Tolga deneme sınavında daha iyi yaptı.\nBu olayın nedenu hangisidir?\nA) Tolga hiç çalışmadı.\nB) Tolga ders çalışmayı düzenli hale getirdi."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Daha sonra kapıyı açık buldu.\nBu olayın nedenu hangisidir?\nA) Berk kapıyı iki kez kilitledi.\nB) Berk aceleyle çıktı ve kapıyı kilitlemedi."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Sena spor öncesi ısınma yaptı.\nBu olayın sonuçu hangisidir?\nA) Sakatlanma riskini azalttı.\nB) Sakatlanma riskini artırdı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir durak geri yürüdü.\nBu olayın nedenu hangisidir?\nA) Onur yanlış durağa indi.\nB) Onur doğru durakta indi."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Planlar aksadı.\nBu olayın nedenu hangisidir?\nA) Her şey sorunsuz ilerledi.\nB) Internet kesildi."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bilgisayar bozulsa bile dosyaları kaybolmadı.\nBu olayın nedenu hangisidir?\nA) Burak hiçbir yedek almadı.\nB) Burak önemli dosyaları yedekledi."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "İrem notlarını düzenli tuttu.\nBu olayın sonuçu hangisidir?\nA) Tekrar ederken daha hızlı buldu.\nB) Tekrar ederken hiçbir şeyi bulamadı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Telefonu gün içinde kapandı.\nBu olayın nedenu hangisidir?\nA) Tolga telefonunu şarja takmadı.\nB) Tolga telefonu tüm gece şarj etti."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Daha dikkatli cevap verdi.\nBu olayın nedenu hangisidir?\nA) Mehmet sınavdan önce hiç uyumadı.\nB) Mehmet sınavdan önce iyi dinlendi."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Turnikeden hızlı geçti.\nBu olayın nedenu hangisidir?\nA) Ece toplu taşımada kartını önceden hazırladı.\nB) Ece kartını arayıp bulamadı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Yasemin sınavdan önce iyi dinlendi.\nBu olayın sonuçu hangisidir?\nA) Daha dikkatli cevap verdi.\nB) Soruları rastgele işaretledi."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Internet kesildi.\nBu olayın sonuçu hangisidir?\nA) Her şey planlandığı gibi devam etti.\nB) Planlar aksadı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Eren ders çalışmayı düzenli hale getirdi.\nBu olayın sonuçu hangisidir?\nA) Eren denemede daha kötü yaptı.\nB) Eren deneme sınavında daha iyi yaptı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hakan randevu saatini karıştırdı.\nBu olayın sonuçu hangisidir?\nA) Hakan tam zamanında ve hiç beklemeden girdi.\nB) Hakan erkenden gidip bekledi."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ]
+    ]
+  }
+}

@@ -1,0 +1,3530 @@
+{
+  "summary": {
+    "n_total": 100,
+    "n_accepted": 70,
+    "accept_rate": 0.7,
+    "common_failure_modes": [
+      "MORPHOLOGY_PROPER_NOUNS (REJECTED): The templating engine uses a static '-de' suffix for all cities, failing Vowel Harmony (a/ı/o/u -> da, e/i/ö/ü -> de) and Consonant Assimilation (p/ç/t/k/s/ş/h/f -> te/ta). Examples: 'Hatay'de' (should be Hatay'da), 'Gaziantep'de' (Gaziantep'te), 'İstanbul'de' (İstanbul'da).",
+      "LOGIC_SEQUENCE_ERROR (REJECTED): Cleaning tasks often list 'Wipe surfaces' *before* 'Target stains', which contradicts standard cleaning logic (spot clean -> general clean).",
+      "MORPHOLOGY_POSSESSIVE (ACCEPTED WITH WARNING): Some compound nouns have awkward suffixes (e.g., 'merkezinda' instead of 'merkezinde')."
+    ],
+    "notes_for_generator": [
+      "CRITICAL FIX: Implement a robust suffix function for proper nouns. Do not simply append '-de'. Rules: 1) Last vowel determines a/e (Harmony). 2) Last letter determines d/t (Assimilation).",
+      "LOGIC FIX: Review the 'cleaning' scripts. Ensure the order is 'Declutter' -> 'Spot Clean' -> 'Wipe Surfaces' -> 'Final Check'.",
+      "IMPROVEMENT: Vary the 'Next Step' distractors to be slightly more plausible contextually (e.g., don't offer 'Cooking' steps for a 'Cleaning' goal)."
+    ],
+    "judge_model_label": "gemini-3-pro",
+    "source_name": "Turkish-PLU-like synthetic EVAL (4-way next-event, held-out)",
+    "synthetic_path": "/Users/nurcunal/Documents/boun/DSAI585/synthetic/synthetic_benchmarks/plu_tr/synthetic_eval_plu_100.jsonl"
+  },
+  "results": [
+    {
+      "index": 0,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Hatay'de' should be 'Hatay'da'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 1,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 2,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 3,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Tekirdağ'de' should be 'Tekirdağ'da'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 4,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Kütahya'de' -> 'Kütahya'da'. 'Merkezinda' -> 'Merkezinde'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 5,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 6,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 7,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic. 'Kayseri'de' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 8,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'İstanbul'de' should be 'İstanbul'da'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 9,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic. 'Mersin'de' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 10,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 11,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic. 'Balıkesir'de' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 12,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Konya'de' should be 'Konya'da'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 13,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic. 'Çanakkale'de' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 14,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 15,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 16,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Gaziantep'de' should be 'Gaziantep'te'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 17,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 18,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Bursa'de' should be 'Bursa'da'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 19,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 20,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 21,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 22,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Bursa'de'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 23,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 24,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 25,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 26,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 27,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Tekirdağ'de'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 28,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 29,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 30,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 31,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 32,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 33,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 2,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Backward logic: Wiping before spotting stains."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": true
+      }
+    },
+    {
+      "index": 34,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 35,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Aydın'de' should be 'Aydın'da'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 36,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Diyarbakır'de' should be 'Diyarbakır'da'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 37,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 38,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 39,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 40,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 41,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 42,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 43,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Diyarbakır'de'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 44,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 45,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 46,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Diyarbakır'de'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 47,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Diyarbakır'de'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 48,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Adana'de' -> 'Adana'da'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 49,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 50,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Kütahya'de'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 51,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Tekirdağ'de'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 52,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 53,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Konya'de'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 54,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 55,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 56,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 57,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 58,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 2,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Backward logic: Wiping before stains."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": true
+      }
+    },
+    {
+      "index": 59,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 60,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 61,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 62,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 63,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 64,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Antalya'de'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 65,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 66,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 67,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 68,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 69,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 70,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 71,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 72,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 2,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Backward logic: Wiping before stains."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": true
+      }
+    },
+    {
+      "index": 73,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 74,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 75,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'İstanbul'de'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 76,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 77,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 2,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Backward logic: Wiping before stains."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": true
+      }
+    },
+    {
+      "index": 78,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 79,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 80,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 81,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 2,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Backward logic: Final check before clutter/wiping."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": true
+      }
+    },
+    {
+      "index": 82,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Antalya'de'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 83,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 84,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Diyarbakır'de'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 85,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 86,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 87,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 88,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 89,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 90,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Diyarbakır'de'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 91,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 92,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 93,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Gaziantep'de'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 94,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 95,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 96,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 97,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 98,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 99,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 2,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Morphology: 'Trabzon'de'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    }
+  ],
+  "accepted_items": {
+    "items": [
+      [
+        {
+          "role": "user",
+          "content": "Hedef: çalışma masası temizliğini hızlıca bitirmek\nAdım: Gerekli temizlik malzemelerini hazırlamak\nBir sonraki adım:\nA) Tamamen farklı bir işe başlamak\nB) Ulaşım seçeneklerini kontrol etmek\nC) Dağınıklığı toplamak\nD) Yüzeyleri silmek"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Emre'in ekip arkadaşına net bir e-posta göndermesi\nAdım: E-postanın amacını tek cümleyle yazmak\nBir sonraki adım:\nA) İstenen aksiyonu açıkça belirtmek\nB) Fişi kontrol etmek\nC) Gerekli bağlamı iki cümleyle eklemek\nD) Hiçbir şey yapmadan zaman geçirmek"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Haftalık market alışverişini tamamlamak\nAdım: Kasada ödemeyi yapmak\nBir sonraki adım:\nA) Fişi kontrol etmek\nB) En zor iki başlığı seçmek\nC) Listeye göre ürünleri toplamak\nD) Hiçbir şey yapmadan zaman geçirmek"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Gökçe'in ekip arkadaşına net bir e-posta göndermesi\nAdım: Gerekli dosya/bağlantıyı eklemek\nBir sonraki adım:\nA) Hiçbir şey yapmadan zaman geçirmek\nB) İstenen aksiyonu açıkça belirtmek\nC) Dil ve yazım kontrolü yapmak\nD) Alıcı listesini kontrol etmek"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Kayseri'de kütüphane toplantı odasında küçük bir panel düzenlemek\nAdım: Gerekli malzemeleri hazırlamak\nBir sonraki adım:\nA) Katılımcılara duyuru göndermek\nB) Gerekli temizlik malzemelerini hazırlamak\nC) Konuyu yarına bırakmak\nD) Etkinlik akışını paylaşmak"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Selin'in programlama sınavına Mersin'de hazırlanması\nAdım: Zayıf başlıkları tekrar çalışmak\nBir sonraki adım:\nA) Tamamen farklı bir işe başlamak\nB) Bir sonraki gün için hedef koymak\nC) Yanlışları inceleyip not almak\nD) En yakın şubeye gitmek"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: esneme rutini yapmak\nAdım: Temponu koruyarak sürdürmek\nBir sonraki adım:\nA) Tamamen farklı bir işe başlamak\nB) Su içip esnemek\nC) Ana bölüme başlamak\nD) Kısa bir soğuma yapmak"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Gökçe'in tarih sınavına Balıkesir'de hazırlanması\nAdım: Notları kısa özetlere dönüştürmek\nBir sonraki adım:\nA) Yanlışları inceleyip not almak\nB) Telefonu şarja takıp beklemek\nC) Kısa bir test çözmek\nD) Gerekli malzemeleri hazırlamak"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Çanakkale'de bir randevuya zamanında yetişmek\nAdım: Gerekli eşyaları hazırlamak\nBir sonraki adım:\nA) En uygun güzergâhı seçmek\nB) Evden çıkmak\nC) Telefonu şarja takıp beklemek\nD) Kargo kodunu almak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: fotoğraf arşivi dosyalarını düzenlemek\nAdım: Tek bir ana klasör oluşturmak\nBir sonraki adım:\nA) Dosyaları türlerine göre ayırmak\nB) Tamamen farklı bir işe başlamak\nC) Dosya adlarını standartlaştırmak\nD) Dağınık klasörleri tespit etmek"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: evde kuvvet çalışması yapmak\nAdım: Uygun kıyafetleri giymek\nBir sonraki adım:\nA) Hedef süre/tempo belirlemek\nB) Kısa bir ısınma yapmak\nC) Telefonu şarja takıp beklemek\nD) Evden çıkmak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Balıkesir'de Sena için mercimek çorbası hazırlamak\nAdım: Ana malzemeyi pişirmeye başlamak\nBir sonraki adım:\nA) Pişirme kabını/tencereyi hazırlamak\nB) Baharat ve sosu ayarlamak\nC) Pişenleri karıştırıp tadına bakmak\nD) Yedek almak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Kocaeli'de Ayşe için fırında sebze hazırlamak\nAdım: Sebzeleri yıkayıp doğramak\nBir sonraki adım:\nA) Hiçbir şey yapmadan zaman geçirmek\nB) Pişirme kabını/tencereyi hazırlamak\nC) Malzemeleri tezgâha çıkarmak\nD) Ana malzemeyi pişirmeye başlamak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Haftalık market alışverişini tamamlamak\nAdım: Listeyi reyonlara göre sıralamak (bütçe sınırlı)\nBir sonraki adım:\nA) Sosyal medyada kısa bir tur atmak\nB) Markete gitmek\nC) Listeye göre ürünleri toplamak\nD) Bütçe sınırı belirlemek"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: 30 dakikalık koşu yapmak\nAdım: Ana bölüme başlamak\nBir sonraki adım:\nA) Temponu koruyarak sürdürmek\nB) Konuyu yarına bırakmak\nC) Dosya adlarını standartlaştırmak\nD) Hedef süre/tempo belirlemek"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Haftalık market alışverişini tamamlamak\nAdım: Kasada ödemeyi yapmak\nBir sonraki adım:\nA) Randevu saatini ve adresi doğrulamak\nB) Tamamen farklı bir işe başlamak\nC) Listeye göre ürünleri toplamak\nD) Fişi kontrol etmek"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: sunum dosyalarını düzenlemek\nAdım: Tek bir ana klasör oluşturmak\nBir sonraki adım:\nA) Dağınık klasörleri tespit etmek\nB) Dosya adlarını standartlaştırmak\nC) Su içip esnemek\nD) Dosyaları türlerine göre ayırmak"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Nisa'in tarih sınavına İzmir'de hazırlanması\nAdım: Notları kısa özetlere dönüştürmek\nBir sonraki adım:\nA) Yanlışları inceleyip not almak\nB) Kısa bir test çözmek\nC) En uygun güzergâhı seçmek\nD) Hiçbir şey yapmadan zaman geçirmek"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: kod projesi dosyalarını düzenlemek\nAdım: Gereksiz kopyaları silmek\nBir sonraki adım:\nA) Yedek almak\nB) Dosya adlarını standartlaştırmak\nC) Konuyu yarına bırakmak\nD) Kısa bir kontrol listesi bırakmak"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: mutfak temizliğini hızlıca bitirmek\nAdım: Zor lekeleri hedeflemek\nBir sonraki adım:\nA) Konuyu yarına bırakmak\nB) Kısa bir test çözmek\nC) Yüzeyleri silmek\nD) Çöpü çıkarmak"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Sena'in ekonomi sınavına Çanakkale'de hazırlanması\nAdım: Yanlışları inceleyip not almak\nBir sonraki adım:\nA) Konuyu yarına bırakmak\nB) Zayıf başlıkları tekrar çalışmak\nC) Kısa bir test çözmek\nD) Randevu yerine yürümek"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: 20 dakikalık yürüyüş yapmak\nAdım: Temponu koruyarak sürdürmek\nBir sonraki adım:\nA) Pişirme kabını/tencereyi hazırlamak\nB) Ana bölüme başlamak\nC) Kısa bir soğuma yapmak\nD) Sosyal medyada kısa bir tur atmak"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Haftalık market alışverişini tamamlamak\nAdım: Listeye göre ürünleri toplamak\nBir sonraki adım:\nA) Kasada ödemeyi yapmak\nB) Konuyu yarına bırakmak\nC) Markete gitmek\nD) En uygun güzergâhı seçmek"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: sunum dosyalarını düzenlemek\nAdım: Dosyaları türlerine göre ayırmak\nBir sonraki adım:\nA) Tek bir ana klasör oluşturmak\nB) Dosya adlarını standartlaştırmak\nC) Varışa yakın durakta inmek\nD) Gereksiz kopyaları silmek"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: oda temizliğini hızlıca bitirmek\nAdım: Son kontrol yapmak\nBir sonraki adım:\nA) Çöpü çıkarmak\nB) Malzemeleri yerine kaldırmak\nC) Listeye göre ürünleri toplamak\nD) Hiçbir şey yapmadan zaman geçirmek"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: mutfak temizliğini hızlıca bitirmek\nAdım: Zor lekeleri hedeflemek\nBir sonraki adım:\nA) Tamamen farklı bir işe başlamak\nB) Yüzeyleri silmek\nC) Çöpü çıkarmak\nD) Son kontrol yapmak"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Denizli'de atölye alanında küçük bir tanıtım toplantısı düzenlemek\nAdım: Gerekli malzemeleri hazırlamak\nBir sonraki adım:\nA) Katılımcılara duyuru göndermek\nB) Konuyu yarına bırakmak\nC) Gerekli eşyaları hazırlamak\nD) Etkinlik akışını paylaşmak"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Satın alınan şarj cihazıi kargoyla iade etmek\nAdım: İade koşullarını kontrol etmek\nBir sonraki adım:\nA) Bütçe sınırı belirlemek\nB) İade talebi oluşturmak\nC) Konuyu yarına bırakmak\nD) Kargo kodunu almak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Eylül'in ekip arkadaşına net bir e-posta göndermesi\nAdım: Gerekli bağlamı iki cümleyle eklemek\nBir sonraki adım:\nA) E-postanın amacını tek cümleyle yazmak\nB) İstenen aksiyonu açıkça belirtmek\nC) Tamamen farklı bir işe başlamak\nD) Gerekli dosya/bağlantıyı eklemek"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Gökçe'in ekip arkadaşına net bir e-posta göndermesi\nAdım: İstenen aksiyonu açıkça belirtmek\nBir sonraki adım:\nA) Telefonu şarja takıp beklemek\nB) İade koşullarını kontrol etmek\nC) Gerekli dosya/bağlantıyı eklemek\nD) Gerekli bağlamı iki cümleyle eklemek"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Balıkesir'de kütüphane toplantı odasında küçük bir seminer düzenlemek\nAdım: Kayıt veya katılımcı listesini oluşturmak\nBir sonraki adım:\nA) Katılımcılara duyuru göndermek\nB) Duyuru metni hazırlamak\nC) Sosyal medyada kısa bir tur atmak\nD) Tek bir ana klasör oluşturmak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Emre'in ekip arkadaşına net bir e-posta göndermesi\nAdım: Dil ve yazım kontrolü yapmak\nBir sonraki adım:\nA) Konuyu yarına bırakmak\nB) Gerekli dosya/bağlantıyı eklemek\nC) Göndermek\nD) Alıcı listesini kontrol etmek"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Sena'in ekip arkadaşına net bir e-posta göndermesi\nAdım: Alıcı listesini kontrol etmek\nBir sonraki adım:\nA) Dil ve yazım kontrolü yapmak\nB) Göndermek\nC) Konuyu yarına bırakmak\nD) Dağınık klasörleri tespit etmek"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Onur'in ekip arkadaşına net bir e-posta göndermesi\nAdım: Dil ve yazım kontrolü yapmak\nBir sonraki adım:\nA) Göndermek\nB) Gerekli dosya/bağlantıyı eklemek\nC) Alıcı listesini kontrol etmek\nD) Konuyu yarına bırakmak"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Eskişehir'de atölye alanında küçük bir seminer düzenlemek\nAdım: Kayıt veya katılımcı listesini oluşturmak\nBir sonraki adım:\nA) Mekânı ayarlamak\nB) Duyuru metni hazırlamak\nC) Tamamen farklı bir işe başlamak\nD) E-postanın amacını tek cümleyle yazmak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Buse'in programlama sınavına Kayseri'de hazırlanması\nAdım: Konu başlıklarını listelemek\nBir sonraki adım:\nA) Notları kısa özetlere dönüştürmek\nB) En zor iki başlığı seçmek\nC) Eksikleri not almak\nD) Konuyu yarına bırakmak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: çalışma masası temizliğini hızlıca bitirmek (dikkatli ol)\nAdım: Çöpü çıkarmak\nBir sonraki adım:\nA) Zor lekeleri hedeflemek\nB) Son kontrol yapmak\nC) Malzemeleri yerine kaldırmak\nD) Konuyu yarına bırakmak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: rapor dosyalarını düzenlemek\nAdım: Tek bir ana klasör oluşturmak\nBir sonraki adım:\nA) Ana malzemeyi pişirmeye başlamak\nB) Dosya adlarını standartlaştırmak\nC) Dağınık klasörleri tespit etmek\nD) Dosyaları türlerine göre ayırmak"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Hakan'in programlama sınavına Kayseri'de hazırlanması\nAdım: Zayıf başlıkları tekrar çalışmak\nBir sonraki adım:\nA) Hiçbir şey yapmadan zaman geçirmek\nB) Bir sonraki gün için hedef koymak\nC) Son kontrol yapmak\nD) Yanlışları inceleyip not almak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Kerem'in ekip arkadaşına net bir e-posta göndermesi (acele etmeden)\nAdım: İstenen aksiyonu açıkça belirtmek\nBir sonraki adım:\nA) Gerekli dosya/bağlantıyı eklemek\nB) Tamamen farklı bir işe başlamak\nC) Gerekli bağlamı iki cümleyle eklemek\nD) Markete gitmek"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Rize'de bir randevuya zamanında yetişmek (dikkatli ol)\nAdım: Randevu saatini ve adresi doğrulamak\nBir sonraki adım:\nA) Konuyu yarına bırakmak\nB) Ulaşım seçeneklerini kontrol etmek\nC) Kasada ödemeyi yapmak\nD) En uygun güzergâhı seçmek"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Satın alınan monti kargoyla iade etmek\nAdım: İade talebi oluşturmak\nBir sonraki adım:\nA) Kargo kodunu almak\nB) Ürünü uygun şekilde paketlemek\nC) İade koşullarını kontrol etmek\nD) Telefonu şarja takıp beklemek"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Buse'in ekonomi sınavına Kayseri'de hazırlanması\nAdım: Yanlışları inceleyip not almak\nBir sonraki adım:\nA) Kısa bir test çözmek\nB) Telefonu şarja takıp beklemek\nC) Zayıf başlıkları tekrar çalışmak\nD) Takip numarasını saklamak"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: evde kuvvet çalışması yapmak\nAdım: Temponu koruyarak sürdürmek\nBir sonraki adım:\nA) Ana bölüme başlamak\nB) Su içip esnemek\nC) Kısa bir soğuma yapmak\nD) Telefonu şarja takıp beklemek"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Ayşe'in ekip arkadaşına net bir e-posta göndermesi\nAdım: Dil ve yazım kontrolü yapmak\nBir sonraki adım:\nA) Gerekli dosya/bağlantıyı eklemek\nB) Alıcı listesini kontrol etmek\nC) Göndermek\nD) Hiçbir şey yapmadan zaman geçirmek"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Tolga'in ekip arkadaşına net bir e-posta göndermesi\nAdım: E-postanın amacını tek cümleyle yazmak (sessiz ilerle)\nBir sonraki adım:\nA) Konuyu yarına bırakmak\nB) İstenen aksiyonu açıkça belirtmek\nC) Gerekli bağlamı iki cümleyle eklemek\nD) Dağınık klasörleri tespit etmek"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Haftalık market alışverişini tamamlamak\nAdım: Markete gitmek\nBir sonraki adım:\nA) Pişirme kabını/tencereyi hazırlamak\nB) Kasada ödemeyi yapmak\nC) Listeye göre ürünleri toplamak\nD) Sosyal medyada kısa bir tur atmak"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Haftalık market alışverişini tamamlamak\nAdım: Markete gitmek (bütçe sınırlı)\nBir sonraki adım:\nA) Listeyi reyonlara göre sıralamak\nB) Kasada ödemeyi yapmak\nC) Listeye göre ürünleri toplamak\nD) Konuyu yarına bırakmak"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Can'in ekip arkadaşına net bir e-posta göndermesi\nAdım: Gerekli dosya/bağlantıyı eklemek\nBir sonraki adım:\nA) Sosyal medyada kısa bir tur atmak\nB) Ulaşım seçeneklerini kontrol etmek\nC) İstenen aksiyonu açıkça belirtmek\nD) Dil ve yazım kontrolü yapmak"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: 20 dakikalık yürüyüş yapmak\nAdım: Kısa bir soğuma yapmak (sessiz ilerle)\nBir sonraki adım:\nA) Temponu koruyarak sürdürmek\nB) Konuyu yarına bırakmak\nC) Su içip esnemek\nD) Çöpü çıkarmak"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: İzmir'de kampüs salonunda küçük bir seminer düzenlemek\nAdım: Gerekli malzemeleri hazırlamak\nBir sonraki adım:\nA) Sosyal medyada kısa bir tur atmak\nB) Etkinlik akışını paylaşmak\nC) Katılımcılara duyuru göndermek\nD) Ana malzemeyi pişirmeye başlamak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Denizli'de bir randevuya zamanında yetişmek\nAdım: En uygun güzergâhı seçmek\nBir sonraki adım:\nA) Mekânı ayarlamak\nB) Gerekli eşyaları hazırlamak\nC) Tamamen farklı bir işe başlamak\nD) Ulaşım seçeneklerini kontrol etmek"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Denizli'de kültür merkezinda küçük bir seminer düzenlemek\nAdım: Katılımcılara duyuru göndermek\nBir sonraki adım:\nA) Temponu koruyarak sürdürmek\nB) Etkinlik akışını paylaşmak\nC) Gerekli malzemeleri hazırlamak\nD) Duyuru metni hazırlamak"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Balıkesir'de kültür merkezinda küçük bir panel düzenlemek\nAdım: Mekânı ayarlamak\nBir sonraki adım:\nA) Su içip esnemek\nB) Kayıt veya katılımcı listesini oluşturmak\nC) Tarih ve saat belirlemek\nD) Tamamen farklı bir işe başlamak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Mehmet'in ekonomi sınavına Kocaeli'de hazırlanması\nAdım: En zor iki başlığı seçmek\nBir sonraki adım:\nA) Notları kısa özetlere dönüştürmek\nB) Kısa bir test çözmek\nC) Fişi kontrol etmek\nD) Konu başlıklarını listelemek"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Haftalık market alışverişini tamamlamak\nAdım: Listeye göre ürünleri toplamak\nBir sonraki adım:\nA) E-postanın amacını tek cümleyle yazmak\nB) Kasada ödemeyi yapmak\nC) Markete gitmek\nD) Hiçbir şey yapmadan zaman geçirmek"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Ayşe'in ekip arkadaşına net bir e-posta göndermesi\nAdım: E-postanın amacını tek cümleyle yazmak\nBir sonraki adım:\nA) Telefonu şarja takıp beklemek\nB) Gerekli bağlamı iki cümleyle eklemek\nC) Gerekli dosya/bağlantıyı eklemek\nD) İstenen aksiyonu açıkça belirtmek"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Buse'in ekip arkadaşına net bir e-posta göndermesi\nAdım: E-postanın amacını tek cümleyle yazmak\nBir sonraki adım:\nA) İstenen aksiyonu açıkça belirtmek\nB) Sosyal medyada kısa bir tur atmak\nC) Gerekli bağlamı iki cümleyle eklemek\nD) Kargoyu teslim etmek"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Balıkesir'de Can için sebzeli makarna hazırlamak\nAdım: Ana malzemeyi pişirmeye başlamak\nBir sonraki adım:\nA) Pişenleri karıştırıp tadına bakmak\nB) Tamamen farklı bir işe başlamak\nC) İstenen aksiyonu açıkça belirtmek\nD) Baharat ve sosu ayarlamak"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: kod projesi dosyalarını düzenlemek\nAdım: Dosya adlarını standartlaştırmak\nBir sonraki adım:\nA) Gereksiz kopyaları silmek\nB) Yedek almak\nC) Tek bir ana klasör oluşturmak\nD) Hiçbir şey yapmadan zaman geçirmek"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: sunum dosyalarını düzenlemek\nAdım: Yedek almak\nBir sonraki adım:\nA) Hiçbir şey yapmadan zaman geçirmek\nB) Gereksiz kopyaları silmek\nC) Kısa bir kontrol listesi bırakmak\nD) Mekânı ayarlamak"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Haftalık market alışverişini tamamlamak\nAdım: Bütçe sınırı belirlemek\nBir sonraki adım:\nA) Markete gitmek\nB) Listeyi reyonlara göre sıralamak\nC) Eksikleri not almak\nD) Sosyal medyada kısa bir tur atmak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Buse'in biyoloji sınavına İzmir'de hazırlanması\nAdım: Zayıf başlıkları tekrar çalışmak\nBir sonraki adım:\nA) Yanlışları inceleyip not almak\nB) Sosyal medyada kısa bir tur atmak\nC) Bir sonraki gün için hedef koymak\nD) Alıcı listesini kontrol etmek"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Deniz'in ekip arkadaşına net bir e-posta göndermesi\nAdım: İstenen aksiyonu açıkça belirtmek (dikkatli ol)\nBir sonraki adım:\nA) Hiçbir şey yapmadan zaman geçirmek\nB) Dil ve yazım kontrolü yapmak\nC) Gerekli bağlamı iki cümleyle eklemek\nD) Gerekli dosya/bağlantıyı eklemek"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: mutfak temizliğini hızlıca bitirmek\nAdım: Gerekli temizlik malzemelerini hazırlamak\nBir sonraki adım:\nA) Dağınıklığı toplamak\nB) Yüzeyleri silmek\nC) Hiçbir şey yapmadan zaman geçirmek\nD) Pişenleri karıştırıp tadına bakmak"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Satın alınan kitapi kargoyla iade etmek\nAdım: Kargo kodunu almak\nBir sonraki adım:\nA) Ürünü uygun şekilde paketlemek\nB) İade talebi oluşturmak\nC) Hedef süre/tempo belirlemek\nD) Telefonu şarja takıp beklemek"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Satın alınan monti kargoyla iade etmek (dikkatli ol)\nAdım: En yakın şubeye gitmek\nBir sonraki adım:\nA) Kargoyu teslim etmek\nB) Randevu saatini ve adresi doğrulamak\nC) Ürünü uygun şekilde paketlemek\nD) Konuyu yarına bırakmak"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Hakan'in ekip arkadaşına net bir e-posta göndermesi\nAdım: Gerekli dosya/bağlantıyı eklemek (zaman kısıtlı)\nBir sonraki adım:\nA) Ulaşım seçeneklerini kontrol etmek\nB) İstenen aksiyonu açıkça belirtmek\nC) Tamamen farklı bir işe başlamak\nD) Dil ve yazım kontrolü yapmak"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: evde kuvvet çalışması yapmak\nAdım: Ana bölüme başlamak (dikkatli ol)\nBir sonraki adım:\nA) Hedef süre/tempo belirlemek\nB) Temponu koruyarak sürdürmek\nC) Kısa bir soğuma yapmak\nD) Konuyu yarına bırakmak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Rize'de Hakan için sebzeli makarna hazırlamak\nAdım: Baharat ve sosu ayarlamak\nBir sonraki adım:\nA) Ana malzemeyi pişirmeye başlamak\nB) Servis etmek\nC) Sosyal medyada kısa bir tur atmak\nD) Pişenleri karıştırıp tadına bakmak"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ]
+    ]
+  },
+  "rejected_items": {
+    "items": [
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Hatay'de Kaan için mercimek çorbası hazırlamak\nAdım: Malzemeleri tezgâha çıkarmak\nBir sonraki adım:\nA) Pişirme kabını/tencereyi hazırlamak\nB) Sebzeleri yıkayıp doğramak\nC) Sosyal medyada kısa bir tur atmak\nD) Kısa bir ısınma yapmak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Tekirdağ'de bir randevuya zamanında yetişmek\nAdım: Varışa yakın durakta inmek\nBir sonraki adım:\nA) Evden çıkmak\nB) Randevu yerine yürümek\nC) Tamamen farklı bir işe başlamak\nD) Çöpü çıkarmak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Kütahya'de kültür merkezinda küçük bir atölye düzenlemek\nAdım: Duyuru metni hazırlamak\nBir sonraki adım:\nA) Gerekli malzemeleri hazırlamak\nB) En zor iki başlığı seçmek\nC) Kayıt veya katılımcı listesini oluşturmak\nD) Katılımcılara duyuru göndermek"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: İstanbul'de bir randevuya zamanında yetişmek\nAdım: Evden çıkmak\nBir sonraki adım:\nA) Randevu yerine yürümek\nB) Evden çıkmak\nC) Varışa yakın durakta inmek\nD) Konuyu yarına bırakmak"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Konya'de kütüphane toplantı odasında küçük bir okuma kulübü düzenlemek\nAdım: Tarih ve saat belirlemek\nBir sonraki adım:\nA) Listeyi reyonlara göre sıralamak\nB) Mekânı ayarlamak\nC) Konuyu yarına bırakmak\nD) Kayıt veya katılımcı listesini oluşturmak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Gaziantep'de kütüphane toplantı odasında küçük bir okuma kulübü düzenlemek\nAdım: Tarih ve saat belirlemek\nBir sonraki adım:\nA) Malzemeleri tezgâha çıkarmak\nB) Mekânı ayarlamak\nC) Kayıt veya katılımcı listesini oluşturmak\nD) Sosyal medyada kısa bir tur atmak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Bursa'de bir randevuya zamanında yetişmek\nAdım: Ulaşım seçeneklerini kontrol etmek\nBir sonraki adım:\nA) Randevu saatini ve adresi doğrulamak\nB) En uygun güzergâhı seçmek\nC) En zor iki başlığı seçmek\nD) Hiçbir şey yapmadan zaman geçirmek"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Bursa'de kütüphane toplantı odasında küçük bir atölye düzenlemek\nAdım: Gerekli malzemeleri hazırlamak\nBir sonraki adım:\nA) Sosyal medyada kısa bir tur atmak\nB) Varışa yakın durakta inmek\nC) Etkinlik akışını paylaşmak\nD) Katılımcılara duyuru göndermek"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Tekirdağ'de Onur için zeytinyağlı fasulye hazırlamak\nAdım: Pişirme kabını/tencereyi hazırlamak\nBir sonraki adım:\nA) Baharat ve sosu ayarlamak\nB) Pişirme kabını/tencereyi hazırlamak\nC) Tamamen farklı bir işe başlamak\nD) Ana malzemeyi pişirmeye başlamak"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: banyo temizliğini hızlıca bitirmek\nAdım: Yüzeyleri silmek\nBir sonraki adım:\nA) Hiçbir şey yapmadan zaman geçirmek\nB) Zor lekeleri hedeflemek\nC) Kargo kodunu almak\nD) Dağınıklığı toplamak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Pınar'in tarih sınavına Aydın'de hazırlanması\nAdım: Zayıf başlıkları tekrar çalışmak\nBir sonraki adım:\nA) Konuyu yarına bırakmak\nB) Kısa bir test çözmek\nC) Bir sonraki gün için hedef koymak\nD) Yanlışları inceleyip not almak"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Diyarbakır'de atölye alanında küçük bir atölye düzenlemek\nAdım: Kayıt veya katılımcı listesini oluşturmak (zaman kısıtlı)\nBir sonraki adım:\nA) Duyuru metni hazırlamak\nB) Katılımcılara duyuru göndermek\nC) Mekânı ayarlamak\nD) Hiçbir şey yapmadan zaman geçirmek"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Diyarbakır'de bir randevuya zamanında yetişmek\nAdım: Evden çıkmak\nBir sonraki adım:\nA) Randevu yerine yürümek\nB) Hedef süre/tempo belirlemek\nC) Tamamen farklı bir işe başlamak\nD) Varışa yakın durakta inmek"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Kerem'in tarih sınavına Diyarbakır'de hazırlanması\nAdım: Notları kısa özetlere dönüştürmek\nBir sonraki adım:\nA) Kısa bir test çözmek\nB) Yanlışları inceleyip not almak\nC) Telefonu şarja takıp beklemek\nD) Bütçe sınırı belirlemek"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Diyarbakır'de Emre için mercimek çorbası hazırlamak\nAdım: Ana malzemeyi pişirmeye başlamak\nBir sonraki adım:\nA) Pişirme kabını/tencereyi hazırlamak\nB) Randevu saatini ve adresi doğrulamak\nC) Baharat ve sosu ayarlamak\nD) Hiçbir şey yapmadan zaman geçirmek"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Adana'de Elif için tavuklu salata hazırlamak\nAdım: Ana malzemeyi pişirmeye başlamak\nBir sonraki adım:\nA) Hiçbir şey yapmadan zaman geçirmek\nB) Pişenleri karıştırıp tadına bakmak\nC) Pişirme kabını/tencereyi hazırlamak\nD) Baharat ve sosu ayarlamak"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Kerem'in biyoloji sınavına Kütahya'de hazırlanması\nAdım: Zayıf başlıkları tekrar çalışmak\nBir sonraki adım:\nA) Baharat ve sosu ayarlamak\nB) Bir sonraki gün için hedef koymak\nC) Konuyu yarına bırakmak\nD) Yanlışları inceleyip not almak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Sena'in istatistik sınavına Tekirdağ'de hazırlanması\nAdım: Zayıf başlıkları tekrar çalışmak\nBir sonraki adım:\nA) Yanlışları inceleyip not almak\nB) Yedek almak\nC) Bir sonraki gün için hedef koymak\nD) Sosyal medyada kısa bir tur atmak"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Konya'de kütüphane toplantı odasında küçük bir tanıtım toplantısı düzenlemek\nAdım: Gerekli malzemeleri hazırlamak\nBir sonraki adım:\nA) Tamamen farklı bir işe başlamak\nB) Katılımcılara duyuru göndermek\nC) Etkinlik akışını paylaşmak\nD) Su içip esnemek"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: çalışma masası temizliğini hızlıca bitirmek\nAdım: Yüzeyleri silmek\nBir sonraki adım:\nA) Malzemeleri yerine kaldırmak\nB) Dağınıklığı toplamak\nC) Zor lekeleri hedeflemek\nD) Sosyal medyada kısa bir tur atmak"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: İrem'in biyoloji sınavına Antalya'de hazırlanması\nAdım: Kısa bir test çözmek\nBir sonraki adım:\nA) Markete gitmek\nB) Yanlışları inceleyip not almak\nC) Hiçbir şey yapmadan zaman geçirmek\nD) Zayıf başlıkları tekrar çalışmak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: banyo temizliğini hızlıca bitirmek\nAdım: Yüzeyleri silmek\nBir sonraki adım:\nA) Sosyal medyada kısa bir tur atmak\nB) Dağınıklığı toplamak\nC) Varışa yakın durakta inmek\nD) Zor lekeleri hedeflemek"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: İstanbul'de Zeynep için zeytinyağlı fasulye hazırlamak\nAdım: Pişirme kabını/tencereyi hazırlamak (zaman kısıtlı)\nBir sonraki adım:\nA) Sebzeleri yıkayıp doğramak\nB) Konuyu yarına bırakmak\nC) Ana malzemeyi pişirmeye başlamak\nD) Baharat ve sosu ayarlamak"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: banyo temizliğini hızlıca bitirmek\nAdım: Yüzeyleri silmek\nBir sonraki adım:\nA) Çöpü çıkarmak\nB) Zor lekeleri hedeflemek\nC) Dağınıklığı toplamak\nD) Tamamen farklı bir işe başlamak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: mutfak temizliğini hızlıca bitirmek\nAdım: Son kontrol yapmak\nBir sonraki adım:\nA) Çöpü çıkarmak\nB) Tamamen farklı bir işe başlamak\nC) En uygun güzergâhı seçmek\nD) Malzemeleri yerine kaldırmak"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Emre'in tarih sınavına Antalya'de hazırlanması\nAdım: Konu başlıklarını listelemek\nBir sonraki adım:\nA) En zor iki başlığı seçmek\nB) Notları kısa özetlere dönüştürmek\nC) En uygun güzergâhı seçmek\nD) Hiçbir şey yapmadan zaman geçirmek"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Gizem'in ekonomi sınavına Diyarbakır'de hazırlanması\nAdım: Konu başlıklarını listelemek\nBir sonraki adım:\nA) Markete gitmek\nB) Notları kısa özetlere dönüştürmek\nC) En zor iki başlığı seçmek\nD) Hiçbir şey yapmadan zaman geçirmek"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Ece'in istatistik sınavına Diyarbakır'de hazırlanması\nAdım: Yanlışları inceleyip not almak\nBir sonraki adım:\nA) Tek bir ana klasör oluşturmak\nB) Zayıf başlıkları tekrar çalışmak\nC) Kısa bir test çözmek\nD) Telefonu şarja takıp beklemek"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Gaziantep'de Melis için fırında sebze hazırlamak\nAdım: Ana malzemeyi pişirmeye başlamak\nBir sonraki adım:\nA) Konuyu yarına bırakmak\nB) Pişenleri karıştırıp tadına bakmak\nC) Eksikleri not almak\nD) Baharat ve sosu ayarlamak"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hedef: Trabzon'de bir randevuya zamanında yetişmek\nAdım: Gerekli eşyaları hazırlamak\nBir sonraki adım:\nA) Sebzeleri yıkayıp doğramak\nB) Varışa yakın durakta inmek\nC) Evden çıkmak\nD) Tamamen farklı bir işe başlamak"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ]
+    ]
+  }
+}

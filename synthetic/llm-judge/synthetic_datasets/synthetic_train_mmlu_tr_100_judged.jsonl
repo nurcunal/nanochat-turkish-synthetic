@@ -1,0 +1,3380 @@
+{
+  "summary": {
+    "n_total": 100,
+    "n_accepted": 93,
+    "accept_rate": 0.93,
+    "common_failure_modes": [
+      "FLOAT_PRECISION_ARTIFACTS (REJECTED): Several math/physics questions contain distractors or answers with excessive floating-point precision (e.g., '0.6666666666666666', '8.333333333333334'). This is a generation artifact that harms data quality.",
+      "INTEGER_APPROXIMATION (REJECTED): Some division problems result in repeating decimals (e.g., 200/3 = 66.66...) but the provided answer is a truncated integer ('66') without instructions to round.",
+      "HIGH_REPETITION (ACCEPTED WITH WARNING): Certain question templates (e.g., 'Felsefi düşüncenin ayırt edici özelliği', 'Aşağıdaki kelimelerden hangisi doğru yazılmıştır?') appear multiple times with identical or near-identical content. While valid, they reduce dataset diversity."
+    ],
+    "notes_for_generator": [
+      "CRITICAL FIX: Implement a rounding function in the template generator. Ensure all float outputs are rounded to 2 decimal places (e.g., '0.67' instead of '0.666...').",
+      "LOGIC FIX: For division problems, either choose numbers that divide cleanly (e.g., 200/4) or explicitly ask for an approximate integer value in the prompt.",
+      "IMPROVEMENT: Increase the entropy of the seed topics to avoid generating the exact same 'Philosophy' or 'Spelling' question 3-4 times in a single batch."
+    ],
+    "judge_model_label": "gemini-3-pro",
+    "source_name": "MMLU-TR-like synthetic TRAIN (MCQ)",
+    "synthetic_path": "/Users/nurcunal/Documents/boun/DSAI585/synthetic/synthetic_datasets/mmlu_tr/synthetic_train_mmlu_tr_100.jsonl"
+  },
+  "results": [
+    {
+      "index": 0,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct biology fact."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 1,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct chemistry classification."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 2,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct calculation (75.0)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 3,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct literary term."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 4,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct definition."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 5,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct chemistry fact."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 6,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct conservation law."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 7,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct calculation."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 8,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct literary term."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 9,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct geography/safety fact."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 10,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 2,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Artifact: '33.333333333333336' in options. Needs rounding."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 11,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct sociology/civics."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 12,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct biology."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 13,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct physics (20.0). Formatting minor issue."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 14,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct civics."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 15,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct definition."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 16,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct geography term."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 17,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct philosophical term."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 18,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct ratio calculation."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 19,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct phase change."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 20,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct history definition."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 21,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct biology."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 22,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct literary term."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 23,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct grammar."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 24,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct philosophy."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 25,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct grammar."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 26,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct calculation."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 27,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct history."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 28,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct math."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 29,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct geography."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 30,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct history."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 31,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct math."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 32,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct spelling."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 33,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct philosophy."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 34,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct biology."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 35,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct algebra."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 36,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct algebra."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 37,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct literature."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 38,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct probability."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 39,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct geography."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 40,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct physics (4.0)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 41,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct physics."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 42,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct philosophy."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 43,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct calculation (75.0)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 44,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct biology."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 45,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct probability."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 46,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct chemistry."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 47,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct math."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 48,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct geography."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 49,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct calculation."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 51,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct ratio."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 52,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct physics (10.0)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 53,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct literary term."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 54,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct math."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 56,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct calculation."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 58,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct grammar."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 59,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct philosophy."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 60,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct math."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 61,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct ratio."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 62,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct math."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 63,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct algebra."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 64,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct sentence type."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 65,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct philosophy."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 66,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct math."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 67,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct algebra."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 68,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct physics."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 69,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct physics (150.0)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 70,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct ratio."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 71,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct ratio."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 72,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct physics (50.0)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 73,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct probability."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 75,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct geography."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 76,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct physics."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 77,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct probability."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 78,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct math."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 79,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct algebra."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 80,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct probability."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 81,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct algebra."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 82,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct physics (30.0)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 83,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct physics (12.5)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 84,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct physics (2.0)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 85,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct math."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 86,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct physics (50.0)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 87,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct probability."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 88,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct math."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 89,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct algebra."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 90,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct physics."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 91,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct physics (75.0)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 92,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct ratio."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 93,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct physics (100.0)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 94,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct math."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 95,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct physics (25.0)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 96,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct physics."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 99,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct algebra."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    }
+  ],
+  "accepted_items": {
+    "items": [
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki kelimelerden hangisi doğru yazılmıştır?\nA) her hangı\nB) herhangi\nC) herhangı\nD) her-hangi"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Deprem riski yüksek bölgelerde en etkili önlem hangisidir?\nA) Yalnızca güneş paneli kullanmak\nB) Denize yakın yaşamak\nC) Depreme dayanıklı yapılaşma\nD) Sadece ağaç dikmek"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir hikâyeyi 'ben' diliyle anlatan anlatıcı hangisidir?\nA) Üçüncü kişi anlatıcı\nB) Tanrısal anlatıcı\nC) Birinci kişi anlatıcı\nD) Gözlemci anlatıcı"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "pH değeri 7'den küçük olan çözelti için hangisi doğrudur?\nA) Baziktir.\nB) Asla iletken değildir.\nC) Nötrdür.\nD) Asidiktir."
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Coğrafi keşiflerin Avrupa'da yaygınlaşmasında önemli etken hangisidir?\nA) Yeni ticaret yolları arayışı\nB) Tarımın tamamen bitmesi\nC) Yazının icadı\nD) Tekerleğin bulunması"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdakilerden hangisi homojen karışıma örnektir?\nA) Kumlu su\nB) Yağ-su karışımı\nC) Çamurlu su\nD) Tuzlu su"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir metinde işlenen ana duygu ve düşünceye ne denir?\nA) Kahraman\nB) Mısra\nC) Tema\nD) Vezin"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Gerilimi 12 V olan bir devrede direnç 3 Ω ise akım kaç A'dır? (I=V/R)\nA) 12\nB) 0.25\nC) 4.0\nD) 36"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdakilerden hangisi yapım ekine örnektir?\nA) -de/-da (bulunma)\nB) -i (belirtme)\nC) -lık/-lik (ör. güzellik)\nD) -m (iyelik)"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "400 N kuvvet 8 m² alana uygulanıyor. Basınç kaç Pa'dır?\nA) 400\nB) 50.0\nC) 3200\nD) 8"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdakilerden hangisi homojen karışıma örnektir?\nA) Çamurlu su\nB) Yağ-su karışımı\nC) Tuzlu su\nD) Kumlu su"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Tarihsel bağlamda 'isyan' kavramı en genel anlamıyla neyi ifade eder?\nA) Otoriteye karşı örgütlü başkaldırıyı\nB) Dillerin değişimini\nC) Yeni bir ürün icadını\nD) Bir şehrin kurulmasını"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdakilerden hangisi yapım ekine örnektir?\nA) -i (belirtme)\nB) -m (iyelik)\nC) -de/-da (bulunma)\nD) -lık/-lik (ör. güzellik)"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "DNA'nın temel görevi nedir?\nA) Enerji üretmek\nB) Hücre duvarı oluşturmak\nC) Proteinleri sindirmek\nD) Kalıtsal bilgiyi taşımak"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Üreticilerin (ototrofların) ekosistemdeki rolü nedir?\nA) Sadece tüketici olmak\nB) Fotosentezle besin üretmek\nC) Sadece ayrıştırmak\nD) Avlanmak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Göçlerin artması aşağıdakilerden hangisini en doğrudan etkileyebilir?\nA) Mevsimlerin sayısını\nB) Güneşin doğuş yönünü\nC) Şehirlerde nüfus yoğunluğunu\nD) Dünya'nın eksen eğikliğini"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "300 sayısının %20'i kaçtır?\nA) 240\nB) 60\nC) 70\nD) 50"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bilginin kaynağını deney ve gözleme dayandıran görüş hangisidir?\nA) Rasyonalizm\nB) Stoacılık\nC) Nihilizm\nD) Empirizm"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Hücresel solunumun temel amacı nedir?\nA) Vitamin üretmek\nB) Hücre zarını kalınlaştırmak\nC) DNA kopyalamak\nD) ATP üretmek"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir araç 150 km yolu 3 saatte alıyor. Ortalama hızı kaç km/saattir?\nA) 3\nB) 50\nC) 150\nD) 450"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Gerilimi 6 V olan bir devrede direnç 9 Ω ise akım kaç A'dır? (I=V/R)\nA) 1.5\nB) 0.6666666666666666\nC) 6\nD) 54"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "4:20 oranı 12:x oranına eşittir. x kaçtır?\nA) 60\nB) 20\nC) 64\nD) 56"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "2:10 oranı 12:x oranına eşittir. x kaçtır?\nA) 60\nB) 58\nC) 62\nD) 10"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "pH değeri 7'den küçük olan çözelti için hangisi doğrudur?\nA) Nötrdür.\nB) Her zaman tuzludur.\nC) Baziktir.\nD) Asidiktir."
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir cismin hızı 4 s'de 5 m/s'den 20 m/s'ye çıkıyor. Ortalama ivme kaç m/s²'dir?\nA) 15\nB) 4\nC) 12.5\nD) 3.75"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "3 kg kütle 5 m yüksekliğe çıkarılıyor (g=10 m/s²). Potansiyel enerji artışı kaç J'ddür?\nA) 150\nB) 50\nC) 30\nD) 15"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Tarihsel bağlamda 'isyan' kavramı en genel anlamıyla neyi ifade eder?\nA) Yeni bir ürün icadını\nB) Otoriteye karşı örgütlü başkaldırıyı\nC) Bir şehrin kurulmasını\nD) Dillerin değişimini"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "\"Keşke yarın tatil olsa.\" cümlesi hangi cümle türüne örnektir?\nA) Emir\nB) Soru\nC) Ünlem\nD) Dilek-istek"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Haritada ölçek büyüdükçe hangisi artar?\nA) Hata payı\nB) Ayrıntı\nC) Genelleştirme\nD) Kapsanan alan"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Felsefi düşüncenin ayırt edici özelliği hangisidir?\nA) Tamamen ezbere dayanması\nB) Sorgulayıcı ve eleştirel olması\nC) Sadece tek doğruyu dayatması\nD) Yalnızca deney yapması"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdakilerden hangisi bir önermedir?\nA) Bugün yağmur yağıyor.\nB) Keşke burada olsaydın.\nC) Ne güzel bir gün!\nD) Kapıyı kapat!"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "pH değeri 7'den küçük olan çözelti için hangisi doğrudur?\nA) Asidiktir.\nB) Her zaman tuzludur.\nC) Baziktir.\nD) Nötrdür."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Coğrafi keşiflerin Avrupa'da yaygınlaşmasında önemli etken hangisidir?\nA) Yeni ticaret yolları arayışı\nB) Tekerleğin bulunması\nC) Yazının icadı\nD) Tarımın tamamen bitmesi"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "200 sayısının %25'i kaçtır?\nA) 51\nB) 52\nC) 50\nD) 49"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "İnsanda oksijenli kanı kalpten vücuda taşıyan damar türü hangisidir?\nA) Lenf damarı\nB) Kılcal damar\nC) Toplardamar\nD) Atardamar"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Felsefi düşüncenin ayırt edici özelliği hangisidir?\nA) Tamamen ezbere dayanması\nB) Sadece tek doğruyu dayatması\nC) Yalnızca deney yapması\nD) Sorgulayıcı ve eleştirel olması"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir araç 200 km yolu 4 saatte alıyor. Ortalama hızı kaç km/saattir?\nA) 50\nB) 800\nC) 200\nD) 4"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir hikâyeyi 'ben' diliyle anlatan anlatıcı hangisidir?\nA) Gözlemci anlatıcı\nB) Birinci kişi anlatıcı\nC) Tanrısal anlatıcı\nD) Üçüncü kişi anlatıcı"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdakilerden hangisi bileşiğe örnektir?\nA) Altın (Au)\nB) Su (H₂O)\nC) Azot (N₂)\nD) Oksijen (O₂)"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Göçlerin artması aşağıdakilerden hangisini en doğrudan etkileyebilir?\nA) Şehirlerde nüfus yoğunluğunu\nB) Mevsimlerin sayısını\nC) Güneşin doğuş yönünü\nD) Dünya'nın eksen eğikliğini"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "İnsanda oksijenli kanı kalpten vücuda taşıyan damar türü hangisidir?\nA) Toplardamar\nB) Lenf damarı\nC) Atardamar\nD) Kılcal damar"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Akarsuların biriktirme yapmasıyla oluşan yer şekli hangisidir?\nA) Kırgıbayır\nB) Delta ovası\nC) Falez\nD) Buzul vadisi"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir metinde işlenen ana duygu ve düşünceye ne denir?\nA) Vezin\nB) Tema\nC) Mısra\nD) Kahraman"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Tarih araştırmalarında birincil kaynağa örnek hangisidir?\nA) Ders kitabı\nB) Sonradan yazılmış özet\nC) Ansiklopedi\nD) Döneme ait günlük"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Gerilimi 6 V olan bir devrede direnç 3 Ω ise akım kaç A'dır? (I=V/R)\nA) 18\nB) 6\nC) 0.5\nD) 2.0"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "DNA'nın temel görevi nedir?\nA) Hücre duvarı oluşturmak\nB) Kalıtsal bilgiyi taşımak\nC) Proteinleri sindirmek\nD) Enerji üretmek"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir cismin hızı 2 s'de 0 m/s'den 10 m/s'ye çıkıyor. Ortalama ivme kaç m/s²'dir?\nA) 10\nB) 5.0\nC) 2\nD) Belirsiz ifade"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "3x - 5 = 10 denkleminde x kaçtır?\nA) 4\nB) 7\nC) 6\nD) 5"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir cismin hızı 2 s'de 5 m/s'den 25 m/s'ye çıkıyor. Ortalama ivme kaç m/s²'dir?\nA) 10.0\nB) 15.0\nC) 20\nD) 2"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Felsefi düşüncenin ayırt edici özelliği hangisidir?\nA) Tamamen ezbere dayanması\nB) Sorgulayıcı ve eleştirel olması\nC) Yalnızca deney yapması\nD) Sadece tek doğruyu dayatması"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "2:6 oranı 12:x oranına eşittir. x kaçtır?\nA) 38\nB) 6\nC) 36\nD) 34"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir cismin hızı 4 s'de 5 m/s'den 25 m/s'ye çıkıyor. Ortalama ivme kaç m/s²'dir?\nA) 4\nB) 15.0\nC) 5.0\nD) 20"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir cismin hızı 5 s'de 0 m/s'den 15 m/s'ye çıkıyor. Ortalama ivme kaç m/s²'dir?\nA) 15\nB) 3.0\nC) 7.5\nD) 5"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdakilerden hangisi yapım ekine örnektir?\nA) -de/-da (bulunma)\nB) -lık/-lik (ör. güzellik)\nC) -i (belirtme)\nD) -m (iyelik)"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Tarih araştırmalarında birincil kaynağa örnek hangisidir?\nA) Ders kitabı\nB) Döneme ait günlük\nC) Sonradan yazılmış özet\nD) Ansiklopedi"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "300 N kuvvet 2 m² alana uygulanıyor. Basınç kaç Pa'dır?\nA) 600\nB) 2\nC) 300\nD) 150.0"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Varlığın ne olduğunu inceleyen felsefe dalı hangisidir?\nA) Aksiyoloji\nB) Epistemoloji\nC) Ontoloji\nD) Etik"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdakilerden hangisi yapım ekine örnektir?\nA) -lık/-lik (ör. güzellik)\nB) -i (belirtme)\nC) -m (iyelik)\nD) -de/-da (bulunma)"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Haritada ölçek büyüdükçe hangisi artar?\nA) Ayrıntı\nB) Kapsanan alan\nC) Genelleştirme\nD) Sembol sayısı"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "DNA'nın temel görevi nedir?\nA) Proteinleri sindirmek\nB) Kalıtsal bilgiyi taşımak\nC) Enerji üretmek\nD) Hücre duvarı oluşturmak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Önermeler arasındaki geçerli çıkarım kurallarını inceleyen alan hangisidir?\nA) Estetik\nB) Dilbilim\nC) Jeoloji\nD) Mantık"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Etik (ahlak felsefesi) en temelde hangi soruyu inceler?\nA) Madde nedir?\nB) Evren kaç yaşındadır?\nC) Hangi kıta en büyüktür?\nD) İyi nedir?"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir varlığa insana özgü özellikler yükleme sanatına ne ad verilir?\nA) Benzetme\nB) Kişileştirme\nC) Tezat\nD) Abartma"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Göçlerin artması aşağıdakilerden hangisini en doğrudan etkileyebilir?\nA) Dünya'nın eksen eğikliğini\nB) Şehirlerde nüfus yoğunluğunu\nC) Mevsimlerin sayısını\nD) Güneşin doğuş yönünü"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "200 sayısının %10'i kaçtır?\nA) 20\nB) 30\nC) 10\nD) 180"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki cümlelerden hangisinin sonuna soru işareti konmalıdır?\nA) Şimdi ders çalışıyorum\nB) Bu akşam gelir misin\nC) Yarın erken kalktım\nD) Bugün hava çok güzel"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Deprem riski yüksek bölgelerde en etkili önlem hangisidir?\nA) Denize yakın yaşamak\nB) Sadece ağaç dikmek\nC) Yalnızca güneş paneli kullanmak\nD) Depreme dayanıklı yapılaşma"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir cismin hızı 4 s'de 10 m/s'den 25 m/s'ye çıkıyor. Ortalama ivme kaç m/s²'dir?\nA) 3.75\nB) 15\nC) 17.5\nD) 4"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "2 kg kütle 5 m yüksekliğe çıkarılıyor (g=10 m/s²). Potansiyel enerji artışı kaç J'ddür?\nA) 20\nB) 50\nC) 10\nD) 100"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdakilerden hangisi bileşiğe örnektir?\nA) Altın (Au)\nB) Azot (N₂)\nC) Su (H₂O)\nD) Oksijen (O₂)"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "\"Hızlı\" sözcüğü \"Hızlı koştu.\" cümlesinde hangi görevde kullanılmıştır?\nA) Fiil\nB) Bağlaç\nC) Zarf\nD) İsim"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Sabit sıcaklıkta bir gazın basıncı artarken hacmi nasıl değişir? (Boyle yasası)\nA) Kütle artar.\nB) Hacim değişmez.\nC) Hacim artar.\nD) Hacim azalır."
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "\"Keşke yarın tatil olsa.\" cümlesi hangi cümle türüne örnektir?\nA) Soru\nB) Dilek-istek\nC) Ünlem\nD) Emir"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir varlığa insana özgü özellikler yükleme sanatına ne ad verilir?\nA) Abartma\nB) Benzetme\nC) Kişileştirme\nD) Tezat"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "1 kg kütle 15 m yüksekliğe çıkarılıyor (g=10 m/s²). Potansiyel enerji artışı kaç J'ddür?\nA) 150\nB) Belirsiz ifade\nC) 10\nD) 15"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki kelimelerden hangisi doğru yazılmıştır?\nA) herhangı\nB) her-hangi\nC) herhangi\nD) her hangı"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Etik (ahlak felsefesi) en temelde hangi soruyu inceler?\nA) Hangi kıta en büyüktür?\nB) İyi nedir?\nC) Evren kaç yaşındadır?\nD) Madde nedir?"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Olay çevresinde gelişen uzun anlatı türü hangisidir?\nA) Dilekçe\nB) Makale\nC) Roman\nD) Fabl"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Deprem riski yüksek bölgelerde en etkili önlem hangisidir?\nA) Depreme dayanıklı yapılaşma\nB) Sadece ağaç dikmek\nC) Yalnızca güneş paneli kullanmak\nD) Denize yakın yaşamak"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki kelimelerden hangisi doğru yazılmıştır?\nA) herhangı\nB) herhangi\nC) her-hangi\nD) her hangı"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Haritada ölçek büyüdükçe hangisi artar?\nA) Genelleştirme\nB) Kapsanan alan\nC) Ayrıntı\nD) Sembol sayısı"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Felsefi düşüncenin ayırt edici özelliği hangisidir?\nA) Yalnızca deney yapması\nB) Sorgulayıcı ve eleştirel olması\nC) Sadece tek doğruyu dayatması\nD) Tamamen ezbere dayanması"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "İnsanda oksijenli kanı kalpten vücuda taşıyan damar türü hangisidir?\nA) Lenf damarı\nB) Toplardamar\nC) Kılcal damar\nD) Atardamar"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Felsefi düşüncenin ayırt edici özelliği hangisidir?\nA) Tamamen ezbere dayanması\nB) Yalnızca deney yapması\nC) Sorgulayıcı ve eleştirel olması\nD) Sadece tek doğruyu dayatması"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki cümlelerden hangisinin sonuna soru işareti konmalıdır?\nA) Şimdi ders çalışıyorum\nB) Bugün hava çok güzel\nC) Bu akşam gelir misin\nD) Yarın erken kalktım"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Üreticilerin (ototrofların) ekosistemdeki rolü nedir?\nA) Avlanmak\nB) Fotosentezle besin üretmek\nC) Sadece ayrıştırmak\nD) Sadece tüketici olmak"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Deprem riski yüksek bölgelerde en etkili önlem hangisidir?\nA) Yalnızca güneş paneli kullanmak\nB) Denize yakın yaşamak\nC) Sadece ağaç dikmek\nD) Depreme dayanıklı yapılaşma"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Göçlerin artması aşağıdakilerden hangisini en doğrudan etkileyebilir?\nA) Güneşin doğuş yönünü\nB) Dünya'nın eksen eğikliğini\nC) Şehirlerde nüfus yoğunluğunu\nD) Mevsimlerin sayısını"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Göçlerin artması aşağıdakilerden hangisini en doğrudan etkileyebilir?\nA) Şehirlerde nüfus yoğunluğunu\nB) Mevsimlerin sayısını\nC) Dünya'nın eksen eğikliğini\nD) Güneşin doğuş yönünü"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Tarih araştırmalarında birincil kaynağa örnek hangisidir?\nA) Döneme ait günlük\nB) Ders kitabı\nC) Sonradan yazılmış özet\nD) Ansiklopedi"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "İnsanda oksijenli kanı kalpten vücuda taşıyan damar türü hangisidir?\nA) Toplardamar\nB) Kılcal damar\nC) Atardamar\nD) Lenf damarı"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Gerilimi 9 V olan bir devrede direnç 3 Ω ise akım kaç A'dır? (I=V/R)\nA) 0.3333333333333333\nB) 9\nC) 3.0\nD) 27"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Sabit sıcaklıkta bir gazın basıncı artarken hacmi nasıl değişir? (Boyle yasası)\nA) Hacim değişmez.\nB) Hacim azalır.\nC) Kütle artar.\nD) Hacim artar."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ]
+    ]
+  },
+  "rejected_items": {
+    "items": [
+      [
+        {
+          "role": "user",
+          "content": "Önermeler arasındaki geçerli çıkarım kurallarını inceleyen alan hangisidir?\nA) Estetik\nB) Jeoloji\nC) Dilbilim\nD) Mantık"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdakilerden hangisi yapım ekine örnektir?\nA) -m (iyelik)\nB) -i (belirtme)\nC) -lık/-lik (ör. güzellik)\nD) -de/-da (bulunma)"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "\"Keşke yarın tatil olsa.\" cümlesi hangi cümle türüne örnektir?\nA) Soru\nB) Dilek-istek\nC) Emir\nD) Ünlem"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Felsefi düşüncenin ayırt edici özelliği hangisidir?\nA) Sadece tek doğruyu dayatması\nB) Tamamen ezbere dayanması\nC) Yalnızca deney yapması\nD) Sorgulayıcı ve eleştirel olması"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki kelimelerden hangisi doğru yazılmıştır?\nA) her-hangi\nB) herhangi\nC) herhangı\nD) her hangı"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir araç 200 km yolu 3 saatte alıyor. Ortalama hızı kaç km/saattir?\nA) 200\nB) 600\nC) 66\nD) 3"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Deprem riski yüksek bölgelerde en etkili önlem hangisidir?\nA) Denize yakın yaşamak\nB) Yalnızca güneş paneli kullanmak\nC) Depreme dayanıklı yapılaşma\nD) Sadece ağaç dikmek"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ]
+    ]
+  }
+}

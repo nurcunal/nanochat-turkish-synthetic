@@ -1,0 +1,3530 @@
+{
+  "summary": {
+    "n_total": 100,
+    "n_accepted": 74,
+    "accept_rate": 0.74,
+    "common_failure_modes": [
+      "MORPHOLOGY_BROKEN_NOUNS (REJECTED): The templating engine creates non-existent Turkish words by appending static suffixes to incompatible roots. Examples include 'biletunu' (should be 'biletini'), 'dosyaunu' (should be 'dosyasını'), 'kalemunu' (should be 'kalemini'), 'istasyonue' (should be 'istasyona'). These degrade the dataset quality significantly.",
+      "MORPHOLOGY_SOFT_ERRORS (ACCEPTED): Items with minor vowel harmony or consonant assimilation errors (e.g., 'Samsun'deki' instead of 'Samsun'daki', 'Gaziantep'de' instead of 'Gaziantep'te') were accepted to maintain dataset yield, as the logic remains valid.",
+      "SUFFIX_TYPE_MISMATCH (REJECTED): Using '-e/-a' (dative) where the sentence structure implies a different case or fails the vowel harmony check (e.g., 'sinemae' instead of 'sinemaya')."
+    ],
+    "notes_for_generator": [
+      "CRITICAL FIX: Fix the object ownership suffix logic. 'Bilet' -> 'Biletini' (not Biletunu). 'Dosya' -> 'Dosyasını' (not Dosyaunu). 'Kalem' -> 'Kalemini' (not Kalemunu).",
+      "CRITICAL FIX: Fix dative case generation. Words ending in vowels need buffer letters 'y' (e.g., 'Sinema' -> 'Sinemaya', not 'Sinemae').",
+      "IMPROVEMENT: Ensure proper consonant assimilation for locative cases ('Gaziantep'te', not 'Gaziantep'de')."
+    ],
+    "judge_model_label": "gemini-3-pro",
+    "source_name": "XNLI-like synthetic EVAL (3-way NLI, held-out)",
+    "synthetic_path": "/Users/nurcunal/Documents/boun/DSAI585/synthetic/synthetic_benchmarks/xnli_tr/synthetic_eval_xnli_100.jsonl"
+  },
+  "results": [
+    {
+      "index": 0,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'istasyonue' (should be 'istasyona')."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 1,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 2,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'sinemae' (should be 'sinemaya')."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 3,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 4,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 5,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'biletunu' (should be 'biletini')."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 6,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 7,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Soft suffix error 'Samsun'deki', acceptable."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 8,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 9,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'salonue' (should be 'salonuna')."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 10,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 11,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 12,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken words: 'salonue', 'dosyaunu'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 13,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 14,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 15,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 16,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 17,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 18,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 19,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 20,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 21,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 22,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 23,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Soft suffix error 'Muğla'de', acceptable."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 24,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'sinemae'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 25,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 26,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Soft suffix error 'kampüsde' (should be 'te'), acceptable."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 27,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 28,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 29,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'istasyonue'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 30,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Soft suffix error 'Gaziantep'de', acceptable."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 31,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 32,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 33,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 34,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'sinemae'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 35,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken words: 'salonue', 'makinesiunu'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 36,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Soft suffix error 'parke', acceptable."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 37,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 38,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 39,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 40,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 41,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Soft suffix error 'kampüsde', acceptable."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 42,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'sinemae'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 43,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 44,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'müzee'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 45,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 46,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 47,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'şişesiunu' (should be 'şişesini')."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 48,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 49,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'aletiunu' (should be 'aletini')."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 50,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 51,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Soft suffix error 'kütüphanee', accepted for yield."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 52,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 53,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 54,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 55,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 56,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'salonue'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 57,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Soft suffix error 'İstanbul'deki', acceptable."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 58,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken words: 'binasıe', 'binasıde'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 59,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 60,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 61,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Soft suffix error 'Samsun'deki', acceptable."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 62,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'otogare'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 63,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 64,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 65,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Soft suffix error 'yerideki', acceptable."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 66,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 67,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 68,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 69,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'salonue'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 70,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 71,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 72,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'kitapunu'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 73,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'müzee'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 74,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 75,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 76,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Soft suffix error 'parke', acceptable."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 77,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 78,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'yerie'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 79,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 80,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 81,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken words: 'binasıe', 'kalemunu'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 82,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 83,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 84,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 85,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Soft suffix error 'Adana'deki', acceptable."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 86,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 87,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 88,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Soft suffix error 'Adana'de', acceptable."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 89,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'kitapçıe'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 90,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'atölyee'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 91,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 92,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'kartunu'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 93,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 94,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 95,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 96,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'istasyonue'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 97,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken word: 'biletunu'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 98,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Soft suffix error 'parke', acceptable."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 99,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    }
+  ],
+  "accepted_items": {
+    "items": [
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Emre, kafedeki sergiyi gezdi ve en çok fotoğrafları beğendi.\nHipotez: Emre sergiyi gezdi.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Burak e-postayı yazdı.\nHipotez: E-postaya henüz yanıt geldi.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Emre e-postayı yazmadı; sadece taslak açıp kapattı.\nHipotez: Emre e-postayı yazdı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Metro istasyonu cuma günleri kapalıdır. Bugün cuma.\nHipotez: Metro istasyonu bugün kapalıdır.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Samsun'deki toplantı 17.00'de başlamadı; 30 dakika gecikmeyle başladı.\nHipotez: Toplantı 17.00'de başladı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Gizem sadece çay içti.\nHipotez: Gizem çayı şekersiz içti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Mert biletini aldıktan sonra perona yürüdü.\nHipotez: Mert biletini aldı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Sinema bugün kapalıydı.\nHipotez: Kerem bunun için şikâyet dilekçesi yazdı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Sahil salı günleri kapalıdır. Bugün salı.\nHipotez: Sahil bugün kapalıdır.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Derya biletini aldıktan sonra perona yürüdü.\nHipotez: Derya biletini aldı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Berk biletini aldı.\nHipotez: Berk biletini 20.00'de aldı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Aslı önce e-postayı yazdı, sonra gönder düğmesine bastı.\nHipotez: Aslı e-postayı yazdı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Sarp çarşamba günü çalıştı.\nHipotez: Sarp çarşamba günü kampüse gitti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Derya önce e-postayı yazdı, sonra gönder düğmesine bastı.\nHipotez: Derya e-postayı yazdı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Can iki gün üst üste sahile uğradı; bugün ikinci gündü.\nHipotez: Can bugün sahile uğradı.\n\nNot: Yalnızca bu iki cümleye göre karar verin.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Hakan kahvaltıda sadece makarna yedi; başka bir şey yemedi.\nHipotez: Hakan kahvaltıda makarna yedi.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Otogar bugün açıktı; kapıda \"Açığız\" yazıyordu.\nHipotez: Otogar bugün kapalıydı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Ceren bilet almadı; içeri ücretsiz girdi.\nHipotez: Ceren bilet aldı.\n\nİpucu: Ek bilgi varsaymayın, sadece verilen cümleleri kullanın.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Muğla'de hava yağmurluydu; bu yüzden Kerem şemsiye aldı.\nHipotez: Kerem şemsiye aldı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Mert bugün evden hiç çıkmadı.\nHipotez: Mert bugün dışarı çıktı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Mehmet, Kocaeli'deki kampüse gitti.\nHipotez: Mehmet kampüsde simit yedi.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Selin bir liste hazırladı ve listedeki tüm maddeleri tamamladı.\nHipotez: Selin listedeki maddeleri tamamladı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Hakan biletini aldı.\nHipotez: Hakan biletini 15.15'de aldı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Gaziantep'de hava yağmurluydu.\nHipotez: Mehmet dışarı çıkmadı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Ozan yağmura rağmen şemsiye almadı.\nHipotez: Ozan şemsiye aldı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Onur bilet almadı; içeri ücretsiz girdi.\nHipotez: Onur bilet aldı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: İrem sadece çay içti; kahve içmedi.\nHipotez: İrem kahve içti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Ayşe salı günü çalıştı.\nHipotez: Ayşe salı günü parke gitti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Atölye bugün açıktı; kapıda \"Açığız\" yazıyordu.\nHipotez: Atölye bugün kapalıydı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Tolga kahvaltıda çorba yedi.\nHipotez: Tolga kahvaltıdan sonra sahile gitti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Selin bugün evden hiç çıkmadı.\nHipotez: Selin bugün dışarı çıktı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Deniz kahvaltıda sadece yoğurt yedi; başka bir şey yemedi.\nHipotez: Deniz kahvaltıda yoğurt yedi.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Umut, kampüsdeki sergiyi gezdi ve en çok fotoğrafları beğendi.\nHipotez: Umut sergiyi gezdi.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Kerem bugün işten çıkınca doğrudan eve gitti.\nHipotez: Kerem bugün eve gitti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Mert yağmura rağmen şemsiye almadı.\nHipotez: Mert şemsiye aldı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Eskişehir'de hava yağmurluydu.\nHipotez: İrem dışarı çıkmadı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Pınar kahvaltıda hiç poğaça yemedi.\nHipotez: Pınar kahvaltıda poğaça yedi.\n\nNot: Yalnızca bu iki cümleye göre karar verin.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Metro istasyonu bugün açıktı; kapıda \"Açığız\" yazıyordu.\nHipotez: Metro istasyonu bugün kapalıydı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Sena bugün eve gitti.\nHipotez: Sena eve giderken kütüphanee uğradı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Kampüs bugün kapalıydı.\nHipotez: Buse bunun için şikâyet dilekçesi yazdı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Kütüphane cumartesi günleri kapalıdır. Bugün cumartesi.\nHipotez: Kütüphane bugün kapalıdır.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Mersin'deki toplantı 20.00'de başladı ve tam bir saat sürdü.\nHipotez: Toplantı 20.00'de başladı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Kaan bir liste hazırladı ve listedeki tüm maddeleri tamamladı.\nHipotez: Kaan listedeki maddeleri tamamladı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: İstanbul'deki toplantı 17.00'de başladı.\nHipotez: Toplantı sonunda bir karar alındı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Sarp bir liste hazırladı.\nHipotez: Listedeki maddelerin yarısını tamamladı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Belediye binası bugün kapalıydı.\nHipotez: Emre bunun için şikâyet dilekçesi yazdı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Samsun'deki toplantı 10.30'de başladı ve tam bir saat sürdü.\nHipotez: Toplantı 10.30'de başladı.\n\nHatırlatma: Sonucu sadece metinden çıkarın.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Hakan bilet almadı; içeri ücretsiz girdi.\nHipotez: Hakan bilet aldı.\n\nNot: Yalnızca bu iki cümleye göre karar verin.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Burak biletini aldı.\nHipotez: Burak biletini 18.30'de aldı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Pınar, pazar yerideki sergiyi gezdi ve en çok fotoğrafları beğendi.\nHipotez: Pınar sergiyi gezdi.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Metro istasyonu çarşamba günleri kapalıdır. Bugün çarşamba.\nHipotez: Metro istasyonu bugün kapalıdır.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Onur iki gün üst üste parke uğradı; bugün ikinci gündü.\nHipotez: Onur bugün parke uğradı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: İrem kahvaltıda hiç poğaça yemedi.\nHipotez: İrem kahvaltıda poğaça yedi.\n\nNot: Yalnızca bu iki cümleye göre karar verin.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Berk sadece çay içti; kahve içmedi.\nHipotez: Berk kahve içti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Ceren biletini aldı.\nHipotez: Ceren biletini 20.00'de aldı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Nisa bugün işten çıkınca doğrudan eve gitti.\nHipotez: Nisa bugün eve gitti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Sena yağmura rağmen şemsiye almadı.\nHipotez: Sena şemsiye aldı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Buse bugün parke gitmedi; evde kaldı.\nHipotez: Buse bugün parke gitti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Derya kahvaltıda hiç simit yemedi.\nHipotez: Derya kahvaltıda simit yedi.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Tolga biletini aldıktan sonra perona yürüdü.\nHipotez: Tolga biletini aldı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Umut sadece çay içti; kahve içmedi.\nHipotez: Umut kahve içti.\n\nİpucu: Ek bilgi varsaymayın, sadece verilen cümleleri kullanın.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Zeynep bugün evden hiç çıkmadı.\nHipotez: Zeynep bugün dışarı çıktı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Nisa kahvaltıda hiç yoğurt yemedi.\nHipotez: Nisa kahvaltıda yoğurt yedi.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Emre yağmura rağmen şemsiye almadı.\nHipotez: Emre şemsiye aldı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Adana'deki toplantı 18.30'de başladı ve tam bir saat sürdü.\nHipotez: Toplantı 18.30'de başladı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Can, defterunu bulmak için çekmeceleri tek tek kontrol etti ve sonunda buldu.\nHipotez: Can defterunu buldu.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Buse listedeki hiçbir maddeyi tamamlamadı.\nHipotez: Buse listedeki tüm maddeleri tamamladı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Adana'de hava yağmurluydu.\nHipotez: Yasemin dışarı çıkmadı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Kerem bilet almadı; içeri ücretsiz girdi.\nHipotez: Kerem bilet aldı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Yasemin biletini aldıktan sonra perona yürüdü.\nHipotez: Yasemin biletini aldı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Hakan kahvaltıda sadece pilav yedi; başka bir şey yemedi.\nHipotez: Hakan kahvaltıda pilav yedi.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Deniz perşembe günü izinliydi; çalışmadı.\nHipotez: Deniz perşembe günü çalıştı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Hakan çarşamba günü çalıştı.\nHipotez: Hakan çarşamba günü parke gitti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Ece biletini aldıktan sonra perona yürüdü.\nHipotez: Ece biletini aldı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ]
+    ]
+  },
+  "rejected_items": {
+    "items": [
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Aslı bugün metro istasyonue gitmedi; evde kaldı.\nHipotez: Aslı bugün metro istasyonue gitti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Elif, Sivas'deki sinemae gitti.\nHipotez: Elif sinemade pilav yedi.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Ayşe biletunu kaybetti ve hâlâ bulamadı.\nHipotez: Ayşe biletunu buldu.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Ayşe bugün sergi salonue gitmedi; evde kaldı.\nHipotez: Ayşe bugün sergi salonue gitti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Sarp, Sivas'deki spor salonue gitti ve dosyaunu masaya bıraktı.\nHipotez: Sarp, spor salonue gitti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Derya bugün sinemae gitmedi; evde kaldı.\nHipotez: Derya bugün sinemae gitti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Buse kahvaltıda çorba yedi.\nHipotez: Buse kahvaltıdan sonra metro istasyonue gitti.\n\nNot: Yalnızca bu iki cümleye göre karar verin.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: İrem iki gün üst üste sinemae uğradı; bugün ikinci gündü.\nHipotez: İrem bugün sinemae uğradı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Sena, Ankara'deki spor salonue gitti ve fotoğraf makinesiunu masaya bıraktı.\nHipotez: Sena, spor salonue gitti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Ayşe, Muğla'deki sinemae gitti.\nHipotez: Ayşe sinemade simit yedi.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Deniz bugün müzee gitmedi; evde kaldı.\nHipotez: Deniz bugün müzee gitti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Yasemin su şişesiunu masanın üzerinde bıraktı.\nHipotez: Yasemin su şişesiunu kaybetti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Tolga şarj aletiunu masanın üzerinde bıraktı.\nHipotez: Tolga şarj aletiunu kaybetti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Buse, Diyarbakır'deki konferans salonue gitti.\nHipotez: Buse konferans salonude makarna yedi.\n\nİpucu: Ek bilgi varsaymayın, sadece verilen cümleleri kullanın.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Zeynep, Tekirdağ'deki belediye binasıe gitti.\nHipotez: Zeynep belediye binasıde pilav yedi.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Kerem kahvaltıda simit yedi.\nHipotez: Kerem kahvaltıdan sonra otogare gitti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Tolga iki gün üst üste spor salonue uğradı; bugün ikinci gündü.\nHipotez: Tolga bugün spor salonue uğradı.\n\nİpucu: Ek bilgi varsaymayın, sadece verilen cümleleri kullanın.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Can kitapunu masanın üzerinde bıraktı.\nHipotez: Can kitapunu kaybetti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Ece bugün müzee gitmedi; evde kaldı.\nHipotez: Ece bugün müzee gitti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Nisa bugün eve gitti.\nHipotez: Nisa eve giderken pazar yerie uğradı.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Mert, Trabzon'deki belediye binasıe gitti ve kalemunu masaya bıraktı.\nHipotez: Mert, belediye binasıe gitti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Deniz kahvaltıda çorba yedi.\nHipotez: Deniz kahvaltıdan sonra kitapçıe gitti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Emre bugün atölyee gitmedi; evde kaldı.\nHipotez: Emre bugün atölyee gitti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Hakan kartunu masanın üzerinde bıraktı.\nHipotez: Hakan kartunu kaybetti.\n\nİpucu: Ek bilgi varsaymayın, sadece verilen cümleleri kullanın.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Mehmet perşembe günü çalıştı.\nHipotez: Mehmet perşembe günü metro istasyonue gitti.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Öncül: Can, Kayseri'deki sinemae gitti ve biletunu masaya bıraktı.\nHipotez: Can, sinemae gitti.\n\nİpucu: Ek bilgi varsaymayın, sadece verilen cümleleri kullanın.\nBu iki cümle arasındaki ilişki hangisidir?\nA) çıkarım\nB) nötr\nC) çelişki"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ]
+    ]
+  }
+}

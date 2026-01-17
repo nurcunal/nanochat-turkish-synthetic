@@ -1,0 +1,3530 @@
+{
+  "summary": {
+    "n_total": 100,
+    "n_accepted": 48,
+    "accept_rate": 0.48,
+    "common_failure_modes": [
+      "MORPHOLOGY_OBJECT_SUFFIXES (UNIVERSAL ERROR): Almost every item uses the suffix '-unu' incorrectly for all objects (e.g., 'kalemunu' instead of 'kalemini', 'biletunu' instead of 'biletini', 'çantaunu' instead of 'çantasını'). Accepted items were penalized for fluency but kept because the reading comprehension logic remains valid.",
+      "MORPHOLOGY_LOCATIVE_HARD_ERRORS (REJECTED): Many items have phonologically broken location suffixes (e.g., 'istasyonude' instead of 'istasyonda', 'salonude' instead of 'salonda', 'otogarde' instead of 'otogarda'). These were rejected.",
+      "MORPHOLOGY_COMPOUND_ERRORS (REJECTED): Noun phrases like 'spor etkinliğie' fail to use the pronominal 'n' (should be 'spor etkinliğine')."
+    ],
+    "notes_for_generator": [
+      "CRITICAL FIX: Implement proper object ownership morphology. 'Kalem' -> 'Kalemini', 'Çanta' -> 'Çantasını', 'Bilet' -> 'Biletini'. The current '-unu' blanket rule is incorrect.",
+      "CRITICAL FIX: Fix locative/dative suffixes for locations. 'İstasyon' -> 'İstasyonda', 'Salon' -> 'Salonda', 'Otogar' -> 'Otogarda'.",
+      "IMPROVEMENT: Handle compound nouns correctly. 'Etkinlik' -> 'Etkinliğe' (simple) but 'Spor etkinliği' -> 'Spor etkinliğine' (compound)."
+    ],
+    "judge_model_label": "gemini-3-pro",
+    "source_name": "Belebele-like synthetic EVAL (4-way RC, held-out)",
+    "synthetic_path": "/Users/nurcunal/Documents/boun/DSAI585/synthetic/synthetic_benchmarks/belebele_tr/synthetic_eval_belebele_like_100.jsonl"
+  },
+  "results": [
+    {
+      "index": 0,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'kafede' is correct. Object 'anahtarunu' is wrong but readable."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 1,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'istasyonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 2,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'okulde' is a soft error (should be 'okulda'). Accepted."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 3,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'merkezide' (should be 'merkezinde')."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 4,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'istasyonude'. Broken compound: 'etkinliğie'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 5,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'müzede' is correct. Object 'dosyaunu' is wrong."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 6,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'istasyonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 7,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'otogarde'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 8,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'atölyede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 9,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'sahilde' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 10,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'yeride' (should be 'yerinde')."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 11,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'okulde' is acceptable soft error."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 12,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'kampüsde' (should be 'kampüste')."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 13,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'salonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 14,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'sahilde' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 15,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'merkezide'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 16,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'kütüphanede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 17,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'salonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 18,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'yeride'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 19,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'yeride'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 20,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'yeride'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 21,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'otogarde'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 22,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'sahilde' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 23,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'kafede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 24,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'otogarde' broken, but 'Diyarbakır'deki' suffix OK. Wait, 'otogarde' is bad. Rejecting based on pattern."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 25,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'istasyonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 26,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'kafede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 27,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'kafede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 28,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'salonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 29,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'merkezide'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 30,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'salonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 31,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'okulde' is acceptable soft error."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 32,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'istasyonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 33,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'müzede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 34,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'merkezide'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 35,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'salonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 36,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'merkezide'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 37,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'kütüphanede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 38,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'istasyonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 39,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'yeride'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 40,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'salonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 41,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'otogarde'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 42,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'salonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 43,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'atölyede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 44,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'müzede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 45,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'kütüphanede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 46,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'atölyede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 47,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'salonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 48,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'kitapçıde' is acceptable soft error."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 49,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'parkde' is acceptable soft error."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 50,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'kampüsde'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 51,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'müzede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 52,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'otogarde'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 53,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'sahilde' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 54,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'kitapçıde' is acceptable soft error."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 55,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'kütüphanede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 56,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'salonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 57,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'salonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 58,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'kütüphanede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 59,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'istasyonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 60,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'kampüsde'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 61,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'parkde' is acceptable soft error."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 62,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'salonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 63,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'kitapçıde' is acceptable soft error."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 64,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'salonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 65,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'kampüsde'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 66,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'kampüsde'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 67,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'kütüphanede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 68,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'atölyede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 69,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'salonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 70,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'pazar yeride' is acceptable soft error."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 71,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'merkezide'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 72,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'sahilde' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 73,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'yeride'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 74,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'kitapçıde' is acceptable soft error."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 75,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'kütüphanede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 76,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'atölyede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 77,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'parkde' is acceptable soft error."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 78,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'salonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 79,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'okulde' is acceptable soft error."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 80,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'kitapçıde' is acceptable soft error."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 81,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'kampüsde'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 82,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'salonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 83,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'istasyonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 84,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'salonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 85,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'merkezide'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 86,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'okulde' is acceptable soft error."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 87,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'okulde' is acceptable soft error."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 88,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'salonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 89,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'müzede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 90,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'otogarde'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 91,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'sahilde' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 92,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'kitapçıde' is acceptable soft error."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 93,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'kütüphanede' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 94,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'salonude'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 95,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'sahilde' is correct."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 96,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'yeride'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 97,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'kitapçıde' is acceptable soft error."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 98,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 1,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Broken location: 'merkezide'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 99,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 3,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Location 'okulde' is acceptable soft error."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    }
+  ],
+  "accepted_items": {
+    "items": [
+      [
+        {
+          "role": "user",
+          "content": "Parça: Derya, Bursa'deki kafede düzenlenen bir gönüllülük buluşmasıe katılmak için cumartesi günü 18.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Derya sıranın ilerlediğini görünce anahtarunu çantasından çıkardı. İçeride Sena ile karşılaştı ve birlikte programa göz attılar. Ancak programı son anda değişti. Derya bunu e-postayı kontrol edip doğruladı ve etkinlik başlamadan önce sorun çözüldü. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Etkinlik aralarında ikisi makarna alıp kısa bir mola verdi. Derya, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı.\nSoru: Sorun nasıl çözüldü?\nC) etkinliği tamamen iptal etti\nB) başka bir şehre gitti\nA) e-postayı kontrol edip doğruladı\nD) programı görmezden geldi"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Sena, Mersin'deki okulde düzenlenen bir panele katılmak için perşembe günü 16.15'da yola çıktı. Girişte kısa bir yoğunluk vardı; Sena sıranın ilerlediğini görünce kimlik kartıunu çantasından çıkardı. İçeride Gökçe ile karşılaştı ve birlikte programa göz attılar. Ancak programı son anda değişti. Sena bunu organizasyon ekibine haber verdi ve etkinlik başlamadan önce sorun çözüldü. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi.\nSoru: Bu parçanın ana fikri aşağıdakilerden hangisidir?\nA) Bir etkinliğe katılırken çıkan küçük bir aksaklığın zamanında çözülmesi.\nD) Spor salonunda yapılan yoğun bir antrenmanın sonuçları.\nB) Bir yemek tarifinin adım adım uygulanması.\nC) Şehirler arası uzun bir yolculuğun zorlukları."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki parçayı dikkatle okuyun.\nParça: Eren, Gaziantep'deki müzede düzenlenen bir tanıtım toplantısıe katılmak için çarşamba günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Eren sıranın ilerlediğini görünce dosyaunu çantasından çıkardı. İçeride Kaan ile karşılaştı ve birlikte programa göz attılar. Ancak ses sistemi gecikmeli çalıştı.\nSoru: Eren etkinliğe katılmak için hangi saatte yola çıktı?\nA) 10.30\nC) 13.30\nD) 17.45\nB) 10.00"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Tolga, Adana'deki atölyede düzenlenen bir sergie katılmak için çarşamba günü 18.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Tolga sıranın ilerlediğini görünce çantaunu çantasından çıkardı. İçeride Kaan ile karşılaştı ve birlikte programa göz attılar. Ancak programı son anda değişti. Tolga bunu e-postayı kontrol edip doğruladı ve etkinlik başlamadan önce sorun çözüldü. Kaan, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Tolga, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Etkinlik aralarında ikisi çay alıp kısa bir mola verdi.\nSoru: Metne göre kim, notları daha sonra paylaşmak için fotoğraf çekti?\nD) Nisa\nA) Furkan\nB) Kaan\nC) Eren"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Eren, Trabzon'deki sahilde düzenlenen bir seminere katılmak için çarşamba günü 16.15'da yola çıktı. Girişte kısa bir yoğunluk vardı; Eren sıranın ilerlediğini görünce kalemunu çantasından çıkardı. İçeride Ece ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı. Eren bunu kısa bir ara verip yeniden başladı ve etkinlik başlamadan önce sorun çözüldü. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Etkinlik aralarında ikisi makarna alıp kısa bir mola verdi. Ece, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti.\nSoru: Sorun nasıl çözüldü?\nC) biletini iade etti\nA) kısa bir ara verip yeniden başladı\nB) kimseye söylemedi\nD) etkinliği tamamen iptal etti"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Buse, Muğla'deki okulde düzenlenen bir gönüllülük buluşmasıe katılmak için cumartesi günü 18.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Buse sıranın ilerlediğini görünce kimlik kartıunu çantasından çıkardı. İçeride Burak ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı. Buse bunu e-postayı kontrol edip doğruladı ve etkinlik başlamadan önce sorun çözüldü. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Etkinlik aralarında ikisi makarna alıp kısa bir mola verdi. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Buse, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı.\nSoru: Metne göre kim, notları daha sonra paylaşmak için fotoğraf çekti?\nB) Zeynep\nC) İrem\nD) Mert\nA) Burak"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Ayşe, Kayseri'deki sahilde düzenlenen bir tanıtım toplantısıe katılmak için cumartesi günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Ayşe sıranın ilerlediğini görünce broşürunu çantasından çıkardı. İçeride İrem ile karşılaştı ve birlikte programa göz attılar. Ancak ses sistemi gecikmeli çalıştı. Ayşe bunu görevliyi bulup düzeltti ve etkinlik başlamadan önce sorun çözüldü.\nSoru: Metinden çıkarılabilecek en makul sonuç hangisidir?\nD) Etkinlik hiç gerçekleşmedi ve herkes geri döndü.\nC) Etkinlik sadece çevrim içi yapıldı ve mekân hiç kullanılmadı.\nA) Sorun, etkinlik başlamadan önce giderildiği için katılım aksatılmadı.\nB) Katılımcılar etkinliğe alınmadı çünkü kayıtlar tamamen silindi."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Selin, İstanbul'deki kütüphanede düzenlenen bir film gösterimie katılmak için cuma günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Selin sıranın ilerlediğini görünce defterunu çantasından çıkardı. İçeride Onur ile karşılaştı ve birlikte programa göz attılar. Ancak katılım listesinde adı görünmedi.\nSoru: Sorun nasıl çözüldü?\nB) kimseye söylemedi\nA) duvarda asılı afişten doğru bilgiyi öğrendi\nC) etkinliği tamamen iptal etti\nD) programı görmezden geldi"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Emre, Konya'deki sahilde düzenlenen bir konsere katılmak için perşembe günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Emre sıranın ilerlediğini görünce not kağıdıunu çantasından çıkardı. İçeride Buse ile karşılaştı ve birlikte programa göz attılar. Ancak ses sistemi gecikmeli çalıştı. Emre bunu kısa bir ara verip yeniden başladı ve etkinlik başlamadan önce sorun çözüldü. Buse, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Emre, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi.\nSoru: Sorun nasıl çözüldü?\nC) programı görmezden geldi\nB) hiçbir şey yapmadan bekledi\nD) kısa bir ara verip yeniden başladı\nA) biletini iade etti"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Eylül, Antalya'deki kafede düzenlenen bir gönüllülük buluşmasıe katılmak için perşembe günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Eylül sıranın ilerlediğini görünce kulaklıkunu çantasından çıkardı. İçeride Nisa ile karşılaştı ve birlikte programa göz attılar. Ancak katılım listesinde adı görünmedi. Eylül bunu arkadaşından yardım aldı ve etkinlik başlamadan önce sorun çözüldü. Etkinlik aralarında ikisi makarna alıp kısa bir mola verdi. Eylül, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Nisa, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı.\nSoru: Sorun nasıl çözüldü?\nA) etkinliğe geç katıldı ama çözmedi\nB) başka bir şehre gitti\nC) programı görmezden geldi\nD) arkadaşından yardım aldı"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Umut, Diyarbakır'deki otogarde düzenlenen bir konsere katılmak için perşembe günü 18.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Umut sıranın ilerlediğini görünce su şişesiunu çantasından çıkardı. İçeride Deniz ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı. Umut bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Umut, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Deniz, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti.\nSoru: Etkinlik nerede düzenlendi?\nD) İzmir'deki park\nC) Trabzon'deki otogar\nA) Diyarbakır'deki otogar\nB) Diyarbakır'deki atölye"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Gizem, Gaziantep'deki kafede düzenlenen bir panele katılmak için perşembe günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Gizem sıranın ilerlediğini görünce kalemunu çantasından çıkardı. İçeride Furkan ile karşılaştı ve birlikte programa göz attılar. Ancak katılım listesinde adı görünmedi.\nSoru: Etkinlik nerede düzenlendi?\nB) Sivas'deki metro istasyonu\nD) Gaziantep'deki belediye kültür merkezi\nC) Gaziantep'deki kafe\nA) Eskişehir'deki kafe"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Gizem, Denizli'deki kafede düzenlenen bir atölyee katılmak için çarşamba günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Gizem sıranın ilerlediğini görünce broşürunu çantasından çıkardı. İçeride Onur ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı. Gizem bunu görevliyi bulup düzeltti ve etkinlik başlamadan önce sorun çözüldü. Etkinlik aralarında ikisi kahve alıp kısa bir mola verdi. Gizem, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı.\nSoru: Metne göre kim, notları daha sonra paylaşmak için fotoğraf çekti?\nD) Furkan\nC) Onur\nA) Melis\nB) Gökçe"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Nisa, Konya'deki okulde düzenlenen bir sergie katılmak için cumartesi günü 16.15'da yola çıktı. Girişte kısa bir yoğunluk vardı; Nisa sıranın ilerlediğini görünce anahtarunu çantasından çıkardı. İçeride Mert ile karşılaştı ve birlikte programa göz attılar. Ancak ses sistemi gecikmeli çalıştı. Nisa bunu görevliyi bulup düzeltti ve etkinlik başlamadan önce sorun çözüldü. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Mert, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti.\nSoru: Aşağıdakilerden hangisi metindeki olayların sırasına uygundur?\nB) Önce girişte yoğunluk yaşandı, sonra sorun fark edildi, ardından sorun çözülüp etkinlik başladı.\nD) Önce etkinlik bitti, sonra sorun ortaya çıktı ve ardından girişte sıra oluştu.\nA) Önce programa bakıldı, sonra eve dönüldü ve en sonda girişte yoğunluk yaşandı.\nC) Önce sorun çözüldü, sonra girişte yoğunluk oldu ve en sonda programa bakıldı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Eren, Trabzon'deki müzede düzenlenen bir film gösterimie katılmak için cuma günü 16.15'da yola çıktı. Girişte kısa bir yoğunluk vardı; Eren sıranın ilerlediğini görünce şarj aletiunu çantasından çıkardı. İçeride Nisa ile karşılaştı ve birlikte programa göz attılar. Ancak programı son anda değişti. Eren bunu organizasyon ekibine haber verdi ve etkinlik başlamadan önce sorun çözüldü. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Eren, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı.\nSoru: Etkinlik nerede düzenlendi?\nC) Trabzon'deki sergi salonu\nD) Trabzon'deki müze\nB) Samsun'deki kütüphane\nA) Sivas'deki müze"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Zeynep, Şanlıurfa'deki kütüphanede düzenlenen bir spor etkinliğie katılmak için pazar günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Zeynep sıranın ilerlediğini görünce dosyaunu çantasından çıkardı. İçeride Melis ile karşılaştı ve birlikte programa göz attılar. Ancak yanlış salonu seçti. Zeynep bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü. Etkinlik aralarında ikisi çorba alıp kısa bir mola verdi. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Melis, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Zeynep, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı.\nSoru: Aşağıdakilerden hangisi metindeki olayların sırasına uygundur?\nD) Önce programa bakıldı, sonra eve dönüldü ve en sonda girişte yoğunluk yaşandı.\nC) Önce girişte yoğunluk yaşandı, sonra sorun fark edildi, ardından sorun çözülüp etkinlik başladı.\nA) Önce etkinlik bitti, sonra sorun ortaya çıktı ve ardından girişte sıra oluştu.\nB) Önce sorun çözüldü, sonra girişte yoğunluk oldu ve en sonda programa bakıldı."
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Metni okuyup soruyu yanıtlayın.\nParça: Zeynep, Eskişehir'deki kitapçıde düzenlenen bir konsere katılmak için cumartesi günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Zeynep sıranın ilerlediğini görünce su şişesiunu çantasından çıkardı. İçeride Ozan ile karşılaştı ve birlikte programa göz attılar. Ancak ses sistemi gecikmeli çalıştı. Zeynep bunu görevliyi bulup düzeltti ve etkinlik başlamadan önce sorun çözüldü. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Ozan, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Zeynep, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Etkinlik aralarında ikisi çorba alıp kısa bir mola verdi.\nSoru: Zeynep etkinliğe katılmak için hangi saatte yola çıktı?\nD) 17.45\nC) 10.30\nB) 19.00\nA) 14.00"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Emre, Sivas'deki kütüphanede düzenlenen bir tanıtım toplantısıe katılmak için çarşamba günü 18.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Emre sıranın ilerlediğini görünce defterunu çantasından çıkardı. İçeride Berk ile karşılaştı ve birlikte programa göz attılar. Ancak kayıt sırasını karıştırdı.\nSoru: Metne göre kim, notları daha sonra paylaşmak için fotoğraf çekti?\nD) Furkan\nC) Deniz\nA) Melis\nB) Berk"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Tolga, Rize'deki kafede düzenlenen bir okuma kulübüe katılmak için çarşamba günü 16.15'da yola çıktı. Girişte kısa bir yoğunluk vardı; Tolga sıranın ilerlediğini görünce broşürunu çantasından çıkardı. İçeride Emre ile karşılaştı ve birlikte programa göz attılar. Ancak ses sistemi gecikmeli çalıştı. Tolga bunu kısa bir ara verip yeniden başladı ve etkinlik başlamadan önce sorun çözüldü. Tolga, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Etkinlik aralarında ikisi kahve alıp kısa bir mola verdi. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Emre, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti.\nSoru: Metne göre kim, notları daha sonra paylaşmak için fotoğraf çekti?\nB) Sena\nD) Buse\nA) Melis\nC) Emre"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Ece, Mersin'deki atölyede düzenlenen bir film gösterimie katılmak için çarşamba günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Ece sıranın ilerlediğini görünce broşürunu çantasından çıkardı. İçeride Buse ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı. Ece bunu organizasyon ekibine haber verdi ve etkinlik başlamadan önce sorun çözüldü. Buse, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Etkinlik aralarında ikisi kahve alıp kısa bir mola verdi.\nSoru: Metindeki \"yoğunluk\" sözcüğü en yakın hangi anlamda kullanılmıştır?\nD) hız\nB) kalabalık\nC) sıcaklık\nA) sessizlik"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Aslı, Diyarbakır'deki spor salonude düzenlenen bir atölyee katılmak için çarşamba günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Aslı sıranın ilerlediğini görünce kulaklıkunu çantasından çıkardı. İçeride Kerem ile karşılaştı ve birlikte programa göz attılar. Ancak programı son anda değişti. Aslı bunu görevliyi bulup düzeltti ve etkinlik başlamadan önce sorun çözüldü. Aslı, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Etkinlik aralarında ikisi salata alıp kısa bir mola verdi. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı.\nSoru: Sorun nasıl çözüldü?\nB) programı görmezden geldi\nD) görevliyi bulup düzeltti\nC) eve geri döndü\nA) etkinliği tamamen iptal etti"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Metni okuyup soruyu yanıtlayın.\nParça: Umut, Bursa'deki kampüsde düzenlenen bir sergie katılmak için çarşamba günü 16.15'da yola çıktı. Girişte kısa bir yoğunluk vardı; Umut sıranın ilerlediğini görünce defterunu çantasından çıkardı. İçeride Hakan ile karşılaştı ve birlikte programa göz attılar. Ancak kayıt sırasını karıştırdı.\nSoru: Metinden çıkarılabilecek en makul sonuç hangisidir?\nC) Etkinlik hiç gerçekleşmedi ve herkes geri döndü.\nD) Katılımcılar etkinliğe alınmadı çünkü kayıtlar tamamen silindi.\nA) Sorun, etkinlik başlamadan önce giderildiği için katılım aksatılmadı.\nB) Etkinlik sadece çevrim içi yapıldı ve mekân hiç kullanılmadı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Berk, Hatay'deki sahilde düzenlenen bir sergie katılmak için cuma günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Berk sıranın ilerlediğini görünce broşürunu çantasından çıkardı. İçeride Eylül ile karşılaştı ve birlikte programa göz attılar. Ancak kayıt sırasını karıştırdı. Berk bunu e-postayı kontrol edip doğruladı ve etkinlik başlamadan önce sorun çözüldü. Berk, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Etkinlik aralarında ikisi makarna alıp kısa bir mola verdi. Eylül, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi.\nSoru: Metne göre sorun neden ortaya çıktı?\nD) sandalyeler yetersiz kaldı\nC) biletleri kaybetti\nB) kapı kilitli kaldı\nA) kayıt sırasını karıştırdı"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Melis, Sivas'deki parkde düzenlenen bir sergie katılmak için pazar günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Melis sıranın ilerlediğini görünce broşürunu çantasından çıkardı. İçeride Kaan ile karşılaştı ve birlikte programa göz attılar. Ancak kayıt sırasını karıştırdı. Melis bunu arkadaşından yardım aldı ve etkinlik başlamadan önce sorun çözüldü. Etkinlik aralarında ikisi simit alıp kısa bir mola verdi. Kaan, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Melis, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı.\nSoru: Bu parçanın ana fikri aşağıdakilerden hangisidir?\nA) Bir etkinliğe katılırken çıkan küçük bir aksaklığın zamanında çözülmesi.\nC) Spor salonunda yapılan yoğun bir antrenmanın sonuçları.\nD) Bir yemek tarifinin adım adım uygulanması.\nB) Şehirler arası uzun bir yolculuğun zorlukları."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Can, Antalya'deki kampüsde düzenlenen bir konsere katılmak için cuma günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Can sıranın ilerlediğini görünce kalemunu çantasından çıkardı. İçeride Aslı ile karşılaştı ve birlikte programa göz attılar. Ancak katılım listesinde adı görünmedi. Can bunu kısa bir ara verip yeniden başladı ve etkinlik başlamadan önce sorun çözüldü. Aslı, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Can, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Etkinlik aralarında ikisi simit alıp kısa bir mola verdi.\nSoru: Metne göre kim, notları daha sonra paylaşmak için fotoğraf çekti?\nB) Eren\nD) İrem\nC) Aslı\nA) Gökçe"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Mert, Bursa'deki müzede düzenlenen bir okuma kulübüe katılmak için cumartesi günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Mert sıranın ilerlediğini görünce çantaunu çantasından çıkardı. İçeride Can ile karşılaştı ve birlikte programa göz attılar. Ancak kayıt sırasını karıştırdı. Mert bunu kısa bir ara verip yeniden başladı ve etkinlik başlamadan önce sorun çözüldü.\nSoru: Sorun nasıl çözüldü?\nD) programı görmezden geldi\nC) biletini iade etti\nA) kimseye söylemedi\nB) kısa bir ara verip yeniden başladı"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Ece, Rize'deki kitapçıde düzenlenen bir atölyee katılmak için cumartesi günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Ece sıranın ilerlediğini görünce not kağıdıunu çantasından çıkardı. İçeride Ceren ile karşılaştı ve birlikte programa göz attılar. Ancak programı son anda değişti. Ece bunu kısa bir ara verip yeniden başladı ve etkinlik başlamadan önce sorun çözüldü. Ceren, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Ece, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Etkinlik aralarında ikisi salata alıp kısa bir mola verdi.\nSoru: Metne göre kim, notları daha sonra paylaşmak için fotoğraf çekti?\nC) Ceren\nA) İrem\nD) Sena\nB) Gizem"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Ece, Mersin'deki spor salonude düzenlenen bir tanıtım toplantısıe katılmak için çarşamba günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Ece sıranın ilerlediğini görünce kimlik kartıunu çantasından çıkardı. İçeride Sarp ile karşılaştı ve birlikte programa göz attılar. Ancak katılım listesinde adı görünmedi. Ece bunu görevliyi bulup düzeltti ve etkinlik başlamadan önce sorun çözüldü. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Sarp, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Etkinlik aralarında ikisi salata alıp kısa bir mola verdi.\nSoru: Sorun nasıl çözüldü?\nD) başka bir şehre gitti\nC) etkinliği tamamen iptal etti\nA) programı görmezden geldi\nB) görevliyi bulup düzeltti"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Nisa, Hatay'deki metro istasyonude düzenlenen bir seminere katılmak için cumartesi günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Nisa sıranın ilerlediğini görünce dosyaunu çantasından çıkardı. İçeride Kerem ile karşılaştı ve birlikte programa göz attılar. Ancak katılım listesinde adı görünmedi. Nisa bunu görevliyi bulup düzeltti ve etkinlik başlamadan önce sorun çözüldü. Nisa, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Kerem, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Etkinlik aralarında ikisi makarna alıp kısa bir mola verdi. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi.\nSoru: Metne göre kim, notları daha sonra paylaşmak için fotoğraf çekti?\nC) Gizem\nA) İrem\nD) Kaan\nB) Kerem"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Kerem, Samsun'deki kitapçıde düzenlenen bir film gösterimie katılmak için cumartesi günü 18.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Kerem sıranın ilerlediğini görünce kalemunu çantasından çıkardı. İçeride Furkan ile karşılaştı ve birlikte programa göz attılar. Ancak katılım listesinde adı görünmedi. Kerem bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü.\nSoru: Aşağıdakilerden hangisi metindeki olayların sırasına uygundur?\nB) Önce programa bakıldı, sonra eve dönüldü ve en sonda girişte yoğunluk yaşandı.\nC) Önce sorun çözüldü, sonra girişte yoğunluk oldu ve en sonda programa bakıldı.\nD) Önce etkinlik bitti, sonra sorun ortaya çıktı ve ardından girişte sıra oluştu.\nA) Önce girişte yoğunluk yaşandı, sonra sorun fark edildi, ardından sorun çözülüp etkinlik başladı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Metni okuyup soruyu yanıtlayın.\nParça: Onur, Denizli'deki sergi salonude düzenlenen bir gönüllülük buluşmasıe katılmak için çarşamba günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Onur sıranın ilerlediğini görünce kalemunu çantasından çıkardı. İçeride Kerem ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı.\nSoru: Aşağıdakilerden hangisi metindeki olayların sırasına uygundur?\nD) Önce sorun çözüldü, sonra girişte yoğunluk oldu ve en sonda programa bakıldı.\nC) Önce girişte yoğunluk yaşandı, sonra sorun fark edildi, ardından sorun çözülüp etkinlik başladı.\nA) Önce programa bakıldı, sonra eve dönüldü ve en sonda girişte yoğunluk yaşandı.\nB) Önce etkinlik bitti, sonra sorun ortaya çıktı ve ardından girişte sıra oluştu."
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parçayı okuyun ve en uygun seçeneği işaretleyin.\nParça: Furkan, Kocaeli'deki kampüsde düzenlenen bir sergie katılmak için çarşamba günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Furkan sıranın ilerlediğini görünce haritaunu çantasından çıkardı. İçeride Ceren ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı. Furkan bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü. Furkan, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Ceren, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Etkinlik aralarında ikisi makarna alıp kısa bir mola verdi.\nSoru: Bu parçanın ana fikri aşağıdakilerden hangisidir?\nB) Bir yemek tarifinin adım adım uygulanması.\nC) Spor salonunda yapılan yoğun bir antrenmanın sonuçları.\nD) Şehirler arası uzun bir yolculuğun zorlukları.\nA) Bir etkinliğe katılırken çıkan küçük bir aksaklığın zamanında çözülmesi."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Emre, Diyarbakır'deki atölyede düzenlenen bir film gösterimie katılmak için pazar günü 18.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Emre sıranın ilerlediğini görünce defterunu çantasından çıkardı. İçeride Eren ile karşılaştı ve birlikte programa göz attılar. Ancak yanlış salonu seçti. Emre bunu organizasyon ekibine haber verdi ve etkinlik başlamadan önce sorun çözüldü. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı.\nSoru: Emre etkinliğe katılmak için hangi saatte yola çıktı?\nD) 11.00\nA) 18.00\nC) 09.00\nB) 19.00"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Melis, Gaziantep'deki pazar yeride düzenlenen bir film gösterimie katılmak için çarşamba günü 18.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Melis sıranın ilerlediğini görünce kalemunu çantasından çıkardı. İçeride Derya ile karşılaştı ve birlikte programa göz attılar. Ancak programı son anda değişti. Melis bunu kısa bir ara verip yeniden başladı ve etkinlik başlamadan önce sorun çözüldü. Derya, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Etkinlik aralarında ikisi poğaça alıp kısa bir mola verdi. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Melis, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı.\nSoru: Sorun nasıl çözüldü?\nD) başka bir şehre gitti\nC) kimseye söylemedi\nA) etkinliği tamamen iptal etti\nB) kısa bir ara verip yeniden başladı"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Zeynep, Şanlıurfa'deki müzede düzenlenen bir spor etkinliğie katılmak için pazar günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Zeynep sıranın ilerlediğini görünce fotoğraf makinesiunu çantasından çıkardı. İçeride Eren ile karşılaştı ve birlikte programa göz attılar. Ancak yanlış salonu seçti. Zeynep bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü. Eren, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Etkinlik aralarında ikisi salata alıp kısa bir mola verdi. Zeynep, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı.\nSoru: Bu parçanın ana fikri aşağıdakilerden hangisidir?\nB) Bir yemek tarifinin adım adım uygulanması.\nD) Spor salonunda yapılan yoğun bir antrenmanın sonuçları.\nA) Bir etkinliğe katılırken çıkan küçük bir aksaklığın zamanında çözülmesi.\nC) Şehirler arası uzun bir yolculuğun zorlukları."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Umut, Kocaeli'deki kampüsde düzenlenen bir spor etkinliğie katılmak için cuma günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Umut sıranın ilerlediğini görünce haritaunu çantasından çıkardı. İçeride Can ile karşılaştı ve birlikte programa göz attılar. Ancak kayıt sırasını karıştırdı.\nSoru: Metinden çıkarılabilecek en makul sonuç hangisidir?\nD) Etkinlik sadece çevrim içi yapıldı ve mekân hiç kullanılmadı.\nB) Katılımcılar etkinliğe alınmadı çünkü kayıtlar tamamen silindi.\nA) Sorun, etkinlik başlamadan önce giderildiği için katılım aksatılmadı.\nC) Etkinlik hiç gerçekleşmedi ve herkes geri döndü."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: İrem, Denizli'deki okulde düzenlenen bir seminere katılmak için cuma günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; İrem sıranın ilerlediğini görünce haritaunu çantasından çıkardı. İçeride Sena ile karşılaştı ve birlikte programa göz attılar. Ancak programı son anda değişti. İrem bunu görevliyi bulup düzeltti ve etkinlik başlamadan önce sorun çözüldü. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. İrem, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı.\nSoru: Metindeki \"yoğunluk\" sözcüğü en yakın hangi anlamda kullanılmıştır?\nD) kalabalık\nA) hız\nB) sessizlik\nC) sıcaklık"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parçayı okuyun ve en uygun seçeneği işaretleyin.\nParça: Eylül, Muğla'deki müzede düzenlenen bir tanıtım toplantısıe katılmak için perşembe günü 18.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Eylül sıranın ilerlediğini görünce çantaunu çantasından çıkardı. İçeride Burak ile karşılaştı ve birlikte programa göz attılar. Ancak yanlış salonu seçti. Eylül bunu organizasyon ekibine haber verdi ve etkinlik başlamadan önce sorun çözüldü. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Eylül, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Etkinlik aralarında ikisi poğaça alıp kısa bir mola verdi. Burak, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti.\nSoru: Bu parçanın ana fikri aşağıdakilerden hangisidir?\nD) Bir etkinliğe katılırken çıkan küçük bir aksaklığın zamanında çözülmesi.\nB) Bir yemek tarifinin adım adım uygulanması.\nC) Spor salonunda yapılan yoğun bir antrenmanın sonuçları.\nA) Şehirler arası uzun bir yolculuğun zorlukları."
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Kerem, Bursa'deki kitapçıde düzenlenen bir panele katılmak için çarşamba günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Kerem sıranın ilerlediğini görünce dosyaunu çantasından çıkardı. İçeride Furkan ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı. Kerem bunu organizasyon ekibine haber verdi ve etkinlik başlamadan önce sorun çözüldü. Furkan, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Etkinlik aralarında ikisi poğaça alıp kısa bir mola verdi. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı.\nSoru: Metne göre sorun neden ortaya çıktı?\nA) broşürlerde tarih hatası vardı\nC) kapı kilitli kaldı\nB) güvenlik kontrolü uzadı\nD) internet çekmedi"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Pınar, İzmir'deki kitapçıde düzenlenen bir konsere katılmak için perşembe günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Pınar sıranın ilerlediğini görünce haritaunu çantasından çıkardı. İçeride Deniz ile karşılaştı ve birlikte programa göz attılar. Ancak katılım listesinde adı görünmedi. Pınar bunu görevliyi bulup düzeltti ve etkinlik başlamadan önce sorun çözüldü. Pınar, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi.\nSoru: Metne göre kim, notları daha sonra paylaşmak için fotoğraf çekti?\nC) Furkan\nA) Melis\nD) Deniz\nB) Gizem"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Buse, Aydın'deki kütüphanede düzenlenen bir panele katılmak için cumartesi günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Buse sıranın ilerlediğini görünce biletunu çantasından çıkardı. İçeride Nisa ile karşılaştı ve birlikte programa göz attılar. Ancak yanlış salonu seçti. Buse bunu e-postayı kontrol edip doğruladı ve etkinlik başlamadan önce sorun çözüldü. Buse, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Nisa, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Etkinlik aralarında ikisi çorba alıp kısa bir mola verdi.\nSoru: Metinden çıkarılabilecek en makul sonuç hangisidir?\nC) Katılımcılar etkinliğe alınmadı çünkü kayıtlar tamamen silindi.\nB) Etkinlik hiç gerçekleşmedi ve herkes geri döndü.\nD) Etkinlik sadece çevrim içi yapıldı ve mekân hiç kullanılmadı.\nA) Sorun, etkinlik başlamadan önce giderildiği için katılım aksatılmadı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Sarp, Muğla'deki parkde düzenlenen bir gönüllülük buluşmasıe katılmak için cumartesi günü 16.15'da yola çıktı. Girişte kısa bir yoğunluk vardı; Sarp sıranın ilerlediğini görünce kalemunu çantasından çıkardı. İçeride Umut ile karşılaştı ve birlikte programa göz attılar. Ancak ses sistemi gecikmeli çalıştı. Sarp bunu organizasyon ekibine haber verdi ve etkinlik başlamadan önce sorun çözüldü. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Umut, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Etkinlik aralarında ikisi çorba alıp kısa bir mola verdi.\nSoru: Sarp etkinliğe katılmak için hangi saatte yola çıktı?\nA) 11.00\nC) 17.45\nD) 13.30\nB) 16.15"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Hakan, Kayseri'deki okulde düzenlenen bir panele katılmak için perşembe günü 18.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Hakan sıranın ilerlediğini görünce haritaunu çantasından çıkardı. İçeride Can ile karşılaştı ve birlikte programa göz attılar. Ancak ses sistemi gecikmeli çalıştı. Hakan bunu organizasyon ekibine haber verdi ve etkinlik başlamadan önce sorun çözüldü. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Can, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Etkinlik aralarında ikisi çay alıp kısa bir mola verdi.\nSoru: Metindeki \"yoğunluk\" sözcüğü en yakın hangi anlamda kullanılmıştır?\nA) sessizlik\nC) hız\nD) kalabalık\nB) sıcaklık"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: İrem, Bursa'deki kitapçıde düzenlenen bir panele katılmak için cumartesi günü 16.15'da yola çıktı. Girişte kısa bir yoğunluk vardı; İrem sıranın ilerlediğini görünce dosyaunu çantasından çıkardı. İçeride Hakan ile karşılaştı ve birlikte programa göz attılar. Ancak yanlış salonu seçti. İrem bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi.\nSoru: Metinden çıkarılabilecek en makul sonuç hangisidir?\nA) Sorun, etkinlik başlamadan önce giderildiği için katılım aksatılmadı.\nB) Etkinlik hiç gerçekleşmedi ve herkes geri döndü.\nD) Katılımcılar etkinliğe alınmadı çünkü kayıtlar tamamen silindi.\nC) Etkinlik sadece çevrim içi yapıldı ve mekân hiç kullanılmadı."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Mehmet, Aydın'deki kampüsde düzenlenen bir tanıtım toplantısıe katılmak için perşembe günü 18.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Mehmet sıranın ilerlediğini görünce kalemunu çantasından çıkardı. İçeride Yasemin ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı. Mehmet bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü. Mehmet, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Etkinlik aralarında ikisi çay alıp kısa bir mola verdi. Yasemin, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi.\nSoru: Aşağıdakilerden hangisi metindeki olayların sırasına uygundur?\nC) Önce sorun çözüldü, sonra girişte yoğunluk oldu ve en sonda programa bakıldı.\nD) Önce etkinlik bitti, sonra sorun ortaya çıktı ve ardından girişte sıra oluştu.\nA) Önce programa bakıldı, sonra eve dönüldü ve en sonda girişte yoğunluk yaşandı.\nB) Önce girişte yoğunluk yaşandı, sonra sorun fark edildi, ardından sorun çözülüp etkinlik başladı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Berk, Kayseri'deki metro istasyonude düzenlenen bir film gösterimie katılmak için cumartesi günü 16.15'da yola çıktı. Girişte kısa bir yoğunluk vardı; Berk sıranın ilerlediğini görünce şarj aletiunu çantasından çıkardı. İçeride Aslı ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı. Berk bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü. Etkinlik aralarında ikisi simit alıp kısa bir mola verdi. Aslı, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Berk, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı.\nSoru: Bu parçanın ana fikri aşağıdakilerden hangisidir?\nD) Bir yemek tarifinin adım adım uygulanması.\nA) Bir etkinliğe katılırken çıkan küçük bir aksaklığın zamanında çözülmesi.\nC) Spor salonunda yapılan yoğun bir antrenmanın sonuçları.\nB) Şehirler arası uzun bir yolculuğun zorlukları."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Ayşe, Diyarbakır'deki okulde düzenlenen bir okuma kulübüe katılmak için cuma günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Ayşe sıranın ilerlediğini görünce çantaunu çantasından çıkardı. İçeride Emre ile karşılaştı ve birlikte programa göz attılar. Ancak ses sistemi gecikmeli çalıştı. Ayşe bunu kısa bir ara verip yeniden başladı ve etkinlik başlamadan önce sorun çözüldü. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Ayşe, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Etkinlik aralarında ikisi çay alıp kısa bir mola verdi. Emre, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti.\nSoru: Metne göre kim, notları daha sonra paylaşmak için fotoğraf çekti?\nA) Emre\nD) Deniz\nC) Ceren\nB) Sena"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: İrem, İzmir'deki sergi salonude düzenlenen bir okuma kulübüe katılmak için çarşamba günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; İrem sıranın ilerlediğini görünce çantaunu çantasından çıkardı. İçeride Eren ile karşılaştı ve birlikte programa göz attılar. Ancak programı son anda değişti. İrem bunu arkadaşından yardım aldı ve etkinlik başlamadan önce sorun çözüldü. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Etkinlik aralarında ikisi çay alıp kısa bir mola verdi. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Eren, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti.\nSoru: Metne göre kim, notları daha sonra paylaşmak için fotoğraf çekti?\nD) Furkan\nA) Sena\nB) Deniz\nC) Eren"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ]
+    ]
+  },
+  "rejected_items": {
+    "items": [
+      [
+        {
+          "role": "user",
+          "content": "Parça: Ceren, Denizli'deki metro istasyonude düzenlenen bir seminere katılmak için perşembe günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Ceren sıranın ilerlediğini görünce haritaunu çantasından çıkardı. İçeride İrem ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı. Ceren bunu arkadaşından yardım aldı ve etkinlik başlamadan önce sorun çözüldü. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. İrem, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Etkinlik aralarında ikisi kahve alıp kısa bir mola verdi. Ceren, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı.\nSoru: Ceren etkinliğe katılmak için hangi saatte yola çıktı?\nD) 09.00\nC) 19.00\nB) 10.00\nA) 10.30"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Eren, İstanbul'deki belediye kültür merkezide düzenlenen bir panele katılmak için perşembe günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Eren sıranın ilerlediğini görünce broşürunu çantasından çıkardı. İçeride Burak ile karşılaştı ve birlikte programa göz attılar. Ancak yanlış salonu seçti. Eren bunu e-postayı kontrol edip doğruladı ve etkinlik başlamadan önce sorun çözüldü. Etkinlik aralarında ikisi salata alıp kısa bir mola verdi. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Burak, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Eren, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı.\nSoru: Aşağıdakilerden hangisi metindeki olayların sırasına uygundur?\nA) Önce programa bakıldı, sonra eve dönüldü ve en sonda girişte yoğunluk yaşandı.\nD) Önce etkinlik bitti, sonra sorun ortaya çıktı ve ardından girişte sıra oluştu.\nC) Önce girişte yoğunluk yaşandı, sonra sorun fark edildi, ardından sorun çözülüp etkinlik başladı.\nB) Önce sorun çözüldü, sonra girişte yoğunluk oldu ve en sonda programa bakıldı."
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Zeynep, Bursa'deki metro istasyonude düzenlenen bir spor etkinliğie katılmak için pazar günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Zeynep sıranın ilerlediğini görünce kalemunu çantasından çıkardı. İçeride Yasemin ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı. Zeynep bunu e-postayı kontrol edip doğruladı ve etkinlik başlamadan önce sorun çözüldü. Zeynep, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi.\nSoru: Bu parçanın ana fikri aşağıdakilerden hangisidir?\nC) Bir yemek tarifinin adım adım uygulanması.\nB) Spor salonunda yapılan yoğun bir antrenmanın sonuçları.\nD) Bir etkinliğe katılırken çıkan küçük bir aksaklığın zamanında çözülmesi.\nA) Şehirler arası uzun bir yolculuğun zorlukları."
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Sarp, Balıkesir'deki metro istasyonude düzenlenen bir konsere katılmak için perşembe günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Sarp sıranın ilerlediğini görünce defterunu çantasından çıkardı. İçeride Umut ile karşılaştı ve birlikte programa göz attılar. Ancak katılım listesinde adı görünmedi. Sarp bunu arkadaşından yardım aldı ve etkinlik başlamadan önce sorun çözüldü. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi.\nSoru: Bu parçanın ana fikri aşağıdakilerden hangisidir?\nB) Bir etkinliğe katılırken çıkan küçük bir aksaklığın zamanında çözülmesi.\nC) Bir yemek tarifinin adım adım uygulanması.\nD) Şehirler arası uzun bir yolculuğun zorlukları.\nA) Spor salonunda yapılan yoğun bir antrenmanın sonuçları."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Zeynep, Kocaeli'deki otogarde düzenlenen bir atölyee katılmak için cuma günü 16.15'da yola çıktı. Girişte kısa bir yoğunluk vardı; Zeynep sıranın ilerlediğini görünce kalemunu çantasından çıkardı. İçeride Sarp ile karşılaştı ve birlikte programa göz attılar. Ancak katılım listesinde adı görünmedi. Zeynep bunu arkadaşından yardım aldı ve etkinlik başlamadan önce sorun çözüldü.\nSoru: Metindeki \"yoğunluk\" sözcüğü en yakın hangi anlamda kullanılmıştır?\nA) kalabalık\nD) sıcaklık\nC) sessizlik\nB) hız"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Sena, Samsun'deki pazar yeride düzenlenen bir tanıtım toplantısıe katılmak için cumartesi günü 16.15'da yola çıktı. Girişte kısa bir yoğunluk vardı; Sena sıranın ilerlediğini görünce biletunu çantasından çıkardı. İçeride Hakan ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı. Sena bunu kısa bir ara verip yeniden başladı ve etkinlik başlamadan önce sorun çözüldü. Sena, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Hakan, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Etkinlik aralarında ikisi simit alıp kısa bir mola verdi.\nSoru: Etkinlik nerede düzenlendi?\nD) Samsun'deki otogar\nC) İstanbul'deki spor salonu\nB) Antalya'deki pazar yeri\nA) Samsun'deki pazar yeri"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Burak, Sivas'deki kampüsde düzenlenen bir atölyee katılmak için pazar günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Burak sıranın ilerlediğini görünce biletunu çantasından çıkardı. İçeride Eylül ile karşılaştı ve birlikte programa göz attılar. Ancak kayıt sırasını karıştırdı.\nSoru: Metindeki \"yoğunluk\" sözcüğü en yakın hangi anlamda kullanılmıştır?\nB) kalabalık\nA) sıcaklık\nD) sessizlik\nC) hız"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Tolga, Aydın'deki konferans salonude düzenlenen bir gönüllülük buluşmasıe katılmak için cuma günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Tolga sıranın ilerlediğini görünce şarj aletiunu çantasından çıkardı. İçeride Ece ile karşılaştı ve birlikte programa göz attılar. Ancak ses sistemi gecikmeli çalıştı. Tolga bunu organizasyon ekibine haber verdi ve etkinlik başlamadan önce sorun çözüldü. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Tolga, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Etkinlik aralarında ikisi poğaça alıp kısa bir mola verdi. Ece, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti.\nSoru: Etkinlik nerede düzenlendi?\nA) İstanbul'deki konferans salonu\nC) Aydın'deki kafe\nB) Trabzon'deki otogar\nD) Aydın'deki konferans salonu"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Melis, Mersin'deki belediye kültür merkezide düzenlenen bir sergie katılmak için cumartesi günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Melis sıranın ilerlediğini görünce dosyaunu çantasından çıkardı. İçeride Berk ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı.\nSoru: Etkinlik nerede düzenlendi?\nD) Mersin'deki belediye kültür merkezi\nC) Aydın'deki kampüs\nB) Diyarbakır'deki belediye kültür merkezi\nA) Mersin'deki kafe"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Eren, Kayseri'deki sergi salonude düzenlenen bir tanıtım toplantısıe katılmak için perşembe günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Eren sıranın ilerlediğini görünce broşürunu çantasından çıkardı. İçeride Can ile karşılaştı ve birlikte programa göz attılar. Ancak kayıt sırasını karıştırdı. Eren bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi.\nSoru: Metinden çıkarılabilecek en makul sonuç hangisidir?\nB) Sorun, etkinlik başlamadan önce giderildiği için katılım aksatılmadı.\nD) Etkinlik sadece çevrim içi yapıldı ve mekân hiç kullanılmadı.\nA) Katılımcılar etkinliğe alınmadı çünkü kayıtlar tamamen silindi.\nC) Etkinlik hiç gerçekleşmedi ve herkes geri döndü."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Zeynep, Eskişehir'deki pazar yeride düzenlenen bir panele katılmak için perşembe günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Zeynep sıranın ilerlediğini görünce haritaunu çantasından çıkardı. İçeride Sena ile karşılaştı ve birlikte programa göz attılar. Ancak katılım listesinde adı görünmedi. Zeynep bunu kısa bir ara verip yeniden başladı ve etkinlik başlamadan önce sorun çözüldü. Sena, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti.\nSoru: Metindeki \"yoğunluk\" sözcüğü en yakın hangi anlamda kullanılmıştır?\nD) hız\nA) sessizlik\nB) kalabalık\nC) sıcaklık"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Yasemin, Bursa'deki pazar yeride düzenlenen bir konsere katılmak için pazar günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Yasemin sıranın ilerlediğini görünce su şişesiunu çantasından çıkardı. İçeride Onur ile karşılaştı ve birlikte programa göz attılar. Ancak kayıt sırasını karıştırdı. Yasemin bunu arkadaşından yardım aldı ve etkinlik başlamadan önce sorun çözüldü. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi.\nSoru: Aşağıdakilerden hangisi metindeki olayların sırasına uygundur?\nA) Önce sorun çözüldü, sonra girişte yoğunluk oldu ve en sonda programa bakıldı.\nC) Önce girişte yoğunluk yaşandı, sonra sorun fark edildi, ardından sorun çözülüp etkinlik başladı.\nB) Önce etkinlik bitti, sonra sorun ortaya çıktı ve ardından girişte sıra oluştu.\nD) Önce programa bakıldı, sonra eve dönüldü ve en sonda girişte yoğunluk yaşandı."
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Kerem, Aydın'deki pazar yeride düzenlenen bir seminere katılmak için perşembe günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Kerem sıranın ilerlediğini görünce çantaunu çantasından çıkardı. İçeride Ece ile karşılaştı ve birlikte programa göz attılar. Ancak yanlış salonu seçti. Kerem bunu arkadaşından yardım aldı ve etkinlik başlamadan önce sorun çözüldü.\nSoru: Sorun nasıl çözüldü?\nD) arkadaşından yardım aldı\nA) eve geri döndü\nC) kimseye söylemedi\nB) programı görmezden geldi"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: İrem, Denizli'deki otogarde düzenlenen bir film gösterimie katılmak için cumartesi günü 16.15'da yola çıktı. Girişte kısa bir yoğunluk vardı; İrem sıranın ilerlediğini görünce broşürunu çantasından çıkardı. İçeride Zeynep ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı. İrem bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü. İrem, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Zeynep, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti.\nSoru: Metne göre kim, notları daha sonra paylaşmak için fotoğraf çekti?\nB) Zeynep\nC) Sena\nA) Furkan\nD) Mert"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Tolga, Rize'deki metro istasyonude düzenlenen bir atölyee katılmak için perşembe günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Tolga sıranın ilerlediğini görünce kulaklıkunu çantasından çıkardı. İçeride Onur ile karşılaştı ve birlikte programa göz attılar. Ancak katılım listesinde adı görünmedi. Tolga bunu kısa bir ara verip yeniden başladı ve etkinlik başlamadan önce sorun çözüldü. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Tolga, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Onur, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti.\nSoru: Metindeki \"yoğunluk\" sözcüğü en yakın hangi anlamda kullanılmıştır?\nC) sıcaklık\nD) sessizlik\nB) hız\nA) kalabalık"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Yasemin, Balıkesir'deki konferans salonude düzenlenen bir spor etkinliğie katılmak için cuma günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Yasemin sıranın ilerlediğini görünce broşürunu çantasından çıkardı. İçeride Ece ile karşılaştı ve birlikte programa göz attılar. Ancak katılım listesinde adı görünmedi. Yasemin bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Ece, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Etkinlik aralarında ikisi salata alıp kısa bir mola verdi.\nSoru: Yasemin etkinliğe katılmak için hangi saatte yola çıktı?\nA) 15.00\nB) 19.00\nD) 11.30\nC) 11.00"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parçayı okuyun ve en uygun seçeneği işaretleyin.\nParça: Can, İzmir'deki belediye kültür merkezide düzenlenen bir okuma kulübüe katılmak için cuma günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Can sıranın ilerlediğini görünce kulaklıkunu çantasından çıkardı. İçeride Umut ile karşılaştı ve birlikte programa göz attılar. Ancak ses sistemi gecikmeli çalıştı. Can bunu arkadaşından yardım aldı ve etkinlik başlamadan önce sorun çözüldü. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı.\nSoru: Can etkinliğe katılmak için hangi saatte yola çıktı?\nC) 14.00\nB) 17.45\nD) 11.00\nA) 10.30"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Elif, Denizli'deki sergi salonude düzenlenen bir konsere katılmak için çarşamba günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Elif sıranın ilerlediğini görünce kimlik kartıunu çantasından çıkardı. İçeride Furkan ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı.\nSoru: Metindeki \"yoğunluk\" sözcüğü en yakın hangi anlamda kullanılmıştır?\nD) kalabalık\nA) sessizlik\nC) hız\nB) sıcaklık"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Derya, Muğla'deki metro istasyonude düzenlenen bir okuma kulübüe katılmak için pazar günü 16.15'da yola çıktı. Girişte kısa bir yoğunluk vardı; Derya sıranın ilerlediğini görünce kalemunu çantasından çıkardı. İçeride Kaan ile karşılaştı ve birlikte programa göz attılar. Ancak kayıt sırasını karıştırdı. Derya bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü.\nSoru: Aşağıdakilerden hangisi metindeki olayların sırasına uygundur?\nA) Önce programa bakıldı, sonra eve dönüldü ve en sonda girişte yoğunluk yaşandı.\nB) Önce etkinlik bitti, sonra sorun ortaya çıktı ve ardından girişte sıra oluştu.\nC) Önce sorun çözüldü, sonra girişte yoğunluk oldu ve en sonda programa bakıldı.\nD) Önce girişte yoğunluk yaşandı, sonra sorun fark edildi, ardından sorun çözülüp etkinlik başladı."
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parçayı okuyun ve en uygun seçeneği işaretleyin.\nParça: Kerem, Samsun'deki belediye kültür merkezide düzenlenen bir panele katılmak için cuma günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Kerem sıranın ilerlediğini görünce çantaunu çantasından çıkardı. İçeride Selin ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı. Kerem bunu arkadaşından yardım aldı ve etkinlik başlamadan önce sorun çözüldü. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi.\nSoru: Sorun nasıl çözüldü?\nA) başka bir şehre gitti\nB) arkadaşından yardım aldı\nD) etkinliği tamamen iptal etti\nC) eve geri döndü"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Aslı, Ankara'deki sergi salonude düzenlenen bir tanıtım toplantısıe katılmak için perşembe günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Aslı sıranın ilerlediğini görünce broşürunu çantasından çıkardı. İçeride Nisa ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı. Aslı bunu görevliyi bulup düzeltti ve etkinlik başlamadan önce sorun çözüldü.\nSoru: Metne göre kim, notları daha sonra paylaşmak için fotoğraf çekti?\nD) Melis\nB) Mert\nC) Nisa\nA) Kaan"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Mehmet, Trabzon'deki belediye kültür merkezide düzenlenen bir film gösterimie katılmak için cumartesi günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Mehmet sıranın ilerlediğini görünce kulaklıkunu çantasından çıkardı. İçeride Ozan ile karşılaştı ve birlikte programa göz attılar. Ancak katılım listesinde adı görünmedi. Mehmet bunu arkadaşından yardım aldı ve etkinlik başlamadan önce sorun çözüldü. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Mehmet, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Ozan, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi.\nSoru: Aşağıdakilerden hangisi metindeki olayların sırasına uygundur?\nD) Önce etkinlik bitti, sonra sorun ortaya çıktı ve ardından girişte sıra oluştu.\nA) Önce sorun çözüldü, sonra girişte yoğunluk oldu ve en sonda programa bakıldı.\nC) Önce girişte yoğunluk yaşandı, sonra sorun fark edildi, ardından sorun çözülüp etkinlik başladı.\nB) Önce programa bakıldı, sonra eve dönüldü ve en sonda girişte yoğunluk yaşandı."
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Ece, İstanbul'deki metro istasyonude düzenlenen bir gönüllülük buluşmasıe katılmak için pazar günü 18.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Ece sıranın ilerlediğini görünce çantaunu çantasından çıkardı. İçeride Emre ile karşılaştı ve birlikte programa göz attılar. Ancak kayıt sırasını karıştırdı. Ece bunu arkadaşından yardım aldı ve etkinlik başlamadan önce sorun çözüldü. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Emre, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Etkinlik aralarında ikisi kahve alıp kısa bir mola verdi.\nSoru: Aşağıdakilerden hangisi metindeki olayların sırasına uygundur?\nA) Önce programa bakıldı, sonra eve dönüldü ve en sonda girişte yoğunluk yaşandı.\nC) Önce etkinlik bitti, sonra sorun ortaya çıktı ve ardından girişte sıra oluştu.\nB) Önce girişte yoğunluk yaşandı, sonra sorun fark edildi, ardından sorun çözülüp etkinlik başladı.\nD) Önce sorun çözüldü, sonra girişte yoğunluk oldu ve en sonda programa bakıldı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Emre, Antalya'deki pazar yeride düzenlenen bir gönüllülük buluşmasıe katılmak için perşembe günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Emre sıranın ilerlediğini görünce biletunu çantasından çıkardı. İçeride Yasemin ile karşılaştı ve birlikte programa göz attılar. Ancak yanlış salonu seçti. Emre bunu e-postayı kontrol edip doğruladı ve etkinlik başlamadan önce sorun çözüldü. Etkinlik aralarında ikisi kahve alıp kısa bir mola verdi. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi.\nSoru: Metne göre kim, notları daha sonra paylaşmak için fotoğraf çekti?\nC) Yasemin\nD) Can\nA) Umut\nB) Buse"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Mert, Muğla'deki spor salonude düzenlenen bir sergie katılmak için pazar günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Mert sıranın ilerlediğini görünce haritaunu çantasından çıkardı. İçeride Emre ile karşılaştı ve birlikte programa göz attılar. Ancak katılım listesinde adı görünmedi. Mert bunu arkadaşından yardım aldı ve etkinlik başlamadan önce sorun çözüldü. Emre, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Etkinlik aralarında ikisi çay alıp kısa bir mola verdi. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi.\nSoru: Aşağıdakilerden hangisi metindeki olayların sırasına uygundur?\nD) Önce girişte yoğunluk yaşandı, sonra sorun fark edildi, ardından sorun çözülüp etkinlik başladı.\nB) Önce programa bakıldı, sonra eve dönüldü ve en sonda girişte yoğunluk yaşandı.\nA) Önce sorun çözüldü, sonra girişte yoğunluk oldu ve en sonda programa bakıldı.\nC) Önce etkinlik bitti, sonra sorun ortaya çıktı ve ardından girişte sıra oluştu."
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Mert, Tekirdağ'deki otogarde düzenlenen bir konsere katılmak için perşembe günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Mert sıranın ilerlediğini görünce şarj aletiunu çantasından çıkardı. İçeride Ceren ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı. Mert bunu e-postayı kontrol edip doğruladı ve etkinlik başlamadan önce sorun çözüldü. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Mert, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı.\nSoru: Metne göre kim, notları daha sonra paylaşmak için fotoğraf çekti?\nD) Mert\nB) Gizem\nA) Ceren\nC) Deniz"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Sena, Şanlıurfa'deki sergi salonude düzenlenen bir panele katılmak için cumartesi günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Sena sıranın ilerlediğini görünce biletunu çantasından çıkardı. İçeride Deniz ile karşılaştı ve birlikte programa göz attılar. Ancak programı son anda değişti. Sena bunu arkadaşından yardım aldı ve etkinlik başlamadan önce sorun çözüldü.\nSoru: Metne göre sorun neden ortaya çıktı?\nB) programı son anda değişti\nC) kapı kilitli kaldı\nD) otobüs seferi iptal oldu\nA) sandalyeler yetersiz kaldı"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parçayı okuyun ve en uygun seçeneği işaretleyin.\nParça: Emre, Konya'deki kütüphanede düzenlenen bir panele katılmak için perşembe günü 18.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Emre sıranın ilerlediğini görünce fotoğraf makinesiunu çantasından çıkardı. İçeride Ece ile karşılaştı ve birlikte programa göz attılar. Ancak yanlış salonu seçti. Emre bunu kısa bir ara verip yeniden başladı ve etkinlik başlamadan önce sorun çözüldü. Etkinlik aralarında ikisi makarna alıp kısa bir mola verdi. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Ece, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Emre, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı.\nSoru: Etkinlik nerede düzenlendi?\nD) Konya'deki kütüphane\nA) Konya'deki müze\nB) Bursa'deki kütüphane\nC) Hatay'deki kafe"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Sarp, Antalya'deki atölyede düzenlenen bir film gösterimie katılmak için pazar günü 18.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Sarp sıranın ilerlediğini görünce dosyaunu çantasından çıkardı. İçeride İrem ile karşılaştı ve birlikte programa göz attılar. Ancak programı son anda değişti. Sarp bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü. Sarp, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. İrem, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Etkinlik aralarında ikisi çorba alıp kısa bir mola verdi.\nSoru: Aşağıdakilerden hangisi metindeki olayların sırasına uygundur?\nC) Önce sorun çözüldü, sonra girişte yoğunluk oldu ve en sonda programa bakıldı.\nB) Önce programa bakıldı, sonra eve dönüldü ve en sonda girişte yoğunluk yaşandı.\nA) Önce etkinlik bitti, sonra sorun ortaya çıktı ve ardından girişte sıra oluştu.\nD) Önce girişte yoğunluk yaşandı, sonra sorun fark edildi, ardından sorun çözülüp etkinlik başladı."
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Derya, Tekirdağ'deki kitapçıde düzenlenen bir sergie katılmak için cuma günü 18.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Derya sıranın ilerlediğini görünce fotoğraf makinesiunu çantasından çıkardı. İçeride Aslı ile karşılaştı ve birlikte programa göz attılar. Ancak programı son anda değişti.\nSoru: Derya etkinliğe katılmak için hangi saatte yola çıktı?\nB) 19.00\nC) 17.45\nA) 18.00\nD) 15.00"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Aslı, Şanlıurfa'deki otogarde düzenlenen bir seminere katılmak için çarşamba günü 18.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Aslı sıranın ilerlediğini görünce çantaunu çantasından çıkardı. İçeride Hakan ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı. Aslı bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü. Etkinlik aralarında ikisi kahve alıp kısa bir mola verdi.\nSoru: Metne göre kim, notları daha sonra paylaşmak için fotoğraf çekti?\nD) İrem\nC) Mert\nB) Nisa\nA) Hakan"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Metni okuyup soruyu yanıtlayın.\nParça: Furkan, Adana'deki sahilde düzenlenen bir gönüllülük buluşmasıe katılmak için cumartesi günü 18.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Furkan sıranın ilerlediğini görünce dosyaunu çantasından çıkardı. İçeride Gökçe ile karşılaştı ve birlikte programa göz attılar. Ancak kayıt sırasını karıştırdı. Furkan bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü.\nSoru: Bu parçanın ana fikri aşağıdakilerden hangisidir?\nB) Bir yemek tarifinin adım adım uygulanması.\nD) Spor salonunda yapılan yoğun bir antrenmanın sonuçları.\nA) Bir etkinliğe katılırken çıkan küçük bir aksaklığın zamanında çözülmesi.\nC) Şehirler arası uzun bir yolculuğun zorlukları."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Ece, Diyarbakır'deki kütüphanede düzenlenen bir atölyee katılmak için cuma günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Ece sıranın ilerlediğini görünce çantaunu çantasından çıkardı. İçeride Kerem ile karşılaştı ve birlikte programa göz attılar. Ancak kayıt sırasını karıştırdı. Ece bunu organizasyon ekibine haber verdi ve etkinlik başlamadan önce sorun çözüldü.\nSoru: Aşağıdakilerden hangisi metindeki olayların sırasına uygundur?\nA) Önce sorun çözüldü, sonra girişte yoğunluk oldu ve en sonda programa bakıldı.\nD) Önce girişte yoğunluk yaşandı, sonra sorun fark edildi, ardından sorun çözülüp etkinlik başladı.\nB) Önce etkinlik bitti, sonra sorun ortaya çıktı ve ardından girişte sıra oluştu.\nC) Önce programa bakıldı, sonra eve dönüldü ve en sonda girişte yoğunluk yaşandı."
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Derya, Trabzon'deki spor salonude düzenlenen bir film gösterimie katılmak için cumartesi günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Derya sıranın ilerlediğini görünce anahtarunu çantasından çıkardı. İçeride Buse ile karşılaştı ve birlikte programa göz attılar. Ancak yanlış salonu seçti. Derya bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü.\nSoru: Sorun nasıl çözüldü?\nB) etkinliğe geç katıldı ama çözmedi\nA) başka bir şehre gitti\nD) kimseye söylemedi\nC) duvarda asılı afişten doğru bilgiyi öğrendi"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Aslı, Diyarbakır'deki kütüphanede düzenlenen bir okuma kulübüe katılmak için pazar günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Aslı sıranın ilerlediğini görünce biletunu çantasından çıkardı. İçeride Mert ile karşılaştı ve birlikte programa göz attılar. Ancak yanlış salonu seçti. Aslı bunu görevliyi bulup düzeltti ve etkinlik başlamadan önce sorun çözüldü. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi.\nSoru: Metne göre kim, notları daha sonra paylaşmak için fotoğraf çekti?\nC) İrem\nD) Deniz\nB) Mert\nA) Nisa"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Eren, Sivas'deki kampüsde düzenlenen bir panele katılmak için perşembe günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Eren sıranın ilerlediğini görünce çantaunu çantasından çıkardı. İçeride Emre ile karşılaştı ve birlikte programa göz attılar. Ancak yanlış salonu seçti. Eren bunu arkadaşından yardım aldı ve etkinlik başlamadan önce sorun çözüldü.\nSoru: Metne göre kim, notları daha sonra paylaşmak için fotoğraf çekti?\nC) Furkan\nB) Melis\nD) Kaan\nA) Emre"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Kaan, Antalya'deki parkde düzenlenen bir panele katılmak için perşembe günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Kaan sıranın ilerlediğini görünce broşürunu çantasından çıkardı. İçeride İrem ile karşılaştı ve birlikte programa göz attılar. Ancak programı son anda değişti. Kaan bunu görevliyi bulup düzeltti ve etkinlik başlamadan önce sorun çözüldü. Etkinlik aralarında ikisi salata alıp kısa bir mola verdi. Kaan, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. İrem, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı.\nSoru: Bu parçanın ana fikri aşağıdakilerden hangisidir?\nC) Bir etkinliğe katılırken çıkan küçük bir aksaklığın zamanında çözülmesi.\nA) Şehirler arası uzun bir yolculuğun zorlukları.\nD) Bir yemek tarifinin adım adım uygulanması.\nB) Spor salonunda yapılan yoğun bir antrenmanın sonuçları."
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Elif, Aydın'deki konferans salonude düzenlenen bir tanıtım toplantısıe katılmak için cumartesi günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Elif sıranın ilerlediğini görünce anahtarunu çantasından çıkardı. İçeride Gizem ile karşılaştı ve birlikte programa göz attılar. Ancak yanlış salonu seçti. Elif bunu görevliyi bulup düzeltti ve etkinlik başlamadan önce sorun çözüldü. Gizem, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Elif, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı.\nSoru: Bu parçanın ana fikri aşağıdakilerden hangisidir?\nC) Bir yemek tarifinin adım adım uygulanması.\nB) Bir etkinliğe katılırken çıkan küçük bir aksaklığın zamanında çözülmesi.\nA) Spor salonunda yapılan yoğun bir antrenmanın sonuçları.\nD) Şehirler arası uzun bir yolculuğun zorlukları."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Berk, Rize'deki kampüsde düzenlenen bir okuma kulübüe katılmak için cumartesi günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Berk sıranın ilerlediğini görünce dosyaunu çantasından çıkardı. İçeride Umut ile karşılaştı ve birlikte programa göz attılar. Ancak kayıt sırasını karıştırdı. Berk bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü. Berk, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı.\nSoru: Metne göre sorun neden ortaya çıktı?\nB) kapı kilitli kaldı\nD) kayıt sırasını karıştırdı\nC) biletleri kaybetti\nA) sunucu geç geldi"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Burak, İzmir'deki kütüphanede düzenlenen bir konsere katılmak için pazar günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Burak sıranın ilerlediğini görünce fotoğraf makinesiunu çantasından çıkardı. İçeride Tolga ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı.\nSoru: Metne göre sorun neden ortaya çıktı?\nC) kapı kilitli kaldı\nA) broşürlerde tarih hatası vardı\nB) biletleri kaybetti\nD) internet çekmedi"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parçayı okuyun ve en uygun seçeneği işaretleyin.\nParça: Kaan, Trabzon'deki pazar yeride düzenlenen bir spor etkinliğie katılmak için cuma günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Kaan sıranın ilerlediğini görünce defterunu çantasından çıkardı. İçeride Kerem ile karşılaştı ve birlikte programa göz attılar. Ancak yanlış salonu seçti. Kaan bunu arkadaşından yardım aldı ve etkinlik başlamadan önce sorun çözüldü. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Kerem, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Kaan, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Etkinlik aralarında ikisi çorba alıp kısa bir mola verdi.\nSoru: Bu parçanın ana fikri aşağıdakilerden hangisidir?\nD) Bir yemek tarifinin adım adım uygulanması.\nB) Şehirler arası uzun bir yolculuğun zorlukları.\nA) Bir etkinliğe katılırken çıkan küçük bir aksaklığın zamanında çözülmesi.\nC) Spor salonunda yapılan yoğun bir antrenmanın sonuçları."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Hakan, Kayseri'deki belediye kültür merkezide düzenlenen bir sergie katılmak için çarşamba günü 18.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Hakan sıranın ilerlediğini görünce kimlik kartıunu çantasından çıkardı. İçeride Yasemin ile karşılaştı ve birlikte programa göz attılar. Ancak ses sistemi gecikmeli çalıştı. Hakan bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü. Hakan, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Yasemin, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti.\nSoru: Metne göre kim, notları daha sonra paylaşmak için fotoğraf çekti?\nC) Yasemin\nB) Umut\nD) Sena\nA) Ceren"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Mert, Kocaeli'deki kampüsde düzenlenen bir konsere katılmak için çarşamba günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Mert sıranın ilerlediğini görünce not kağıdıunu çantasından çıkardı. İçeride Aslı ile karşılaştı ve birlikte programa göz attılar. Ancak ses sistemi gecikmeli çalıştı. Mert bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Aslı, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Etkinlik aralarında ikisi çay alıp kısa bir mola verdi. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi.\nSoru: Metindeki \"yoğunluk\" sözcüğü en yakın hangi anlamda kullanılmıştır?\nB) sıcaklık\nD) kalabalık\nA) sessizlik\nC) hız"
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Eylül, Konya'deki kitapçıde düzenlenen bir film gösterimie katılmak için pazar günü 16.15'da yola çıktı. Girişte kısa bir yoğunluk vardı; Eylül sıranın ilerlediğini görünce biletunu çantasından çıkardı. İçeride Burak ile karşılaştı ve birlikte programa göz attılar. Ancak programı son anda değişti. Eylül bunu duvarda asılı afişten doğru bilgiyi öğrendi ve etkinlik başlamadan önce sorun çözüldü. Burak, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Etkinlik aralarında ikisi salata alıp kısa bir mola verdi.\nSoru: Etkinlik nerede düzenlendi?\nB) Antalya'deki kitapçı\nD) Konya'deki konferans salonu\nC) Antalya'deki konferans salonu\nA) Konya'deki kitapçı"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Burak, Samsun'deki sergi salonude düzenlenen bir sergie katılmak için pazar günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Burak sıranın ilerlediğini görünce dosyaunu çantasından çıkardı. İçeride Berk ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı.\nSoru: Bu parçanın ana fikri aşağıdakilerden hangisidir?\nC) Şehirler arası uzun bir yolculuğun zorlukları.\nB) Bir yemek tarifinin adım adım uygulanması.\nA) Bir etkinliğe katılırken çıkan küçük bir aksaklığın zamanında çözülmesi.\nD) Spor salonunda yapılan yoğun bir antrenmanın sonuçları."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Nisa, Balıkesir'deki sahilde düzenlenen bir sergie katılmak için pazar günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Nisa sıranın ilerlediğini görünce not kağıdıunu çantasından çıkardı. İçeride Aslı ile karşılaştı ve birlikte programa göz attılar. Ancak programı son anda değişti. Nisa bunu e-postayı kontrol edip doğruladı ve etkinlik başlamadan önce sorun çözüldü. Aslı, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti.\nSoru: Bu parçanın ana fikri aşağıdakilerden hangisidir?\nC) Şehirler arası uzun bir yolculuğun zorlukları.\nD) Bir yemek tarifinin adım adım uygulanması.\nB) Spor salonunda yapılan yoğun bir antrenmanın sonuçları.\nA) Bir etkinliğe katılırken çıkan küçük bir aksaklığın zamanında çözülmesi."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki parçayı dikkatle okuyun.\nParça: Gizem, Balıkesir'deki pazar yeride düzenlenen bir gönüllülük buluşmasıe katılmak için cuma günü 10.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Gizem sıranın ilerlediğini görünce broşürunu çantasından çıkardı. İçeride Umut ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı. Gizem bunu e-postayı kontrol edip doğruladı ve etkinlik başlamadan önce sorun çözüldü. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi.\nSoru: Bu parçanın ana fikri aşağıdakilerden hangisidir?\nB) Bir yemek tarifinin adım adım uygulanması.\nD) Şehirler arası uzun bir yolculuğun zorlukları.\nC) Bir etkinliğe katılırken çıkan küçük bir aksaklığın zamanında çözülmesi.\nA) Spor salonunda yapılan yoğun bir antrenmanın sonuçları."
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Zeynep, Adana'deki atölyede düzenlenen bir tanıtım toplantısıe katılmak için perşembe günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Zeynep sıranın ilerlediğini görünce anahtarunu çantasından çıkardı. İçeride Mehmet ile karşılaştı ve birlikte programa göz attılar. Ancak yanlış salonu seçti. Zeynep bunu arkadaşından yardım aldı ve etkinlik başlamadan önce sorun çözüldü. Mehmet, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Zeynep, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Etkinlik aralarında ikisi makarna alıp kısa bir mola verdi.\nSoru: Aşağıdakilerden hangisi metindeki olayların sırasına uygundur?\nC) Önce programa bakıldı, sonra eve dönüldü ve en sonda girişte yoğunluk yaşandı.\nD) Önce girişte yoğunluk yaşandı, sonra sorun fark edildi, ardından sorun çözülüp etkinlik başladı.\nB) Önce etkinlik bitti, sonra sorun ortaya çıktı ve ardından girişte sıra oluştu.\nA) Önce sorun çözüldü, sonra girişte yoğunluk oldu ve en sonda programa bakıldı."
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Mehmet, Tekirdağ'deki konferans salonude düzenlenen bir tanıtım toplantısıe katılmak için perşembe günü 11.30'da yola çıktı. Girişte kısa bir yoğunluk vardı; Mehmet sıranın ilerlediğini görünce kimlik kartıunu çantasından çıkardı. İçeride Aslı ile karşılaştı ve birlikte programa göz attılar. Ancak programı son anda değişti. Mehmet bunu organizasyon ekibine haber verdi ve etkinlik başlamadan önce sorun çözüldü. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Mehmet, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı.\nSoru: Aşağıdakilerden hangisi metindeki olayların sırasına uygundur?\nC) Önce programa bakıldı, sonra eve dönüldü ve en sonda girişte yoğunluk yaşandı.\nA) Önce etkinlik bitti, sonra sorun ortaya çıktı ve ardından girişte sıra oluştu.\nD) Önce girişte yoğunluk yaşandı, sonra sorun fark edildi, ardından sorun çözülüp etkinlik başladı.\nB) Önce sorun çözüldü, sonra girişte yoğunluk oldu ve en sonda programa bakıldı."
+        },
+        {
+          "role": "assistant",
+          "content": "D"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Gizem, Samsun'deki sergi salonude düzenlenen bir okuma kulübüe katılmak için cumartesi günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Gizem sıranın ilerlediğini görünce haritaunu çantasından çıkardı. İçeride Aslı ile karşılaştı ve birlikte programa göz attılar. Ancak yanlış salonu seçti. Gizem bunu arkadaşından yardım aldı ve etkinlik başlamadan önce sorun çözüldü. Etkinlik aralarında ikisi simit alıp kısa bir mola verdi. Aslı, notları daha sonra paylaşmak için telefonuyla birkaç fotoğraf çekti. Programın sonunda katılımcılardan kısa bir geri bildirim formu doldurmaları istendi. Gizem, eve dönmeden önce bir sonraki buluşmanın tarihini ajandasına yazdı. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı.\nSoru: Metinden çıkarılabilecek en makul sonuç hangisidir?\nC) Etkinlik sadece çevrim içi yapıldı ve mekân hiç kullanılmadı.\nA) Katılımcılar etkinliğe alınmadı çünkü kayıtlar tamamen silindi.\nD) Etkinlik hiç gerçekleşmedi ve herkes geri döndü.\nB) Sorun, etkinlik başlamadan önce giderildiği için katılım aksatılmadı."
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Metni okuyup soruyu yanıtlayın.\nParça: Mehmet, Adana'deki belediye kültür merkezide düzenlenen bir spor etkinliğie katılmak için pazar günü 14.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Mehmet sıranın ilerlediğini görünce kimlik kartıunu çantasından çıkardı. İçeride Elif ile karşılaştı ve birlikte programa göz attılar. Ancak broşürlerde tarih hatası vardı. Mehmet bunu arkadaşından yardım aldı ve etkinlik başlamadan önce sorun çözüldü. Etkinlik aralarında ikisi kahve alıp kısa bir mola verdi. Çıkışta görevliler, katılımcılara küçük bir bilgilendirme broşürü dağıttı.\nSoru: Sorun nasıl çözüldü?\nB) arkadaşından yardım aldı\nC) etkinliği tamamen iptal etti\nD) başka bir şehre gitti\nA) kimseye söylemedi"
+        },
+        {
+          "role": "assistant",
+          "content": "B"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Parça: Emre, Hatay'deki okulde düzenlenen bir panele katılmak için cumartesi günü 18.00'da yola çıktı. Girişte kısa bir yoğunluk vardı; Emre sıranın ilerlediğini görünce kalemunu çantasından çıkardı. İçeride Umut ile karşılaştı ve birlikte programa göz attılar. Ancak katılım listesinde adı görünmedi. Emre bunu görevliyi bulup düzeltti ve etkinlik başlamadan önce sorun çözüldü. Etkinlik aralarında ikisi kahve alıp kısa bir mola verdi.\nSoru: Metne göre sorun neden ortaya çıktı?\nC) katılım listesinde adı görünmedi\nB) otobüs seferi iptal oldu\nA) internet çekmedi\nD) kapı kilitli kaldı"
+        },
+        {
+          "role": "assistant",
+          "content": "C"
+        }
+      ]
+    ]
+  }
+}

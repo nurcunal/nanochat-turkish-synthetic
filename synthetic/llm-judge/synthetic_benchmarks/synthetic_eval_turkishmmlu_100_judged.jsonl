@@ -1,0 +1,1356 @@
+{
+  "summary": {
+    "n_total": 100,
+    "n_accepted": 5,
+    "accept_rate": 0.05,
+    "common_failure_modes": [
+      "POSITION_BIAS (CRITICAL): 100% of the correct answers are Option A. This is acceptable for a raw corpus *only if* shuffled later, but fatal for SFT/Eval if used as-is. Models will learn to ignore the question.",
+      "FLOAT_FORMATTING: Integer answers are frequently formatted as floats (e.g., '20.0', '75.0') or unrounded repeating decimals (e.g., '33.333333333333336').",
+      "MATH_PRECISION: Percentage calculations involving decimals are incorrectly rounded or truncated (e.g., 25% of 150 is 37.5, but the option provided is 37).",
+      "DUPLICATE_OPTIONS: Some generated distractors replicate the correct answer (e.g., Item 55 lists '1.0' as both A and C)."
+    ],
+    "notes_for_generator": [
+      "CRITICAL FIX: Randomize the position of the correct answer (A/B/C/D). Do not default to A.",
+      "FORMATTING FIX: Post-process numbers to remove trailing '.0' if the result is an integer. Round infinite decimals to 1-2 decimal places (e.g., '33.33').",
+      "LOGIC FIX: Ensure math problems with decimal results include the exact answer or explicit rounding instructions."
+    ],
+    "judge_model_label": "gemini-3-pro",
+    "source_name": "TurkishMMLU-like synthetic EVAL (4-way MCQ, held-out)",
+    "synthetic_path": "/Users/nurcunal/Documents/boun/DSAI585/synthetic/synthetic_benchmarks/mmlu_tr/synthetic_eval_turkishmmlu_100.jsonl"
+  },
+  "results": [
+    {
+      "index": 0,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct biology fact."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 1,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct chemistry example."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 2,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Math correct (75.0). Float formatting is minor issue here."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 3,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct literary term."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 4,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct definition."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 11,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 2,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Float formatting error: '33.333333333333336' is machine artifact."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 14,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 3,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Formatting: '20.0' should be '20'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 50,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 2,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 2
+      },
+      "reasons": [
+        "Math Error: 150 * 0.25 = 37.5, but correct option is '37'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": true,
+        "ambiguous": true
+      }
+    },
+    {
+      "index": 55,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 2,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Duplicate options: A and C are both '1.0'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": true
+      }
+    },
+    {
+      "index": 57,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 2,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Float formatting: '66.66666666666667'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 74,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 2,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Float formatting: '8.333333333333334'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 97,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 3,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Formatting: '200.0' should be '200'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 98,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 2,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 2
+      },
+      "reasons": [
+        "Math Error: 150 * 0.25 = 37.5, option is '37'."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": true,
+        "ambiguous": true
+      }
+    }
+  ],
+  "accepted_items": {
+    "items": [
+      [
+        {
+          "role": "user",
+          "content": "DNA'nın temel görevi aşağıdakilerden hangisidir?\nA) Kalıtsal bilgiyi taşımak\nB) Hücreye enerji üretmek\nC) Proteinleri parçalamak\nD) Hücre zarını oluşturmak"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdakilerden hangisi homojen karışıma örnektir?\nA) Tuzlu su\nB) Kumlu su\nC) Toprak\nD) Yağ-su karışımı"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Isı sığası 4 (birim) olan 1 kg bir maddeye 300 birim ısı veriliyor. Sıcaklık artışı kaç birim olur?\nA) 75.0\nB) 300\nC) 4\nD) 1200"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir hikâyeyi 'ben' diliyle anlatan anlatıcı türü hangisidir?\nA) Birinci kişi anlatıcı\nB) Üçüncü kişi anlatıcı\nC) Tanrısal anlatıcı\nD) Gözlemci anlatıcı"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir varlığa insana özgü özellikler yükleme sanatına ne ad verilir?\nA) Kişileştirme\nB) Abartma\nC) Benzetme\nD) Tezat"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ]
+    ]
+  },
+  "rejected_items": {
+    "items": [
+      [
+        {
+          "role": "user",
+          "content": "pH değeri 7'den küçük olan bir çözelti için aşağıdakilerden hangisi doğrudur?\nA) Asidiktir.\nB) Baziktir.\nC) Nötrdür.\nD) Tuzludur."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir kimyasal tepkimede kütlenin korunumu yasasına göre aşağıdakilerden hangisi doğrudur?\nA) Girenlerin toplam kütlesi çıkanların toplam kütlesine eşittir.\nB) Ürünlerin kütlesi her zaman daha fazladır.\nC) Gireni olmayan ürün oluşabilir.\nD) Kütle tepkime boyunca azalır."
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir araç 90 km yolu 5 saatte alıyor. Ortalama hızı kaç km/saattir?\nA) 18\nB) 90\nC) 5\nD) 450"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Şiirde aynı seslerin tekrarına dayalı ahenge ne denir?\nA) Kafiye\nB) Öyküleme\nC) Betimleme\nD) Karşıtlık"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Deprem riskinin yüksek olduğu bölgelerde hangi önlem en doğrudan etkilidir?\nA) Depreme dayanıklı yapılaşma\nB) Denize yakın yaşamak\nC) Sadece ağaç dikmek\nD) Güneş paneli kullanmak"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Isı sığası 3 (birim) olan 4 kg bir maddeye 400 birim ısı veriliyor. Sıcaklık artışı kaç birim olur?\nA) 33.333333333333336\nB) 400\nC) 12\nD) 4800"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir toplumda eğitim alanındaki düzenlemelerin temel amacı genellikle nedir?\nA) Okuryazarlığı ve nitelikli insan kaynağını artırmak\nB) Sadece vergiyi yükseltmek\nC) Sınırları genişletmek\nD) İklimi değiştirmek"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir ekosistemde üreticilerin (ototrofların) temel rolü nedir?\nA) Fotosentezle besin üretmek\nB) Diğer canlıları avlamak\nC) Sadece ayrıştırma yapmak\nD) Sadece tüketici olmak"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "100 N kuvvet 5 m² yüzeye dik uygulanıyor. Basınç kaç Pa'dır?\nA) 20.0\nB) 40.0\nC) 10.0\nD) 30"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Merkezi otoritenin güçlenmesi aşağıdakilerden hangisini en doğrudan etkiler?\nA) Yönetimde karar alma hızını\nB) Depremlerin sıklığını\nC) Mevsimlerin süresini\nD) Denizlerin tuzluluğunu"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Önermeler arasındaki çıkarım kurallarını inceleyen alan hangisidir?\nA) Mantık\nB) Estetik\nC) Sosyoloji\nD) Jeoloji"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Akarsuların taşıdığı malzemeyi biriktirmesiyle oluşan yer şekli hangisidir?\nA) Delta ovası\nB) Falez\nC) Buzul vadisi\nD) Kıvrım dağ"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bilginin kaynağını deney ve gözleme dayandıran görüş hangisidir?\nA) Empirizm\nB) Rasyonalizm\nC) Nihilizm\nD) Stoacılık"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "5:15 = 9:x oranında x kaçtır?\nA) 27\nB) 32\nC) 22\nD) 15"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Buzun erimesi hangi hâl değişimidir?\nA) Katıdan sıvıya\nB) Sıvıdan katıya\nC) Sıvıdan gaza\nD) Gazdan sıvıya"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Tarihte 'fetih' kavramı en genel anlamıyla neyi ifade eder?\nA) Bir bölgenin askeri/siyasi olarak ele geçirilmesini\nB) Bir ülkenin vergi toplamasını\nC) Bir icadın yapılmasını\nD) Bir şehrin planlanmasını"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Solunumun temel amacı aşağıdakilerden hangisidir?\nA) Hücrelere enerji sağlamak\nB) Kalıtsal bilgiyi aktarmak\nC) Kasları büyütmek\nD) Vücudu soğutmak"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir metinde işlenen ana düşünce ve duyguya ne denir?\nA) Tema\nB) Kafiye\nC) Vezin\nD) Diyalog"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdakilerden hangisi yapım ekine örnektir?\nA) -lık/-lik (ör. güzellik)\nB) -de/-da (bulunma)\nC) -i (belirtme)\nD) -m (iyelik)"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Ahlak felsefesinin (etik) temel sorusu aşağıdakilerden hangisidir?\nA) İyi nedir?\nB) Madde nedir?\nC) Evren kaç yaşındadır?\nD) Hangi kıta en büyüktür?"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "\"Hızlı\" sözcüğü \"Hızlı koştu.\" cümlesinde hangi görevde kullanılmıştır?\nA) Zarf\nB) İsim\nC) Fiil\nD) Bağlaç"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "30 N'luk kuvvetle cisim 6 m itiliyor. Yapılan iş kaç J'dür?\nA) 180\nB) 30\nC) 6\nD) 36"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Tarih araştırmalarında birincil kaynak aşağıdakilerden hangisine örnektir?\nA) Döneme ait mektup\nB) Ders kitabı özeti\nC) Belgesel yorum yazısı\nD) Ansiklopedi maddesi"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Yarıçapı 5 olan dairenin çevresi kaçπ'dir?\nA) 10π\nB) 5π\nC) 50π\nD) 10"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Nüfusun yoğun olduğu yerlerde aşağıdakilerden hangisi genellikle daha fazladır?\nA) Konut ihtiyacı\nB) Yağış miktarı\nC) Volkanik faaliyet\nD) Gün uzunluğu"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Coğrafi keşiflerin Avrupa'da yaygınlaşmasında aşağıdakilerden hangisi önemli bir etkendir?\nA) Yeni ticaret yolları arayışı\nB) Nüfusun azalması\nC) Tarımın tamamen bitmesi\nD) Yazının icadı"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir araç 120 km yolu 4 saatte alıyor. Ortalama hızı kaç km/saattir?\nA) 30\nB) 120\nC) 4\nD) 480"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki kelimelerden hangisi doğru yazılmıştır?\nA) herhangi\nB) her hangı\nC) her-hangi\nD) herhangı"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Felsefenin temel özelliklerinden biri aşağıdakilerden hangisidir?\nA) Sorgulayıcı ve eleştirel olması\nB) Tamamen ezbere dayanması\nC) Sadece sayısal işlemler içermesi\nD) Yalnızca tek doğruyu dayatması"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bitki hücresinde hayvan hücresinden farklı olarak genellikle hangi yapı bulunur?\nA) Hücre duvarı\nB) Ribozom\nC) Mitokondri\nD) Hücre zarı"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "3x + 9 = 15 denkleminde x kaçtır?\nA) 2\nB) 3\nC) 1\nD) 15"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "4x + 6 = 18 denkleminde x kaçtır?\nA) 3\nB) 4\nC) 2\nD) 18"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Olay çevresinde gelişen uzun anlatı türü hangisidir?\nA) Roman\nB) Makale\nC) Dilekçe\nD) Fıkra"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir torbada toplam 10 bilye var ve 5 tanesi kırmızıdır. Rastgele çekilen bir bilyenin kırmızı olma olasılığı nedir?\nA) 5/10\nB) 10/5\nC) 5/10\nD) 5/5"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Haritada ölçek büyüdükçe aşağıdakilerden hangisi artar?\nA) Ayrıntı\nB) Genelleştirme\nC) Kapsanan alan\nD) Sembol sayısı"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Gerilimi 12 V olan bir devrede direnç 3 Ω ise akım kaç A'dır? (I=V/R)\nA) 4.0\nB) 36\nC) 0.25\nD) 12"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "30 N'luk kuvvetle cisim 3 m itiliyor. Yapılan iş kaç J'dür?\nA) 90\nB) 30\nC) 3\nD) 33"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Varlığın ne olduğunu inceleyen felsefe dalı hangisidir?\nA) Ontoloji\nB) Epistemoloji\nC) Etik\nD) Aksiyoloji"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Isı sığası 2 (birim) olan 2 kg bir maddeye 300 birim ısı veriliyor. Sıcaklık artışı kaç birim olur?\nA) 75.0\nB) 300\nC) 4\nD) 1200"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "İnsanda oksijenli kanı vücuda taşıyan damar türü hangisidir?\nA) Atardamar\nB) Toplardamar\nC) Kılcal damar\nD) Lenf damarı"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir torbada toplam 10 bilye var ve 2 tanesi kırmızıdır. Rastgele çekilen bir bilyenin kırmızı olma olasılığı nedir?\nA) 2/10\nB) 10/2\nC) 8/10\nD) 2/8"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Periyodik tabloda aynı gruptaki elementler genellikle hangi özelliğe sahiptir?\nA) Benzer kimyasal özellikler\nB) Aynı atom kütlesi\nC) Aynı nötron sayısı\nD) Aynı periyot numarası"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir araç 80 km yolu 4 saatte alıyor. Ortalama hızı kaç km/saattir?\nA) 20\nB) 80\nC) 4\nD) 320"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Yıllık sıcaklık farkının az olduğu yerlerde genellikle hangi etki daha baskındır?\nA) Denizellik\nB) Karasallık\nC) Yükselti\nD) Ekvatora uzaklık"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "150 sayısının %25'i kaçtır?\nA) 37\nB) 52\nC) 22\nD) 187"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "4:10 = 6:x oranında x kaçtır?\nA) 15\nB) 19\nC) 11\nD) 10"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "100 N kuvvet 10 m² yüzeye dik uygulanıyor. Basınç kaç Pa'dır?\nA) 10.0\nB) 20.0\nC) 5.0\nD) 20"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir varlığa insana özgü özellikler yükleme sanatına ne ad verilir?\nA) Kişileştirme\nB) Benzetme\nC) Tezat\nD) Abartma"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "80 sayısının %50'i kaçtır?\nA) 40\nB) 55\nC) 35\nD) 120"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Gerilimi 9 V olan bir devrede direnç 9 Ω ise akım kaç A'dır? (I=V/R)\nA) 1.0\nB) 81\nC) 1.0\nD) 9"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "20 N'luk kuvvetle cisim 2 m itiliyor. Yapılan iş kaç J'dür?\nA) 40\nB) 20\nC) 2\nD) 22"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Isı sığası 3 (birim) olan 1 kg bir maddeye 200 birim ısı veriliyor. Sıcaklık artışı kaç birim olur?\nA) 66.66666666666667\nB) 200\nC) 3\nD) 600"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki cümlelerden hangisinin sonuna soru işareti (?) konmalıdır?\nA) Bu akşam gelir misin\nB) Bugün hava çok güzel\nC) Yarın erken kalktım\nD) Şimdi ders çalışıyorum"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bilginin kaynağını deney ve gözleme dayandıran görüş hangisidir?\nA) Empirizm\nB) Rasyonalizm\nC) Pozitivizm\nD) Skeptisizm"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir araç 150 km yolu 3 saatte alıyor. Ortalama hızı kaç km/saattir?\nA) 50\nB) 150\nC) 3\nD) 450"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "2:10 = 9:x oranında x kaçtır?\nA) 45\nB) 47\nC) 43\nD) 10"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Yarıçapı 7 olan dairenin çevresi kaçπ'dir?\nA) 14π\nB) 7π\nC) 98π\nD) 14"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "3x + 10 = 25 denkleminde x kaçtır?\nA) 5\nB) 6\nC) 4\nD) 25"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "\"Keşke yarın tatil olsa.\" cümlesi hangi cümle türüne örnektir?\nA) Dilek-istek\nB) Emir\nC) Soru\nD) Ünlem"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Varlığın ne olduğunu inceleyen felsefe dalı hangisidir?\nA) Ontoloji\nB) Epistemoloji\nC) Metafizik\nD) Aksiyoloji"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "80 sayısının %50'i kaçtır?\nA) 40\nB) 50\nC) 30\nD) 120"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "4x + 6 = 22 denkleminde x kaçtır?\nA) 4\nB) 5\nC) 3\nD) 22"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "30 N'luk kuvvetle cisim 2 m itiliyor. Yapılan iş kaç J'dür?\nA) 60\nB) 30\nC) 2\nD) 32"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "300 N kuvvet 2 m² yüzeye dik uygulanıyor. Basınç kaç Pa'dır?\nA) 150.0\nB) 600\nC) 300\nD) 2"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "4:8 = 6:x oranında x kaçtır?\nA) 12\nB) 16\nC) 8\nD) 8"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "5:6 = 5:x oranında x kaçtır?\nA) 6\nB) 11\nC) 1\nD) 6"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "100 N kuvvet 2 m² yüzeye dik uygulanıyor. Basınç kaç Pa'dır?\nA) 50.0\nB) 200\nC) 100\nD) 2"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir torbada toplam 15 bilye var ve 3 tanesi kırmızıdır. Rastgele çekilen bir bilyenin kırmızı olma olasılığı nedir?\nA) 3/15\nB) 15/3\nC) 12/15\nD) 3/12"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Isı sığası 3 (birim) olan 4 kg bir maddeye 100 birim ısı veriliyor. Sıcaklık artışı kaç birim olur?\nA) 8.333333333333334\nB) 100\nC) 12\nD) 1200"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Haritada ölçek büyüdükçe aşağıdakilerden hangisi artar?\nA) Ayrıntı\nB) Kapsanan alan\nC) Genelleştirme\nD) Bozulma"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "20 N'luk kuvvetle cisim 6 m itiliyor. Yapılan iş kaç J'dür?\nA) 120\nB) 20\nC) 6\nD) 26"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir torbada toplam 10 bilye var ve 4 tanesi kırmızıdır. Rastgele çekilen bir bilyenin kırmızı olma olasılığı nedir?\nA) 4/10\nB) 10/4\nC) 6/10\nD) 4/6"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir araç 90 km yolu 2 saatte alıyor. Ortalama hızı kaç km/saattir?\nA) 45\nB) 90\nC) 2\nD) 180"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "4x + 6 = 10 denkleminde x kaçtır?\nA) 1\nB) 2\nC) 3\nD) 10"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir torbada toplam 20 bilye var ve 2 tanesi kırmızıdır. Rastgele çekilen bir bilyenin kırmızı olma olasılığı nedir?\nA) 2/20\nB) 20/2\nC) 18/20\nD) 2/18"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "5x + 10 = 20 denkleminde x kaçtır?\nA) 2\nB) 3\nC) 1\nD) 20"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "300 N kuvvet 10 m² yüzeye dik uygulanıyor. Basınç kaç Pa'dır?\nA) 30.0\nB) 60.0\nC) 15.0\nD) 40"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Isı sığası 2 (birim) olan 4 kg bir maddeye 100 birim ısı veriliyor. Sıcaklık artışı kaç birim olur?\nA) 12.5\nB) 100\nC) 8\nD) 800"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Gerilimi 6 V olan bir devrede direnç 3 Ω ise akım kaç A'dır? (I=V/R)\nA) 2.0\nB) 18\nC) 0.5\nD) 6"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir araç 90 km yolu 4 saatte alıyor. Ortalama hızı kaç km/saattir?\nA) 22.5\nB) 90\nC) 4\nD) 360"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Isı sığası 4 (birim) olan 1 kg bir maddeye 200 birim ısı veriliyor. Sıcaklık artışı kaç birim olur?\nA) 50.0\nB) 200\nC) 4\nD) 800"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir torbada toplam 20 bilye var ve 4 tanesi kırmızıdır. Rastgele çekilen bir bilyenin kırmızı olma olasılığı nedir?\nA) 4/20\nB) 20/4\nC) 16/20\nD) 4/16"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "150 sayısının %40'i kaçtır?\nA) 60\nB) 65\nC) 55\nD) 210"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "3x + 8 = 20 denkleminde x kaçtır?\nA) 4\nB) 5\nC) 3\nD) 20"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "30 N'luk kuvvetle cisim 5 m itiliyor. Yapılan iş kaç J'dür?\nA) 150\nB) 30\nC) 5\nD) 35"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Isı sığası 1 (birim) olan 4 kg bir maddeye 300 birim ısı veriliyor. Sıcaklık artışı kaç birim olur?\nA) 75.0\nB) 300\nC) 4\nD) 1200"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "2:6 = 3:x oranında x kaçtır?\nA) 9\nB) 11\nC) 7\nD) 6"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "200 N kuvvet 2 m² yüzeye dik uygulanıyor. Basınç kaç Pa'dır?\nA) 100.0\nB) 200.0\nC) 50.0\nD) 110"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "150 sayısının %50'i kaçtır?\nA) 75\nB) 85\nC) 65\nD) 225"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "100 N kuvvet 4 m² yüzeye dik uygulanıyor. Basınç kaç Pa'dır?\nA) 25.0\nB) 50.0\nC) 12.5\nD) 35"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "40 N'luk kuvvetle cisim 3 m itiliyor. Yapılan iş kaç J'dür?\nA) 120\nB) 40\nC) 3\nD) 43"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Isı sığası 1 (birim) olan 1 kg bir maddeye 200 birim ısı veriliyor. Sıcaklık artışı kaç birim olur?\nA) 200.0\nB) 200\nC) 1\nD) 200"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "150 sayısının %25'i kaçtır?\nA) 37\nB) 42\nC) 27\nD) 187"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "3x + 7 = 19 denkleminde x kaçtır?\nA) 4\nB) 5\nC) 3\nD) 19"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir araç 60 km yolu 5 saatte alıyor. Ortalama hızı kaç km/saattir?\nA) 12\nB) 60\nC) 5\nD) 300"
+        },
+        {
+          "role": "assistant",
+          "content": "A"
+        }
+      ]
+    ]
+  }
+}

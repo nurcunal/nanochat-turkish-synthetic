@@ -1,0 +1,3690 @@
+{
+  "summary": {
+    "n_total": 100,
+    "n_accepted": 51,
+    "accept_rate": 0.51,
+    "common_failure_modes": [
+      "EXACT_DUPLICATION (REJECTED): The dataset contains high-frequency exact duplicates. Prompts like 'Active Recall', 'Habit vs Motivation', and 'Project Report Methods' appear 4-6 times verbatim. These provide zero marginal value and risk overfitting.",
+      "MORPHOLOGY_TEMPLATING (ACCEPTED WITH WARNING): City names consistently use incorrect static suffixes (e.g., 'Konya'de' instead of 'Konya'da', 'Muğla'de' instead of 'Muğla'da', 'Trabzon'de' instead of 'Trabzon'da').",
+      "ROBOTIC_REPETITION (ACCEPTED): Template variants (e.g., Marketing plans for different cities) use identical response structures. While accepted for coverage, they reduce linguistic diversity."
+    ],
+    "notes_for_generator": [
+      "CRITICAL FIX: De-duplicate the dataset. Ensure unique `instruction` fields. If augmentation is desired, vary the *content* of the advice, not just the city name.",
+      "CRITICAL FIX: Fix the suffix logic for proper nouns. 'Konya' -> 'Konya'da' (not 'de'). 'Muğla' -> 'Muğla'da'. 'İstanbul' -> 'İstanbul'da'.",
+      "IMPROVEMENT: For 'Classification' tasks (e.g., sentiment analysis), ensure a wider variety of examples rather than repeating the exact same sentence ('Ürün fena değil...') multiple times."
+    ],
+    "judge_model_label": "gemini-3-pro",
+    "source_name": "TurkishSFTV1-style synthetic TRAIN (instruction)",
+    "synthetic_path": "/Users/nurcunal/Documents/boun/DSAI585/synthetic/synthetic_datasets/turkishsftv1/synthetic_train_turkishsftv1_100.jsonl"
+  },
+  "results": [
+    {
+      "index": 0,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good advice on active recall."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 1,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Clear distinction between habit and motivation."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 2,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Natural functional writing."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 3,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good formal petition template."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 4,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Variant of index 3 (Metro vs Bus), accepted for coverage."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 5,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good professional email."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 6,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Suffix 'Gaziantep'de' (should be 'te'), but clear summary."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 7,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 0."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 8,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct sentiment labeling."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 9,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 1."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 10,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 0."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 11,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 1."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 12,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Excellent data cleaning checklist."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 13,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Variant of Index 3 (Cafe location), accepted."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 14,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good dialogue data."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 15,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 1."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 16,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Clear definition."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 17,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Variant of Index 3 (Gym location), accepted."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 18,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good markdown table."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 19,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 5."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 20,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Correct math (36)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 21,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good rewrite."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 22,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 8."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 23,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 3."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 24,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Useful reasoning Q&A."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 25,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 0."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 26,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 20."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 27,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Suffix 'Gaziantep'de' (should be 'te'), but good marketing copy."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 28,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Variant of Index 14 (Name change), accepted."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 29,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 21."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 30,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 18."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 31,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good step-by-step guide."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 32,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 0."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 33,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 1."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 34,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 8."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 35,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 18."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 36,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 0."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 37,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 1."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 38,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good definition."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 39,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 8."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 40,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Suffix 'İstanbul'de' (should be 'da'), good planning logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 41,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good technical writing advice."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 42,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good meeting template."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 43,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good advice."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 44,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good presentation advice."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 45,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Suffix 'Konya'de' (should be 'da'), good marketing logic."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 46,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 41."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 47,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Variant of Index 45 (Eskişehir, correct suffix)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 48,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 43."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 49,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Variant of Index 40 (Muğla'de - incorrect suffix)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 50,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Variant of Index 40 (Trabzon'de - incorrect suffix)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 51,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 42."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 52,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 42."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 53,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 40."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 54,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 50."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 55,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Variant of Index 40 (Adana'de - incorrect suffix)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 56,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Variant of Index 45 (Trabzon'de - incorrect suffix)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 57,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good conflict resolution script."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 58,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 41."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 59,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 41."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 60,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good prioritization technique."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 61,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 60."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 62,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Variant of Index 40 (Ankara'de - incorrect suffix)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 63,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good habit formation advice."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 64,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 41."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 65,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 44."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 66,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Variant of Index 45 (Konya'de - incorrect suffix)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 67,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Variant of Index 40 (Trabzon'de - incorrect suffix)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 68,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good conflict resolution advice."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 69,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 40."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 70,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 60."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 71,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 41."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 72,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 44."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 73,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 60."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 74,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Variant of Index 45 (Muğla'de - incorrect suffix)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 75,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 44."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 76,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 41."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 77,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 63."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 78,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 42."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 79,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Variant of Index 68 (Umut vs Selin)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 80,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good explanation of Spaced Repetition."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 81,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 80."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 82,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good Python explanation."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 83,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 82."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 84,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 82."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 85,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Suffix 'Adana'de' (should be 'da'), good event plan."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 86,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 80."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 87,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 80."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 88,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Variant of Index 85 (Muğla'de - incorrect suffix)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 89,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good soft skills script."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 90,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Good rewriting exercise."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 91,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 82."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 92,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Variant of Index 85 (Antalya'de - incorrect suffix)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 93,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Variant of Index 85 (Trabzon'de - incorrect suffix)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 94,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Variant of Index 89 (Ece vs Elif)."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 95,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 82."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 96,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 82."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 97,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 80."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 98,
+      "accept": false,
+      "scores": {
+        "turkish_fluency": 5,
+        "clarity_usefulness_small_llm": 1,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 1,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Exact Duplicate: Verbatim copy of Index 90."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    },
+    {
+      "index": 99,
+      "accept": true,
+      "scores": {
+        "turkish_fluency": 4,
+        "clarity_usefulness_small_llm": 5,
+        "format_schema_correct": 5,
+        "safety_no_pii": 5,
+        "novelty_no_memorization": 5,
+        "mcq_correctness_if_applicable": 5
+      },
+      "reasons": [
+        "Variant of Index 85 (Antalya, different city but identical plan to 92). Accepted for coverage."
+      ],
+      "flags": {
+        "suspected_leakage": false,
+        "non_turkish": false,
+        "pii": false,
+        "unsafe": false,
+        "schema_violation": false,
+        "mcq_letter_not_valid": false,
+        "mcq_answer_mismatch": false,
+        "ambiguous": false
+      }
+    }
+  ],
+  "accepted_items": {
+    "items": [
+      [
+        {
+          "role": "user",
+          "content": "Yeni bir konuyu (ör. istatistik) öğrenirken 'aktif hatırlama' yöntemini 4 maddeyle anlat."
+        },
+        {
+          "role": "assistant",
+          "content": "• Konuyu okuduktan sonra kitaba bakmadan sorular üretip cevaplamaya çalış.\n• Kısa aralıklarla kendini test et (mini sınavlar).\n• Yanlışlarını hemen not alıp nedenini açıklayarak düzelt.\n• Günler içinde aralıklı tekrar yap; sadece yeniden okumaya güvenme."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Kısa bir paragrafta 'alışkanlık' ile 'motivasyon' arasındaki farkı açıkla."
+        },
+        {
+          "role": "assistant",
+          "content": "Motivasyon çoğu zaman dalgalanan bir itici güçtür; bir işi başlatmayı kolaylaştırır ama sürekliliği garanti etmez. Alışkanlık ise tekrarla otomatikleşen davranıştır; motivasyon düşükken bile işi sürdürmeyi sağlar. Bu yüzden kalıcı ilerleme için motivasyona güvenmek yerine küçük, tekrarlanabilir alışkanlıklar kurmak daha etkilidir."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "İzmir'de bir kuaförden randevu istemek için kısa, kibar bir mesaj yaz."
+        },
+        {
+          "role": "assistant",
+          "content": "Merhaba, uygun olduğunuz bir gün için saç kesimi randevusu almak istiyorum. Bu hafta içinde boşluk var mı?"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "otobüs durağı yakınında yeni bir bisiklet park yeri yapılması için kısa bir dilekçe metni yaz (120-150 kelime)."
+        },
+        {
+          "role": "assistant",
+          "content": "Sayın Yetkili,\n\nMahallemizde bisiklet kullanımını artırmak ve güvenli park ihtiyacını karşılamak amacıyla, bölgedeki yoğun yaya akışının bulunduğu alana yakın bir bisiklet park yeri yapılmasını talep ediyoruz. Mevcut durumda bisikletler uygun olmayan yerlere kilitlenmekte, bu durum hem güvenlik riskleri doğurmakta hem de yaya geçişini engelleyebilmektedir. Düzenli bir park alanı, bisikletli ulaşımı teşvik ederek trafik yoğunluğunu ve kısa mesafeli araç kullanımını azaltacaktır. Ayrıca çevresel sürdürülebilirliğe katkı sunacak ve bölgemizin yaşam kalitesini yükseltecektir.\n\nGereğinin değerlendirilmesini arz ederiz."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "metro istasyonu yakınında yeni bir bisiklet park yeri yapılması için kısa bir dilekçe metni yaz (120-150 kelime)."
+        },
+        {
+          "role": "assistant",
+          "content": "Sayın Yetkili,\n\nMahallemizde bisiklet kullanımını artırmak ve güvenli park ihtiyacını karşılamak amacıyla, bölgedeki yoğun yaya akışının bulunduğu alana yakın bir bisiklet park yeri yapılmasını talep ediyoruz. Mevcut durumda bisikletler uygun olmayan yerlere kilitlenmekte, bu durum hem güvenlik riskleri doğurmakta hem de yaya geçişini engelleyebilmektedir. Düzenli bir park alanı, bisikletli ulaşımı teşvik ederek trafik yoğunluğunu ve kısa mesafeli araç kullanımını azaltacaktır. Ayrıca çevresel sürdürülebilirliğe katkı sunacak ve bölgemizin yaşam kalitesini yükseltecektir.\n\nGereğinin değerlendirilmesini arz ederiz."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir iş arkadaşına, paylaştığı dosyada eksik sayfalar olduğunu nazikçe bildiren kısa bir e-posta metni yaz."
+        },
+        {
+          "role": "assistant",
+          "content": "Merhaba,\n\nPaylaştığın dosyayı inceledim; bazı bölümlerde sayfalar eksik görünüyor. Mümkünse güncel sürümü tekrar paylaşabilir misin?\n\nTeşekkürler."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki metni 3 madde halinde özetle:\n\n\"Derya, Gaziantep'de park yakınında düzenlenen gönüllülük etkinliğine katıldı. Etkinlikte atık ayrıştırma, mahalle temizliği ve geri dönüşüm farkındalığı üzerine kısa eğitimler verildi. Gün sonunda katılımcılar, bir sonraki ay için görev paylaşımı yaptı.\""
+        },
+        {
+          "role": "assistant",
+          "content": "• Gönüllülük etkinliğine katılım ve temel amaç.\n• Atık ayrıştırma ve farkındalık eğitimleri.\n• Bir sonraki ay için görev paylaşımı yapılması."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki cümleyi 'olumlu / olumsuz / nötr' olarak etiketle ve sadece etiketi yaz:\n\"Ürün fena değil ama beklediğim kadar hızlı çalışmıyor.\""
+        },
+        {
+          "role": "assistant",
+          "content": "nötr"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Elimde anket verisi var: bazı alanlar boş, bazıları tutarsız. Genel bir veri temizleme kontrol listesi yaz (8 madde)."
+        },
+        {
+          "role": "assistant",
+          "content": "1) Eksik değer oranlarını çıkar.\n2) Eksik değer stratejisi belirle (silme/doldurma).\n3) Tür dönüşümlerini kontrol et (sayı/metin/tarih).\n4) Aykırı değerleri tanımla ve kaynağını incele.\n5) Kategorik değerleri standardize et (yazım farklılıkları).\n6) Yinelenen kayıtları bul ve birleştir/sil.\n7) Mantıksal tutarlılık kuralları uygula (ör. yaş < 0 olamaz).\n8) Tüm adımları kayıt altına al (tekrarlanabilirlik)."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "kafe yakınında yeni bir bisiklet park yeri yapılması için kısa bir dilekçe metni yaz (120-150 kelime)."
+        },
+        {
+          "role": "assistant",
+          "content": "Sayın Yetkili,\n\nMahallemizde bisiklet kullanımını artırmak ve güvenli park ihtiyacını karşılamak amacıyla, bölgedeki yoğun yaya akışının bulunduğu alana yakın bir bisiklet park yeri yapılmasını talep ediyoruz. Mevcut durumda bisikletler uygun olmayan yerlere kilitlenmekte, bu durum hem güvenlik riskleri doğurmakta hem de yaya geçişini engelleyebilmektedir. Düzenli bir park alanı, bisikletli ulaşımı teşvik ederek trafik yoğunluğunu ve kısa mesafeli araç kullanımını azaltacaktır. Ayrıca çevresel sürdürülebilirliğe katkı sunacak ve bölgemizin yaşam kalitesini yükseltecektir.\n\nGereğinin değerlendirilmesini arz ederiz."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Elif ile bir müşteri temsilcisi arasında kargonun gecikmesiyle ilgili 6 repliklik kısa bir diyalog yaz."
+        },
+        {
+          "role": "assistant",
+          "content": "Elif: Merhaba, kargomun teslim tarihi geçti ama hâlâ gelmedi.\nTemsilci: Merhaba, takip numaranızı alabilir miyim?\nElif: Elbette, 45XX-12XX.\nTemsilci: Kontrol ediyorum… Dağıtıma çıkmış görünüyor, bugün teslim edilecek.\nElif: Teslim edilmezse ne yapmalıyım?\nTemsilci: Bu akşam 18.00’e kadar gelmezse tekrar arayın, acil kayıt açalım."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir cümlede 'verimlilik' ile 'etkinlik' farkını açıkla."
+        },
+        {
+          "role": "assistant",
+          "content": "Verimlilik aynı işi daha az kaynakla yapmaya odaklanırken, etkinlik doğru işi yapıp hedefe ulaşıp ulaşmadığını vurgular."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "spor salonu yakınında yeni bir bisiklet park yeri yapılması için kısa bir dilekçe metni yaz (120-150 kelime)."
+        },
+        {
+          "role": "assistant",
+          "content": "Sayın Yetkili,\n\nMahallemizde bisiklet kullanımını artırmak ve güvenli park ihtiyacını karşılamak amacıyla, bölgedeki yoğun yaya akışının bulunduğu alana yakın bir bisiklet park yeri yapılmasını talep ediyoruz. Mevcut durumda bisikletler uygun olmayan yerlere kilitlenmekte, bu durum hem güvenlik riskleri doğurmakta hem de yaya geçişini engelleyebilmektedir. Düzenli bir park alanı, bisikletli ulaşımı teşvik ederek trafik yoğunluğunu ve kısa mesafeli araç kullanımını azaltacaktır. Ayrıca çevresel sürdürülebilirliğe katkı sunacak ve bölgemizin yaşam kalitesini yükseltecektir.\n\nGereğinin değerlendirilmesini arz ederiz."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Şu bilgileri 2 sütunlu (Görev | Süre) küçük bir tablo olarak yaz:\n- Okuma: 25 dk\n- Not çıkarma: 15 dk\n- Tekrar: 10 dk"
+        },
+        {
+          "role": "assistant",
+          "content": "Görev | Süre\n--- | ---\nOkuma | 25 dk\nNot çıkarma | 15 dk\nTekrar | 10 dk"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir etkinlikte 3 farklı atölye var. Her atölyeye 12 kişi katılıyor. Toplam katılımcı sayısı kaçtır? Sadece sayıyı yaz."
+        },
+        {
+          "role": "assistant",
+          "content": "36"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Şu cümleyi daha resmi bir dille yeniden yaz:\n\"Toplantıyı yarına alsak olur mu? Çünkü bugün yetişemiyorum.\""
+        },
+        {
+          "role": "assistant",
+          "content": "Toplantıyı yarına ertelememiz mümkün müdür? Bugün zaman açısından yetiştirememekteyim."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Soru: Neden küçük hedefler motivasyonu artırabilir?\nCevap: 2-3 cümleyle açıkla."
+        },
+        {
+          "role": "assistant",
+          "content": "Küçük hedefler hızlı başarı hissi sağlar ve ilerlemeyi görünür kılar. Bu da sürekliliği destekler; kişi daha büyük hedeflere adım adım yaklaşırken özgüveni artar."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Gaziantep'de toplantı odası için kısa bir tanıtım metni yaz (2-3 cümle)."
+        },
+        {
+          "role": "assistant",
+          "content": "Gaziantep'de toplantı odası, hem dinlenmek hem de yeni şeyler keşfetmek isteyenler için keyifli bir durak. Kolay ulaşımı ve sıcak atmosferiyle kısa molalar için ideal bir seçenek sunar."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "İrem ile bir müşteri temsilcisi arasında kargonun gecikmesiyle ilgili 6 repliklik kısa bir diyalog yaz."
+        },
+        {
+          "role": "assistant",
+          "content": "İrem: Merhaba, kargomun teslim tarihi geçti ama hâlâ gelmedi.\nTemsilci: Merhaba, takip numaranızı alabilir miyim?\nİrem: Elbette, 45XX-12XX.\nTemsilci: Kontrol ediyorum… Dağıtıma çıkmış görünüyor, bugün teslim edilecek.\nİrem: Teslim edilmezse ne yapmalıyım?\nTemsilci: Bu akşam 18.00’e kadar gelmezse tekrar arayın, acil kayıt açalım."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Evde kablo karmaşasını azaltmak için adım adım kısa bir rehber yaz (6 adım)."
+        },
+        {
+          "role": "assistant",
+          "content": "1) Tüm kabloları çıkarıp türlerine göre ayır.\n2) Gereksiz/bozuk olanları ayıkla.\n3) Kablo uçlarını etiketle.\n4) Cihaz bazında topla ve cırt cırtla sar.\n5) Çoklu prizleri sabit bir noktaya yerleştir.\n6) Görünür kablolar için kanal veya klips kullan."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir cümlede 'verimlilik' ile 'etkinlik' farkını açıkla."
+        },
+        {
+          "role": "assistant",
+          "content": "Verimlilik aynı işi daha az kaynakla yapmaya odaklanırken, etkinlik doğru işi yapıp hedefe ulaşıp ulaşmadığını vurgular."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "İstanbul'de ders, iş ve spor arasında sıkıştım. Günlük planım sürekli bozuluyor. 'En küçük uygulanabilir düzen' yaklaşımıyla 7 günlük bir deneme planı çıkar."
+        },
+        {
+          "role": "assistant",
+          "content": "Önce sabit iki çıpa belirle: her gün aynı saatte uyanma ve 30 dk 'çekirdek çalışma'. İlk 3 gün sadece bu iki çıpayı koru. 4–5. gün çekirdek çalışmayı 45 dk’ya çıkar ve haftada 2 gün 20 dk hafif spor ekle. 6–7. gün bir ders bloğu daha ekle (30 dk). Her akşam 5 dk: ne bozuldu, neden bozuldu, yarın tek bir düzeltme notu."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir proje raporunda yöntem kısmı zayıf görünüyor. Yöntem bölümünü güçlendirmek için mutlaka yazılması gereken 8 öğeyi listele."
+        },
+        {
+          "role": "assistant",
+          "content": "1) Problem tanımı ve kapsam.\n2) Veri kaynağı ve örnekleme.\n3) Ön işleme adımları.\n4) Model/algoritma seçimi gerekçesi.\n5) Eğitim/validasyon ayrımı ve protokol.\n6) Değerlendirme metrikleri.\n7) Hiperparametre aralığı ve seçimi.\n8) Hata analizi ve sınırlılıklar."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Toplantılar uzuyor ve karar çıkmıyor. 30 dakikalık toplantı için net bir şablon öner."
+        },
+        {
+          "role": "assistant",
+          "content": "0–5 dk: hedef + gündem maddeleri.\n5–20 dk: her madde için 3 dk durum, 2 dk seçenek.\n20–25 dk: karar cümlelerini netleştir (kim, ne, ne zaman).\n25–30 dk: riskler + takip toplantısı gerekip gerekmediği. Toplantı sonunda tek sayfa özet paylaş."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Yeni bir hobiye başlamak istiyorum ama çabuk sıkılıyorum. Sıkılmayı azaltmak için 4 strateji ve her biri için bir örnek ver."
+        },
+        {
+          "role": "assistant",
+          "content": "1) Mikro hedef: 10 dk pratik (ör. gitar: iki akor).\n2) Geri bildirim: kaydedip dinle (ör. çizim: haftalık önce/sonra).\n3) Çeşitlilik: aynı beceriyi farklı içerikle çalış (ör. fotoğraf: portre+manzara).\n4) Sosyal bağ: bir arkadaşla paylaş (ör. koşu: haftalık ortak rota)."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir sunumda dinleyiciler sıkılıyor. İçeriği değiştirmeden akışı iyileştirmek için 6 teknik öner."
+        },
+        {
+          "role": "assistant",
+          "content": "1) İlk 30 saniyede amaç ve faydayı söyle.\n2) Slayt başlıklarını 'sonuç cümlesi' gibi yaz.\n3) Her bölümün sonunda tek cümle özetle bağla.\n4) Uzun listeleri 2–3 parçaya böl.\n5) Örnek–sonuç ikilileriyle ilerle.\n6) Sonda tek slayt: 3 ana çıkarım + çağrı."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Konya'de küçük bir kahve dükkanı için düşük bütçeli 3 pazarlama deneyi öner; her biri için ölçülebilir bir hedef yaz."
+        },
+        {
+          "role": "assistant",
+          "content": "1) 'Günün tadımı' mini ikramı: Hedef, deneme alan müşterilerin %20’sinin satışa dönmesi.\n2) Sadakat kartı (6 al 1 bedava): Hedef, 2 hafta içinde tekrar gelen müşteri sayısını %15 artırmak.\n3) Yerel komşu indirimi (belirli saat): Hedef, düşük yoğunluk saatlerinde işlem adedini günde +10 artırmak."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Eskişehir'de küçük bir kahve dükkanı için düşük bütçeli 3 pazarlama deneyi öner; her biri için ölçülebilir bir hedef yaz."
+        },
+        {
+          "role": "assistant",
+          "content": "1) 'Günün tadımı' mini ikramı: Hedef, deneme alan müşterilerin %20’sinin satışa dönmesi.\n2) Sadakat kartı (6 al 1 bedava): Hedef, 2 hafta içinde tekrar gelen müşteri sayısını %15 artırmak.\n3) Yerel komşu indirimi (belirli saat): Hedef, düşük yoğunluk saatlerinde işlem adedini günde +10 artırmak."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Muğla'de ders, iş ve spor arasında sıkıştım. Günlük planım sürekli bozuluyor. 'En küçük uygulanabilir düzen' yaklaşımıyla 7 günlük bir deneme planı çıkar."
+        },
+        {
+          "role": "assistant",
+          "content": "Önce sabit iki çıpa belirle: her gün aynı saatte uyanma ve 30 dk 'çekirdek çalışma'. İlk 3 gün sadece bu iki çıpayı koru. 4–5. gün çekirdek çalışmayı 45 dk’ya çıkar ve haftada 2 gün 20 dk hafif spor ekle. 6–7. gün bir ders bloğu daha ekle (30 dk). Her akşam 5 dk: ne bozuldu, neden bozuldu, yarın tek bir düzeltme notu."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Trabzon'de ders, iş ve spor arasında sıkıştım. Günlük planım sürekli bozuluyor. 'En küçük uygulanabilir düzen' yaklaşımıyla 7 günlük bir deneme planı çıkar."
+        },
+        {
+          "role": "assistant",
+          "content": "Önce sabit iki çıpa belirle: her gün aynı saatte uyanma ve 30 dk 'çekirdek çalışma'. İlk 3 gün sadece bu iki çıpayı koru. 4–5. gün çekirdek çalışmayı 45 dk’ya çıkar ve haftada 2 gün 20 dk hafif spor ekle. 6–7. gün bir ders bloğu daha ekle (30 dk). Her akşam 5 dk: ne bozuldu, neden bozuldu, yarın tek bir düzeltme notu."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Adana'de ders, iş ve spor arasında sıkıştım. Günlük planım sürekli bozuluyor. 'En küçük uygulanabilir düzen' yaklaşımıyla 7 günlük bir deneme planı çıkar."
+        },
+        {
+          "role": "assistant",
+          "content": "Önce sabit iki çıpa belirle: her gün aynı saatte uyanma ve 30 dk 'çekirdek çalışma'. İlk 3 gün sadece bu iki çıpayı koru. 4–5. gün çekirdek çalışmayı 45 dk’ya çıkar ve haftada 2 gün 20 dk hafif spor ekle. 6–7. gün bir ders bloğu daha ekle (30 dk). Her akşam 5 dk: ne bozuldu, neden bozuldu, yarın tek bir düzeltme notu."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Trabzon'de küçük bir kahve dükkanı için düşük bütçeli 3 pazarlama deneyi öner; her biri için ölçülebilir bir hedef yaz."
+        },
+        {
+          "role": "assistant",
+          "content": "1) 'Günün tadımı' mini ikramı: Hedef, deneme alan müşterilerin %20’sinin satışa dönmesi.\n2) Sadakat kartı (6 al 1 bedava): Hedef, 2 hafta içinde tekrar gelen müşteri sayısını %15 artırmak.\n3) Yerel komşu indirimi (belirli saat): Hedef, düşük yoğunluk saatlerinde işlem adedini günde +10 artırmak."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir müşteri 'gecikti' diye sinirli. Savunmaya geçmeden çözüm sunan 5 cümlelik bir yanıt yaz."
+        },
+        {
+          "role": "assistant",
+          "content": "Yaşadığınız gecikme için üzgünüz. Süreci netleştirmek için sipariş numaranızı paylaşabilir misiniz? Durumu hemen kontrol edip size güncel teslim bilgisini ileteceğim. Dilerseniz beklemeden iade veya alternatif teslim seçeneği de sunabiliriz. Çözümün hızlı olması için sizinle aynı anda ilerleyelim."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Sınav haftasında her şeyi aynı anda çalışmaya çalışıyorum. Konuları önceliklendirmek için pratik bir yöntem anlat ve örnekle."
+        },
+        {
+          "role": "assistant",
+          "content": "Konuları iki ölçütle sırala: (1) sınav ağırlığı, (2) eksiklik düzeyi. 1–5 puan verip çarp. En yüksek puanlı 3 konuya haftanın %60’ını ayır. Örnek: Konu A (ağırlık 5, eksik 4)=20; Konu B (3,5)=15; Konu C (4,2)=8. Önce A, sonra B."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Ankara'de ders, iş ve spor arasında sıkıştım. Günlük planım sürekli bozuluyor. 'En küçük uygulanabilir düzen' yaklaşımıyla 7 günlük bir deneme planı çıkar."
+        },
+        {
+          "role": "assistant",
+          "content": "Önce sabit iki çıpa belirle: her gün aynı saatte uyanma ve 30 dk 'çekirdek çalışma'. İlk 3 gün sadece bu iki çıpayı koru. 4–5. gün çekirdek çalışmayı 45 dk’ya çıkar ve haftada 2 gün 20 dk hafif spor ekle. 6–7. gün bir ders bloğu daha ekle (30 dk). Her akşam 5 dk: ne bozuldu, neden bozuldu, yarın tek bir düzeltme notu."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Okuma alışkanlığı edinemiyorum; 10 sayfada bırakıyorum. Davranış tasarımıyla 2 haftalık mini plan yap."
+        },
+        {
+          "role": "assistant",
+          "content": "Günlük hedefi küçült: 5 sayfa. Aynı tetikleyici: her akşam diş fırçalamadan hemen önce. Zorluğu azalt: kitabı yastığın üzerine bırak. İlk hafta sadece süreklilik; ikinci hafta 5 sayfayı 8 sayfaya çıkar. Her gün bittiğinde küçük bir işaret koy; iki gün üst üste kaçırırsan üçüncü gün hedefi tekrar 5 sayfaya indir."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Konya'de küçük bir kahve dükkanı için düşük bütçeli 3 pazarlama deneyi öner; her biri için ölçülebilir bir hedef yaz."
+        },
+        {
+          "role": "assistant",
+          "content": "1) 'Günün tadımı' mini ikramı: Hedef, deneme alan müşterilerin %20’sinin satışa dönmesi.\n2) Sadakat kartı (6 al 1 bedava): Hedef, 2 hafta içinde tekrar gelen müşteri sayısını %15 artırmak.\n3) Yerel komşu indirimi (belirli saat): Hedef, düşük yoğunluk saatlerinde işlem adedini günde +10 artırmak."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Trabzon'de ders, iş ve spor arasında sıkıştım. Günlük planım sürekli bozuluyor. 'En küçük uygulanabilir düzen' yaklaşımıyla 7 günlük bir deneme planı çıkar."
+        },
+        {
+          "role": "assistant",
+          "content": "Önce sabit iki çıpa belirle: her gün aynı saatte uyanma ve 30 dk 'çekirdek çalışma'. İlk 3 gün sadece bu iki çıpayı koru. 4–5. gün çekirdek çalışmayı 45 dk’ya çıkar ve haftada 2 gün 20 dk hafif spor ekle. 6–7. gün bir ders bloğu daha ekle (30 dk). Her akşam 5 dk: ne bozuldu, neden bozuldu, yarın tek bir düzeltme notu."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Selin, ekipte iki kişinin sürekli aynı konuda tartıştığını söylüyor. Durumu tırmandırmadan çözmek için 5 maddelik bir yaklaşım öner."
+        },
+        {
+          "role": "assistant",
+          "content": "1) Tarafları ayrı ayrı dinleyip beklentileri netleştir.\n2) Tartışmanın konu ve sınırlarını yazılı hale getir.\n3) Ortak hedefi hatırlatıp ölçütleri belirle (zaman, kalite, sorumluluk).\n4) Alternatifleri birlikte üret ve artı/eksiyle değerlendir.\n5) Kararı ve takip adımlarını kayıt altına al; bir hafta sonra kısa kontrol toplantısı yap."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Muğla'de küçük bir kahve dükkanı için düşük bütçeli 3 pazarlama deneyi öner; her biri için ölçülebilir bir hedef yaz."
+        },
+        {
+          "role": "assistant",
+          "content": "1) 'Günün tadımı' mini ikramı: Hedef, deneme alan müşterilerin %20’sinin satışa dönmesi.\n2) Sadakat kartı (6 al 1 bedava): Hedef, 2 hafta içinde tekrar gelen müşteri sayısını %15 artırmak.\n3) Yerel komşu indirimi (belirli saat): Hedef, düşük yoğunluk saatlerinde işlem adedini günde +10 artırmak."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Umut, ekipte iki kişinin sürekli aynı konuda tartıştığını söylüyor. Durumu tırmandırmadan çözmek için 5 maddelik bir yaklaşım öner."
+        },
+        {
+          "role": "assistant",
+          "content": "1) Tarafları ayrı ayrı dinleyip beklentileri netleştir.\n2) Tartışmanın konu ve sınırlarını yazılı hale getir.\n3) Ortak hedefi hatırlatıp ölçütleri belirle (zaman, kalite, sorumluluk).\n4) Alternatifleri birlikte üret ve artı/eksiyle değerlendir.\n5) Kararı ve takip adımlarını kayıt altına al; bir hafta sonra kısa kontrol toplantısı yap."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aralıklı tekrar nedir? 2 cümleyle açıkla."
+        },
+        {
+          "role": "assistant",
+          "content": "Aralıklı tekrar, bilgiyi artan zaman aralıklarıyla tekrar ederek kalıcılığı artırma yöntemidir. Tek seferde uzun çalışmak yerine düzenli kısa tekrarlar yapılır."
+        },
+        {
+          "role": "user",
+          "content": "Bunu günlük hayatta uygulanabilir bir örnekle anlat."
+        },
+        {
+          "role": "assistant",
+          "content": "Yeni bir kelimeyi bugün öğrenip yarın, üç gün sonra ve bir hafta sonra kısa testlerle hatırlamaya çalışırsan, kelimeyi uzun süre akılda tutma olasılığın artar."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki kod parçası ne yapar? Kısaca anlat.\n\nfor i in range(3):\n print(i)"
+        },
+        {
+          "role": "assistant",
+          "content": "0’dan başlayarak 3’e kadar (3 hariç) sayıları ekrana yazdırır: 0, 1, 2."
+        },
+        {
+          "role": "user",
+          "content": "Bunu 1,2,3 yazacak şekilde nasıl değiştiririm?"
+        },
+        {
+          "role": "assistant",
+          "content": "range(1, 4) kullanabilirsin:\nfor i in range(1, 4):\n print(i)"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Adana'de küçük bir topluluk etkinliği planlıyorum. Hedef 50 kişi. 1 haftalık hazırlık planı çıkar."
+        },
+        {
+          "role": "assistant",
+          "content": "Gün 1: Mekân ve tarih netleştir, duyuru metni hazırla.\nGün 2: Kayıt formu aç, sosyal medya/duyuru kanalları belirle.\nGün 3: İçerik akışını yaz (açılış, ana bölüm, kapanış).\nGün 4: Gönüllü görev dağılımı (karşılama, kayıt, teknik).\nGün 5: Malzeme listesi ve bütçe; eksikleri tamamla.\nGün 6: Hatırlatma duyurusu + katılımcı sayısı kontrol.\nGün 7: Son kontrol + etkinlik günü kısa brifing."
+        },
+        {
+          "role": "user",
+          "content": "Riskler neler olabilir? 4 madde."
+        },
+        {
+          "role": "assistant",
+          "content": "• Katılımın düşük kalması (erken duyuru/hatırlatma).\n• Teknik aksaklık (yedek kablo/plan).\n• Mekân yoğunluğu (oturma düzeni/kapasite).\n• Zaman taşması (net süreler ve moderasyon)."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Muğla'de küçük bir topluluk etkinliği planlıyorum. Hedef 50 kişi. 1 haftalık hazırlık planı çıkar."
+        },
+        {
+          "role": "assistant",
+          "content": "Gün 1: Mekân ve tarih netleştir, duyuru metni hazırla.\nGün 2: Kayıt formu aç, sosyal medya/duyuru kanalları belirle.\nGün 3: İçerik akışını yaz (açılış, ana bölüm, kapanış).\nGün 4: Gönüllü görev dağılımı (karşılama, kayıt, teknik).\nGün 5: Malzeme listesi ve bütçe; eksikleri tamamla.\nGün 6: Hatırlatma duyurusu + katılımcı sayısı kontrol.\nGün 7: Son kontrol + etkinlik günü kısa brifing."
+        },
+        {
+          "role": "user",
+          "content": "Riskler neler olabilir? 4 madde."
+        },
+        {
+          "role": "assistant",
+          "content": "• Katılımın düşük kalması (erken duyuru/hatırlatma).\n• Teknik aksaklık (yedek kablo/plan).\n• Mekân yoğunluğu (oturma düzeni/kapasite).\n• Zaman taşması (net süreler ve moderasyon)."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Elif bana gönderdiği raporda bazı terimleri tutarsız kullanmış. Kırmadan geri bildirim vermek için 4 cümlelik mesaj yaz."
+        },
+        {
+          "role": "assistant",
+          "content": "Emeğine sağlık, raporun genel akışı çok iyi. Sadece bazı terimler farklı bölümlerde farklı şekilde geçiyor; bunları tek biçime çekersek metin daha tutarlı olur. İstersen hangi terimleri kastettiğimi işaretleyip gönderebilirim. Uygun olursan birlikte hızlıca üzerinden geçelim."
+        },
+        {
+          "role": "user",
+          "content": "Daha kısa: 2 cümle."
+        },
+        {
+          "role": "assistant",
+          "content": "Raporun akışı çok iyi, eline sağlık. Bazı terimleri tutarlı hale getirirsek metin daha da güçlenecek; istersen işaretleyip paylaşayım."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Şu paragraf fazla dağınık. Önce ana fikri söyle, sonra 2 kısa paragraf halinde yeniden yaz:\n\"Bugün pek çok iş vardı. Bir yandan rapor, bir yandan toplantılar. Arada e-postalar. Sonuçta hiçbir şey bitmedi gibi hissettim. Belki de öncelik koymalıydım.\""
+        },
+        {
+          "role": "assistant",
+          "content": "Ana fikir: Aynı anda çok işe bölünmek ilerleme hissini azaltıyor.\n\nBugün rapor, toplantılar ve e-postalar arasında sürekli bölündüm. Bu yüzden gün sonunda ilerlemem azmış gibi geldi.\n\nBir dahaki sefer önce öncelikleri belirleyip tek tek tamamlamayı deneyeceğim. Böylece hem odaklanıp hem de somut sonuç görebilirim."
+        },
+        {
+          "role": "user",
+          "content": "Daha da kısa yap: 2 cümle."
+        },
+        {
+          "role": "assistant",
+          "content": "Bugün farklı işler arasında bölündüğüm için ilerlemem azmış gibi hissettim. Bir dahaki sefere öncelik belirleyip tek işe odaklanacağım."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Antalya'de küçük bir topluluk etkinliği planlıyorum. Hedef 50 kişi. 1 haftalık hazırlık planı çıkar."
+        },
+        {
+          "role": "assistant",
+          "content": "Gün 1: Mekân ve tarih netleştir, duyuru metni hazırla.\nGün 2: Kayıt formu aç, sosyal medya/duyuru kanalları belirle.\nGün 3: İçerik akışını yaz (açılış, ana bölüm, kapanış).\nGün 4: Gönüllü görev dağılımı (karşılama, kayıt, teknik).\nGün 5: Malzeme listesi ve bütçe; eksikleri tamamla.\nGün 6: Hatırlatma duyurusu + katılımcı sayısı kontrol.\nGün 7: Son kontrol + etkinlik günü kısa brifing."
+        },
+        {
+          "role": "user",
+          "content": "Riskler neler olabilir? 4 madde."
+        },
+        {
+          "role": "assistant",
+          "content": "• Katılımın düşük kalması (erken duyuru/hatırlatma).\n• Teknik aksaklık (yedek kablo/plan).\n• Mekân yoğunluğu (oturma düzeni/kapasite).\n• Zaman taşması (net süreler ve moderasyon)."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Trabzon'de küçük bir topluluk etkinliği planlıyorum. Hedef 50 kişi. 1 haftalık hazırlık planı çıkar."
+        },
+        {
+          "role": "assistant",
+          "content": "Gün 1: Mekân ve tarih netleştir, duyuru metni hazırla.\nGün 2: Kayıt formu aç, sosyal medya/duyuru kanalları belirle.\nGün 3: İçerik akışını yaz (açılış, ana bölüm, kapanış).\nGün 4: Gönüllü görev dağılımı (karşılama, kayıt, teknik).\nGün 5: Malzeme listesi ve bütçe; eksikleri tamamla.\nGün 6: Hatırlatma duyurusu + katılımcı sayısı kontrol.\nGün 7: Son kontrol + etkinlik günü kısa brifing."
+        },
+        {
+          "role": "user",
+          "content": "Riskler neler olabilir? 4 madde."
+        },
+        {
+          "role": "assistant",
+          "content": "• Katılımın düşük kalması (erken duyuru/hatırlatma).\n• Teknik aksaklık (yedek kablo/plan).\n• Mekân yoğunluğu (oturma düzeni/kapasite).\n• Zaman taşması (net süreler ve moderasyon)."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Ece bana gönderdiği raporda bazı terimleri tutarsız kullanmış. Kırmadan geri bildirim vermek için 4 cümlelik mesaj yaz."
+        },
+        {
+          "role": "assistant",
+          "content": "Emeğine sağlık, raporun genel akışı çok iyi. Sadece bazı terimler farklı bölümlerde farklı şekilde geçiyor; bunları tek biçime çekersek metin daha tutarlı olur. İstersen hangi terimleri kastettiğimi işaretleyip gönderebilirim. Uygun olursan birlikte hızlıca üzerinden geçelim."
+        },
+        {
+          "role": "user",
+          "content": "Daha kısa: 2 cümle."
+        },
+        {
+          "role": "assistant",
+          "content": "Raporun akışı çok iyi, eline sağlık. Bazı terimleri tutarlı hale getirirsek metin daha da güçlenecek; istersen işaretleyip paylaşayım."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Antalya'de küçük bir topluluk etkinliği planlıyorum. Hedef 50 kişi. 1 haftalık hazırlık planı çıkar."
+        },
+        {
+          "role": "assistant",
+          "content": "Gün 1: Mekân ve tarih netleştir, duyuru metni hazırla.\nGün 2: Kayıt formu aç, sosyal medya/duyuru kanalları belirle.\nGün 3: İçerik akışını yaz (açılış, ana bölüm, kapanış).\nGün 4: Gönüllü görev dağılımı (karşılama, kayıt, teknik).\nGün 5: Malzeme listesi ve bütçe; eksikleri tamamla.\nGün 6: Hatırlatma duyurusu + katılımcı sayısı kontrol.\nGün 7: Son kontrol + etkinlik günü kısa brifing."
+        },
+        {
+          "role": "user",
+          "content": "Riskler neler olabilir? 4 madde."
+        },
+        {
+          "role": "assistant",
+          "content": "• Katılımın düşük kalması (erken duyuru/hatırlatma).\n• Teknik aksaklık (yedek kablo/plan).\n• Mekân yoğunluğu (oturma düzeni/kapasite).\n• Zaman taşması (net süreler ve moderasyon)."
+        }
+      ]
+    ]
+  },
+  "rejected_items": {
+    "items": [
+      [
+        {
+          "role": "user",
+          "content": "Yeni bir konuyu (ör. istatistik) öğrenirken 'aktif hatırlama' yöntemini 4 maddeyle anlat."
+        },
+        {
+          "role": "assistant",
+          "content": "• Konuyu okuduktan sonra kitaba bakmadan sorular üretip cevaplamaya çalış.\n• Kısa aralıklarla kendini test et (mini sınavlar).\n• Yanlışlarını hemen not alıp nedenini açıklayarak düzelt.\n• Günler içinde aralıklı tekrar yap; sadece yeniden okumaya güvenme."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Kısa bir paragrafta 'alışkanlık' ile 'motivasyon' arasındaki farkı açıkla."
+        },
+        {
+          "role": "assistant",
+          "content": "Motivasyon çoğu zaman dalgalanan bir itici güçtür; bir işi başlatmayı kolaylaştırır ama sürekliliği garanti etmez. Alışkanlık ise tekrarla otomatikleşen davranıştır; motivasyon düşükken bile işi sürdürmeyi sağlar. Bu yüzden kalıcı ilerleme için motivasyona güvenmek yerine küçük, tekrarlanabilir alışkanlıklar kurmak daha etkilidir."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Yeni bir konuyu (ör. istatistik) öğrenirken 'aktif hatırlama' yöntemini 4 maddeyle anlat."
+        },
+        {
+          "role": "assistant",
+          "content": "• Konuyu okuduktan sonra kitaba bakmadan sorular üretip cevaplamaya çalış.\n• Kısa aralıklarla kendini test et (mini sınavlar).\n• Yanlışlarını hemen not alıp nedenini açıklayarak düzelt.\n• Günler içinde aralıklı tekrar yap; sadece yeniden okumaya güvenme."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Kısa bir paragrafta 'alışkanlık' ile 'motivasyon' arasındaki farkı açıkla."
+        },
+        {
+          "role": "assistant",
+          "content": "Motivasyon çoğu zaman dalgalanan bir itici güçtür; bir işi başlatmayı kolaylaştırır ama sürekliliği garanti etmez. Alışkanlık ise tekrarla otomatikleşen davranıştır; motivasyon düşükken bile işi sürdürmeyi sağlar. Bu yüzden kalıcı ilerleme için motivasyona güvenmek yerine küçük, tekrarlanabilir alışkanlıklar kurmak daha etkilidir."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Kısa bir paragrafta 'alışkanlık' ile 'motivasyon' arasındaki farkı açıkla."
+        },
+        {
+          "role": "assistant",
+          "content": "Motivasyon çoğu zaman dalgalanan bir itici güçtür; bir işi başlatmayı kolaylaştırır ama sürekliliği garanti etmez. Alışkanlık ise tekrarla otomatikleşen davranıştır; motivasyon düşükken bile işi sürdürmeyi sağlar. Bu yüzden kalıcı ilerleme için motivasyona güvenmek yerine küçük, tekrarlanabilir alışkanlıklar kurmak daha etkilidir."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir iş arkadaşına, paylaştığı dosyada eksik sayfalar olduğunu nazikçe bildiren kısa bir e-posta metni yaz."
+        },
+        {
+          "role": "assistant",
+          "content": "Merhaba,\n\nPaylaştığın dosyayı inceledim; bazı bölümlerde sayfalar eksik görünüyor. Mümkünse güncel sürümü tekrar paylaşabilir misin?\n\nTeşekkürler."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki cümleyi 'olumlu / olumsuz / nötr' olarak etiketle ve sadece etiketi yaz:\n\"Ürün fena değil ama beklediğim kadar hızlı çalışmıyor.\""
+        },
+        {
+          "role": "assistant",
+          "content": "nötr"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "otobüs durağı yakınında yeni bir bisiklet park yeri yapılması için kısa bir dilekçe metni yaz (120-150 kelime)."
+        },
+        {
+          "role": "assistant",
+          "content": "Sayın Yetkili,\n\nMahallemizde bisiklet kullanımını artırmak ve güvenli park ihtiyacını karşılamak amacıyla, bölgedeki yoğun yaya akışının bulunduğu alana yakın bir bisiklet park yeri yapılmasını talep ediyoruz. Mevcut durumda bisikletler uygun olmayan yerlere kilitlenmekte, bu durum hem güvenlik riskleri doğurmakta hem de yaya geçişini engelleyebilmektedir. Düzenli bir park alanı, bisikletli ulaşımı teşvik ederek trafik yoğunluğunu ve kısa mesafeli araç kullanımını azaltacaktır. Ayrıca çevresel sürdürülebilirliğe katkı sunacak ve bölgemizin yaşam kalitesini yükseltecektir.\n\nGereğinin değerlendirilmesini arz ederiz."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Yeni bir konuyu (ör. istatistik) öğrenirken 'aktif hatırlama' yöntemini 4 maddeyle anlat."
+        },
+        {
+          "role": "assistant",
+          "content": "• Konuyu okuduktan sonra kitaba bakmadan sorular üretip cevaplamaya çalış.\n• Kısa aralıklarla kendini test et (mini sınavlar).\n• Yanlışlarını hemen not alıp nedenini açıklayarak düzelt.\n• Günler içinde aralıklı tekrar yap; sadece yeniden okumaya güvenme."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir etkinlikte 3 farklı atölye var. Her atölyeye 12 kişi katılıyor. Toplam katılımcı sayısı kaçtır? Sadece sayıyı yaz."
+        },
+        {
+          "role": "assistant",
+          "content": "36"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Şu cümleyi daha resmi bir dille yeniden yaz:\n\"Toplantıyı yarına alsak olur mu? Çünkü bugün yetişemiyorum.\""
+        },
+        {
+          "role": "assistant",
+          "content": "Toplantıyı yarına ertelememiz mümkün müdür? Bugün zaman açısından yetiştirememekteyim."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Şu bilgileri 2 sütunlu (Görev | Süre) küçük bir tablo olarak yaz:\n- Okuma: 25 dk\n- Not çıkarma: 15 dk\n- Tekrar: 10 dk"
+        },
+        {
+          "role": "assistant",
+          "content": "Görev | Süre\n--- | ---\nOkuma | 25 dk\nNot çıkarma | 15 dk\nTekrar | 10 dk"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Yeni bir konuyu (ör. istatistik) öğrenirken 'aktif hatırlama' yöntemini 4 maddeyle anlat."
+        },
+        {
+          "role": "assistant",
+          "content": "• Konuyu okuduktan sonra kitaba bakmadan sorular üretip cevaplamaya çalış.\n• Kısa aralıklarla kendini test et (mini sınavlar).\n• Yanlışlarını hemen not alıp nedenini açıklayarak düzelt.\n• Günler içinde aralıklı tekrar yap; sadece yeniden okumaya güvenme."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Kısa bir paragrafta 'alışkanlık' ile 'motivasyon' arasındaki farkı açıkla."
+        },
+        {
+          "role": "assistant",
+          "content": "Motivasyon çoğu zaman dalgalanan bir itici güçtür; bir işi başlatmayı kolaylaştırır ama sürekliliği garanti etmez. Alışkanlık ise tekrarla otomatikleşen davranıştır; motivasyon düşükken bile işi sürdürmeyi sağlar. Bu yüzden kalıcı ilerleme için motivasyona güvenmek yerine küçük, tekrarlanabilir alışkanlıklar kurmak daha etkilidir."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki cümleyi 'olumlu / olumsuz / nötr' olarak etiketle ve sadece etiketi yaz:\n\"Ürün fena değil ama beklediğim kadar hızlı çalışmıyor.\""
+        },
+        {
+          "role": "assistant",
+          "content": "nötr"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Şu bilgileri 2 sütunlu (Görev | Süre) küçük bir tablo olarak yaz:\n- Okuma: 25 dk\n- Not çıkarma: 15 dk\n- Tekrar: 10 dk"
+        },
+        {
+          "role": "assistant",
+          "content": "Görev | Süre\n--- | ---\nOkuma | 25 dk\nNot çıkarma | 15 dk\nTekrar | 10 dk"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Yeni bir konuyu (ör. istatistik) öğrenirken 'aktif hatırlama' yöntemini 4 maddeyle anlat."
+        },
+        {
+          "role": "assistant",
+          "content": "• Konuyu okuduktan sonra kitaba bakmadan sorular üretip cevaplamaya çalış.\n• Kısa aralıklarla kendini test et (mini sınavlar).\n• Yanlışlarını hemen not alıp nedenini açıklayarak düzelt.\n• Günler içinde aralıklı tekrar yap; sadece yeniden okumaya güvenme."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Kısa bir paragrafta 'alışkanlık' ile 'motivasyon' arasındaki farkı açıkla."
+        },
+        {
+          "role": "assistant",
+          "content": "Motivasyon çoğu zaman dalgalanan bir itici güçtür; bir işi başlatmayı kolaylaştırır ama sürekliliği garanti etmez. Alışkanlık ise tekrarla otomatikleşen davranıştır; motivasyon düşükken bile işi sürdürmeyi sağlar. Bu yüzden kalıcı ilerleme için motivasyona güvenmek yerine küçük, tekrarlanabilir alışkanlıklar kurmak daha etkilidir."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki cümleyi 'olumlu / olumsuz / nötr' olarak etiketle ve sadece etiketi yaz:\n\"Ürün fena değil ama beklediğim kadar hızlı çalışmıyor.\""
+        },
+        {
+          "role": "assistant",
+          "content": "nötr"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir proje raporunda yöntem kısmı zayıf görünüyor. Yöntem bölümünü güçlendirmek için mutlaka yazılması gereken 8 öğeyi listele."
+        },
+        {
+          "role": "assistant",
+          "content": "1) Problem tanımı ve kapsam.\n2) Veri kaynağı ve örnekleme.\n3) Ön işleme adımları.\n4) Model/algoritma seçimi gerekçesi.\n5) Eğitim/validasyon ayrımı ve protokol.\n6) Değerlendirme metrikleri.\n7) Hiperparametre aralığı ve seçimi.\n8) Hata analizi ve sınırlılıklar."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Yeni bir hobiye başlamak istiyorum ama çabuk sıkılıyorum. Sıkılmayı azaltmak için 4 strateji ve her biri için bir örnek ver."
+        },
+        {
+          "role": "assistant",
+          "content": "1) Mikro hedef: 10 dk pratik (ör. gitar: iki akor).\n2) Geri bildirim: kaydedip dinle (ör. çizim: haftalık önce/sonra).\n3) Çeşitlilik: aynı beceriyi farklı içerikle çalış (ör. fotoğraf: portre+manzara).\n4) Sosyal bağ: bir arkadaşla paylaş (ör. koşu: haftalık ortak rota)."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Toplantılar uzuyor ve karar çıkmıyor. 30 dakikalık toplantı için net bir şablon öner."
+        },
+        {
+          "role": "assistant",
+          "content": "0–5 dk: hedef + gündem maddeleri.\n5–20 dk: her madde için 3 dk durum, 2 dk seçenek.\n20–25 dk: karar cümlelerini netleştir (kim, ne, ne zaman).\n25–30 dk: riskler + takip toplantısı gerekip gerekmediği. Toplantı sonunda tek sayfa özet paylaş."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Toplantılar uzuyor ve karar çıkmıyor. 30 dakikalık toplantı için net bir şablon öner."
+        },
+        {
+          "role": "assistant",
+          "content": "0–5 dk: hedef + gündem maddeleri.\n5–20 dk: her madde için 3 dk durum, 2 dk seçenek.\n20–25 dk: karar cümlelerini netleştir (kim, ne, ne zaman).\n25–30 dk: riskler + takip toplantısı gerekip gerekmediği. Toplantı sonunda tek sayfa özet paylaş."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "İstanbul'de ders, iş ve spor arasında sıkıştım. Günlük planım sürekli bozuluyor. 'En küçük uygulanabilir düzen' yaklaşımıyla 7 günlük bir deneme planı çıkar."
+        },
+        {
+          "role": "assistant",
+          "content": "Önce sabit iki çıpa belirle: her gün aynı saatte uyanma ve 30 dk 'çekirdek çalışma'. İlk 3 gün sadece bu iki çıpayı koru. 4–5. gün çekirdek çalışmayı 45 dk’ya çıkar ve haftada 2 gün 20 dk hafif spor ekle. 6–7. gün bir ders bloğu daha ekle (30 dk). Her akşam 5 dk: ne bozuldu, neden bozuldu, yarın tek bir düzeltme notu."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Trabzon'de ders, iş ve spor arasında sıkıştım. Günlük planım sürekli bozuluyor. 'En küçük uygulanabilir düzen' yaklaşımıyla 7 günlük bir deneme planı çıkar."
+        },
+        {
+          "role": "assistant",
+          "content": "Önce sabit iki çıpa belirle: her gün aynı saatte uyanma ve 30 dk 'çekirdek çalışma'. İlk 3 gün sadece bu iki çıpayı koru. 4–5. gün çekirdek çalışmayı 45 dk’ya çıkar ve haftada 2 gün 20 dk hafif spor ekle. 6–7. gün bir ders bloğu daha ekle (30 dk). Her akşam 5 dk: ne bozuldu, neden bozuldu, yarın tek bir düzeltme notu."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir proje raporunda yöntem kısmı zayıf görünüyor. Yöntem bölümünü güçlendirmek için mutlaka yazılması gereken 8 öğeyi listele."
+        },
+        {
+          "role": "assistant",
+          "content": "1) Problem tanımı ve kapsam.\n2) Veri kaynağı ve örnekleme.\n3) Ön işleme adımları.\n4) Model/algoritma seçimi gerekçesi.\n5) Eğitim/validasyon ayrımı ve protokol.\n6) Değerlendirme metrikleri.\n7) Hiperparametre aralığı ve seçimi.\n8) Hata analizi ve sınırlılıklar."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir proje raporunda yöntem kısmı zayıf görünüyor. Yöntem bölümünü güçlendirmek için mutlaka yazılması gereken 8 öğeyi listele."
+        },
+        {
+          "role": "assistant",
+          "content": "1) Problem tanımı ve kapsam.\n2) Veri kaynağı ve örnekleme.\n3) Ön işleme adımları.\n4) Model/algoritma seçimi gerekçesi.\n5) Eğitim/validasyon ayrımı ve protokol.\n6) Değerlendirme metrikleri.\n7) Hiperparametre aralığı ve seçimi.\n8) Hata analizi ve sınırlılıklar."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Sınav haftasında her şeyi aynı anda çalışmaya çalışıyorum. Konuları önceliklendirmek için pratik bir yöntem anlat ve örnekle."
+        },
+        {
+          "role": "assistant",
+          "content": "Konuları iki ölçütle sırala: (1) sınav ağırlığı, (2) eksiklik düzeyi. 1–5 puan verip çarp. En yüksek puanlı 3 konuya haftanın %60’ını ayır. Örnek: Konu A (ağırlık 5, eksik 4)=20; Konu B (3,5)=15; Konu C (4,2)=8. Önce A, sonra B."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir proje raporunda yöntem kısmı zayıf görünüyor. Yöntem bölümünü güçlendirmek için mutlaka yazılması gereken 8 öğeyi listele."
+        },
+        {
+          "role": "assistant",
+          "content": "1) Problem tanımı ve kapsam.\n2) Veri kaynağı ve örnekleme.\n3) Ön işleme adımları.\n4) Model/algoritma seçimi gerekçesi.\n5) Eğitim/validasyon ayrımı ve protokol.\n6) Değerlendirme metrikleri.\n7) Hiperparametre aralığı ve seçimi.\n8) Hata analizi ve sınırlılıklar."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir sunumda dinleyiciler sıkılıyor. İçeriği değiştirmeden akışı iyileştirmek için 6 teknik öner."
+        },
+        {
+          "role": "assistant",
+          "content": "1) İlk 30 saniyede amaç ve faydayı söyle.\n2) Slayt başlıklarını 'sonuç cümlesi' gibi yaz.\n3) Her bölümün sonunda tek cümle özetle bağla.\n4) Uzun listeleri 2–3 parçaya böl.\n5) Örnek–sonuç ikilileriyle ilerle.\n6) Sonda tek slayt: 3 ana çıkarım + çağrı."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "İstanbul'de ders, iş ve spor arasında sıkıştım. Günlük planım sürekli bozuluyor. 'En küçük uygulanabilir düzen' yaklaşımıyla 7 günlük bir deneme planı çıkar."
+        },
+        {
+          "role": "assistant",
+          "content": "Önce sabit iki çıpa belirle: her gün aynı saatte uyanma ve 30 dk 'çekirdek çalışma'. İlk 3 gün sadece bu iki çıpayı koru. 4–5. gün çekirdek çalışmayı 45 dk’ya çıkar ve haftada 2 gün 20 dk hafif spor ekle. 6–7. gün bir ders bloğu daha ekle (30 dk). Her akşam 5 dk: ne bozuldu, neden bozuldu, yarın tek bir düzeltme notu."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Sınav haftasında her şeyi aynı anda çalışmaya çalışıyorum. Konuları önceliklendirmek için pratik bir yöntem anlat ve örnekle."
+        },
+        {
+          "role": "assistant",
+          "content": "Konuları iki ölçütle sırala: (1) sınav ağırlığı, (2) eksiklik düzeyi. 1–5 puan verip çarp. En yüksek puanlı 3 konuya haftanın %60’ını ayır. Örnek: Konu A (ağırlık 5, eksik 4)=20; Konu B (3,5)=15; Konu C (4,2)=8. Önce A, sonra B."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir proje raporunda yöntem kısmı zayıf görünüyor. Yöntem bölümünü güçlendirmek için mutlaka yazılması gereken 8 öğeyi listele."
+        },
+        {
+          "role": "assistant",
+          "content": "1) Problem tanımı ve kapsam.\n2) Veri kaynağı ve örnekleme.\n3) Ön işleme adımları.\n4) Model/algoritma seçimi gerekçesi.\n5) Eğitim/validasyon ayrımı ve protokol.\n6) Değerlendirme metrikleri.\n7) Hiperparametre aralığı ve seçimi.\n8) Hata analizi ve sınırlılıklar."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir sunumda dinleyiciler sıkılıyor. İçeriği değiştirmeden akışı iyileştirmek için 6 teknik öner."
+        },
+        {
+          "role": "assistant",
+          "content": "1) İlk 30 saniyede amaç ve faydayı söyle.\n2) Slayt başlıklarını 'sonuç cümlesi' gibi yaz.\n3) Her bölümün sonunda tek cümle özetle bağla.\n4) Uzun listeleri 2–3 parçaya böl.\n5) Örnek–sonuç ikilileriyle ilerle.\n6) Sonda tek slayt: 3 ana çıkarım + çağrı."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Sınav haftasında her şeyi aynı anda çalışmaya çalışıyorum. Konuları önceliklendirmek için pratik bir yöntem anlat ve örnekle."
+        },
+        {
+          "role": "assistant",
+          "content": "Konuları iki ölçütle sırala: (1) sınav ağırlığı, (2) eksiklik düzeyi. 1–5 puan verip çarp. En yüksek puanlı 3 konuya haftanın %60’ını ayır. Örnek: Konu A (ağırlık 5, eksik 4)=20; Konu B (3,5)=15; Konu C (4,2)=8. Önce A, sonra B."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir sunumda dinleyiciler sıkılıyor. İçeriği değiştirmeden akışı iyileştirmek için 6 teknik öner."
+        },
+        {
+          "role": "assistant",
+          "content": "1) İlk 30 saniyede amaç ve faydayı söyle.\n2) Slayt başlıklarını 'sonuç cümlesi' gibi yaz.\n3) Her bölümün sonunda tek cümle özetle bağla.\n4) Uzun listeleri 2–3 parçaya böl.\n5) Örnek–sonuç ikilileriyle ilerle.\n6) Sonda tek slayt: 3 ana çıkarım + çağrı."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bir proje raporunda yöntem kısmı zayıf görünüyor. Yöntem bölümünü güçlendirmek için mutlaka yazılması gereken 8 öğeyi listele."
+        },
+        {
+          "role": "assistant",
+          "content": "1) Problem tanımı ve kapsam.\n2) Veri kaynağı ve örnekleme.\n3) Ön işleme adımları.\n4) Model/algoritma seçimi gerekçesi.\n5) Eğitim/validasyon ayrımı ve protokol.\n6) Değerlendirme metrikleri.\n7) Hiperparametre aralığı ve seçimi.\n8) Hata analizi ve sınırlılıklar."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Okuma alışkanlığı edinemiyorum; 10 sayfada bırakıyorum. Davranış tasarımıyla 2 haftalık mini plan yap."
+        },
+        {
+          "role": "assistant",
+          "content": "Günlük hedefi küçült: 5 sayfa. Aynı tetikleyici: her akşam diş fırçalamadan hemen önce. Zorluğu azalt: kitabı yastığın üzerine bırak. İlk hafta sadece süreklilik; ikinci hafta 5 sayfayı 8 sayfaya çıkar. Her gün bittiğinde küçük bir işaret koy; iki gün üst üste kaçırırsan üçüncü gün hedefi tekrar 5 sayfaya indir."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Toplantılar uzuyor ve karar çıkmıyor. 30 dakikalık toplantı için net bir şablon öner."
+        },
+        {
+          "role": "assistant",
+          "content": "0–5 dk: hedef + gündem maddeleri.\n5–20 dk: her madde için 3 dk durum, 2 dk seçenek.\n20–25 dk: karar cümlelerini netleştir (kim, ne, ne zaman).\n25–30 dk: riskler + takip toplantısı gerekip gerekmediği. Toplantı sonunda tek sayfa özet paylaş."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aralıklı tekrar nedir? 2 cümleyle açıkla."
+        },
+        {
+          "role": "assistant",
+          "content": "Aralıklı tekrar, bilgiyi artan zaman aralıklarıyla tekrar ederek kalıcılığı artırma yöntemidir. Tek seferde uzun çalışmak yerine düzenli kısa tekrarlar yapılır."
+        },
+        {
+          "role": "user",
+          "content": "Bunu günlük hayatta uygulanabilir bir örnekle anlat."
+        },
+        {
+          "role": "assistant",
+          "content": "Yeni bir kelimeyi bugün öğrenip yarın, üç gün sonra ve bir hafta sonra kısa testlerle hatırlamaya çalışırsan, kelimeyi uzun süre akılda tutma olasılığın artar."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki kod parçası ne yapar? Kısaca anlat.\n\nfor i in range(3):\n print(i)"
+        },
+        {
+          "role": "assistant",
+          "content": "0’dan başlayarak 3’e kadar (3 hariç) sayıları ekrana yazdırır: 0, 1, 2."
+        },
+        {
+          "role": "user",
+          "content": "Bunu 1,2,3 yazacak şekilde nasıl değiştiririm?"
+        },
+        {
+          "role": "assistant",
+          "content": "range(1, 4) kullanabilirsin:\nfor i in range(1, 4):\n print(i)"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki kod parçası ne yapar? Kısaca anlat.\n\nfor i in range(3):\n print(i)"
+        },
+        {
+          "role": "assistant",
+          "content": "0’dan başlayarak 3’e kadar (3 hariç) sayıları ekrana yazdırır: 0, 1, 2."
+        },
+        {
+          "role": "user",
+          "content": "Bunu 1,2,3 yazacak şekilde nasıl değiştiririm?"
+        },
+        {
+          "role": "assistant",
+          "content": "range(1, 4) kullanabilirsin:\nfor i in range(1, 4):\n print(i)"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aralıklı tekrar nedir? 2 cümleyle açıkla."
+        },
+        {
+          "role": "assistant",
+          "content": "Aralıklı tekrar, bilgiyi artan zaman aralıklarıyla tekrar ederek kalıcılığı artırma yöntemidir. Tek seferde uzun çalışmak yerine düzenli kısa tekrarlar yapılır."
+        },
+        {
+          "role": "user",
+          "content": "Bunu günlük hayatta uygulanabilir bir örnekle anlat."
+        },
+        {
+          "role": "assistant",
+          "content": "Yeni bir kelimeyi bugün öğrenip yarın, üç gün sonra ve bir hafta sonra kısa testlerle hatırlamaya çalışırsan, kelimeyi uzun süre akılda tutma olasılığın artar."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aralıklı tekrar nedir? 2 cümleyle açıkla."
+        },
+        {
+          "role": "assistant",
+          "content": "Aralıklı tekrar, bilgiyi artan zaman aralıklarıyla tekrar ederek kalıcılığı artırma yöntemidir. Tek seferde uzun çalışmak yerine düzenli kısa tekrarlar yapılır."
+        },
+        {
+          "role": "user",
+          "content": "Bunu günlük hayatta uygulanabilir bir örnekle anlat."
+        },
+        {
+          "role": "assistant",
+          "content": "Yeni bir kelimeyi bugün öğrenip yarın, üç gün sonra ve bir hafta sonra kısa testlerle hatırlamaya çalışırsan, kelimeyi uzun süre akılda tutma olasılığın artar."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki kod parçası ne yapar? Kısaca anlat.\n\nfor i in range(3):\n print(i)"
+        },
+        {
+          "role": "assistant",
+          "content": "0’dan başlayarak 3’e kadar (3 hariç) sayıları ekrana yazdırır: 0, 1, 2."
+        },
+        {
+          "role": "user",
+          "content": "Bunu 1,2,3 yazacak şekilde nasıl değiştiririm?"
+        },
+        {
+          "role": "assistant",
+          "content": "range(1, 4) kullanabilirsin:\nfor i in range(1, 4):\n print(i)"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki kod parçası ne yapar? Kısaca anlat.\n\nfor i in range(3):\n print(i)"
+        },
+        {
+          "role": "assistant",
+          "content": "0’dan başlayarak 3’e kadar (3 hariç) sayıları ekrana yazdırır: 0, 1, 2."
+        },
+        {
+          "role": "user",
+          "content": "Bunu 1,2,3 yazacak şekilde nasıl değiştiririm?"
+        },
+        {
+          "role": "assistant",
+          "content": "range(1, 4) kullanabilirsin:\nfor i in range(1, 4):\n print(i)"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aşağıdaki kod parçası ne yapar? Kısaca anlat.\n\nfor i in range(3):\n print(i)"
+        },
+        {
+          "role": "assistant",
+          "content": "0’dan başlayarak 3’e kadar (3 hariç) sayıları ekrana yazdırır: 0, 1, 2."
+        },
+        {
+          "role": "user",
+          "content": "Bunu 1,2,3 yazacak şekilde nasıl değiştiririm?"
+        },
+        {
+          "role": "assistant",
+          "content": "range(1, 4) kullanabilirsin:\nfor i in range(1, 4):\n print(i)"
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Aralıklı tekrar nedir? 2 cümleyle açıkla."
+        },
+        {
+          "role": "assistant",
+          "content": "Aralıklı tekrar, bilgiyi artan zaman aralıklarıyla tekrar ederek kalıcılığı artırma yöntemidir. Tek seferde uzun çalışmak yerine düzenli kısa tekrarlar yapılır."
+        },
+        {
+          "role": "user",
+          "content": "Bunu günlük hayatta uygulanabilir bir örnekle anlat."
+        },
+        {
+          "role": "assistant",
+          "content": "Yeni bir kelimeyi bugün öğrenip yarın, üç gün sonra ve bir hafta sonra kısa testlerle hatırlamaya çalışırsan, kelimeyi uzun süre akılda tutma olasılığın artar."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Şu paragraf fazla dağınık. Önce ana fikri söyle, sonra 2 kısa paragraf halinde yeniden yaz:\n\"Bugün pek çok iş vardı. Bir yandan rapor, bir yandan toplantılar. Arada e-postalar. Sonuçta hiçbir şey bitmedi gibi hissettim. Belki de öncelik koymalıydım.\""
+        },
+        {
+          "role": "assistant",
+          "content": "Ana fikir: Aynı anda çok işe bölünmek ilerleme hissini azaltıyor.\n\nBugün rapor, toplantılar ve e-postalar arasında sürekli bölündüm. Bu yüzden gün sonunda ilerlemem azmış gibi geldi.\n\nBir dahaki sefer önce öncelikleri belirleyip tek tek tamamlamayı deneyeceğim. Böylece hem odaklanıp hem de somut sonuç görebilirim."
+        },
+        {
+          "role": "user",
+          "content": "Daha da kısa yap: 2 cümle."
+        },
+        {
+          "role": "assistant",
+          "content": "Bugün farklı işler arasında bölündüğüm için ilerlemem azmış gibi hissettim. Bir dahaki sefere öncelik belirleyip tek işe odaklanacağım."
+        }
+      ]
+    ]
+  }
+}
